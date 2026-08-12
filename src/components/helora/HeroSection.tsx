@@ -184,14 +184,32 @@ export function HeroSection() {
       rafId = requestAnimationFrame(tick);
     }
 
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (!mq.matches) rafId = requestAnimationFrame(tick);
+    const mqMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mqDesktop = window.matchMedia('(min-width: 768px)');
+
+    function isAnimationAllowed() {
+      return mqDesktop.matches && !mqMotion.matches;
+    }
+    function startAnimation() {
+      if (rafId) return;
+      rafId = requestAnimationFrame(tick);
+    }
+    function stopAnimation() {
+      if (rafId) { cancelAnimationFrame(rafId); rafId = 0; }
+    }
+
+    if (isAnimationAllowed()) rafId = requestAnimationFrame(tick);
 
     function onMotionChange(e: MediaQueryListEvent) {
-      if (e.matches) cancelAnimationFrame(rafId);
-      else rafId = requestAnimationFrame(tick);
+      if (e.matches) stopAnimation();
+      else startAnimation();
     }
-    mq.addEventListener('change', onMotionChange);
+    function onDesktopChange(e: MediaQueryListEvent) {
+      if (e.matches) startAnimation();
+      else stopAnimation();
+    }
+    mqMotion.addEventListener('change', onMotionChange);
+    mqDesktop.addEventListener('change', onDesktopChange);
 
     function toGrid(clientX: number, clientY: number): [number, number] {
       const r = section!.getBoundingClientRect();
@@ -241,8 +259,9 @@ export function HeroSection() {
     section.addEventListener('touchmove', onTouchMove, { passive: true });
 
     return () => {
-      cancelAnimationFrame(rafId);
-      mq.removeEventListener('change', onMotionChange);
+      stopAnimation();
+      mqMotion.removeEventListener('change', onMotionChange);
+      mqDesktop.removeEventListener('change', onDesktopChange);
       section.removeEventListener('mousedown', onMouseDown);
       section.removeEventListener('mousemove', onMouseMove);
       section.removeEventListener('touchstart', onTouchStart);
@@ -255,10 +274,11 @@ export function HeroSection() {
       ref={sectionRef}
       id="hero"
       className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden"
+      style={{ background: 'linear-gradient(to bottom, #141E03, #283107)' }}
     >
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full pointer-events-none"
+        className="absolute inset-0 w-full h-full pointer-events-none hidden md:block"
         style={{ imageRendering: 'auto' }}
         aria-hidden="true"
       />
