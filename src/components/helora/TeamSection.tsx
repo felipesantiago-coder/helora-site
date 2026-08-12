@@ -1,0 +1,107 @@
+'use client';
+
+import { Heart } from 'lucide-react';
+import { ScrollReveal } from './ScrollReveal';
+import { OrganicNatureBg } from './OrganicNatureBg';
+
+interface Professional {
+  id: string;
+  name: string;
+  specialty: string | null;
+  bio: string | null;
+}
+
+const PROFESSIONALS: Professional[] = [
+  {
+    id: '1',
+    name: 'Dra. Marina Lopes',
+    specialty: 'Psicologia Clínica',
+    bio: 'Acolho você com escuta sensível e presença genuína. Especialista em psicoterapia integrativa.',
+  },
+  {
+    id: '2',
+    name: 'Dr. André Bastos',
+    specialty: 'Psicoterapia Corporal',
+    bio: 'Trabalho a conexão entre corpo e emoção. Cada sessão é um espaço seguro para se reconectar consigo.',
+  },
+];
+
+function getInitials(name: string): string {
+  const parts = name.trim().split(/\s+/);
+  if (parts.length >= 2) {
+    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  }
+  return name.slice(0, 2).toUpperCase();
+}
+
+export function TeamSection() {
+  return (
+    <section id="equipe" className="bg-helora-white py-12 md:py-24 relative overflow-hidden">
+      <OrganicNatureBg variant="forest-floor" />
+
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
+        <ScrollReveal>
+          <div className="max-w-2xl mb-14">
+            <h2 className="font-serif font-normal text-2xl md:text-4xl text-helora-dark-green tracking-tight text-balance mb-4">
+              Quem te acompanha
+            </h2>
+            <p className="font-sans text-helora-tan text-base md:text-lg leading-relaxed">
+              Profissionais que escolheram o cuidado como caminho.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
+          {PROFESSIONALS.map((person, index) => (
+            <ScrollReveal key={person.id} delay={index * 0.12}>
+              <div className="helora-card flex flex-col hover:shadow-organic-lg transition-shadow duration-300 relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-[3px]" aria-hidden="true">
+                  <svg width="3" height="100%" viewBox="0 0 3 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 0 Q0 50, 2.5 100 Q3 150, 1.5 200" stroke="#777F5C" strokeWidth="3" fill="none" strokeLinecap="round" />
+                  </svg>
+                </div>
+
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-helora-sage/20 to-helora-sage/10 flex items-center justify-center shrink-0 border border-helora-sage/10">
+                    <span className="font-serif text-lg text-helora-sage font-normal">
+                      {getInitials(person.name)}
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="font-serif font-normal text-xl text-helora-dark-coffee tracking-tight">
+                      {person.name}
+                    </h3>
+                    {person.specialty && (
+                      <div className="inline-flex items-center gap-1.5 mt-1 bg-helora-sienna/8 rounded-full px-2.5 py-0.5 border border-helora-sienna/10">
+                        <Heart
+                          size={14}
+                          className="text-helora-sienna"
+                          aria-hidden="true"
+                        />
+                        <span className="font-sans text-sm font-medium text-helora-sienna">
+                          {person.specialty}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {person.bio && (
+                  <p className="font-sans text-[15px] text-helora-tan leading-relaxed mt-1">
+                    {person.bio}
+                  </p>
+                )}
+
+                <div className="absolute bottom-0 right-0 pointer-events-none opacity-[0.04]" aria-hidden="true">
+                  <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M80 80 Q50 70, 40 40 Q35 20, 50 5 Q65 15, 70 40 Q75 60, 80 80Z" fill="#777F5C" />
+                  </svg>
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
