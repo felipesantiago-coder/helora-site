@@ -90,7 +90,7 @@ export function Footer() {
                 saúde integrada
               </p>
             </div>
-            <p className="font-sans text-helora-gainsboro/70 text-sm mt-3 leading-relaxed">
+            <p className="font-sans text-helora-gainsboro/70 text-xs mt-3 leading-relaxed">
               Clínica de psicologia em Brasília — DF, especializada em saúde mental, neuropsicologia e avaliação psicológica. Atendimento humanizado, ético e baseado em evidências científicas para todas as faixas etárias.
             </p>
           </div>
