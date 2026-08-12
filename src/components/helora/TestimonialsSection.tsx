@@ -26,7 +26,7 @@ const TESTIMONIALS = [
 
 export function TestimonialsSection() {
   return (
-    <section className="bg-helora-antique-white/50 py-12 md:py-24 relative overflow-hidden">
+    <section id="depoimentos" className="bg-helora-antique-white/50 py-12 md:py-24 relative overflow-hidden">
       {/* Forest layer: Forest Floor — deeper, warmer ground-level patterns */}
       <OrganicNatureBg variant="forest-floor" />
 
