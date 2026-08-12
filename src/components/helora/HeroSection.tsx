@@ -175,7 +175,7 @@ export function HeroSection() {
           px[pi + 3] = 255;
         }
       }
-      ctx.putImageData(imgData, 0, 0);
+      ctx!.putImageData(imgData, 0, 0);
     }
 
     function tick() {
@@ -194,7 +194,7 @@ export function HeroSection() {
     mq.addEventListener('change', onMotionChange);
 
     function toGrid(clientX: number, clientY: number): [number, number] {
-      const r = section.getBoundingClientRect();
+      const r = section!.getBoundingClientRect();
       return [((clientX - r.left) / r.width) * VW, ((clientY - r.top) / r.height) * VH];
     }
 
