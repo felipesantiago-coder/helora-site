@@ -14,12 +14,12 @@ const NAV_LINKS = [
 
 const PHONE_DISPLAY = '(61) 9 9999-9999'; // ← Replace with real number
 
+const COL_HEADER = 'font-sans text-[11px] font-medium text-helora-sage/70 tracking-[0.15em] uppercase mb-4';
+
 function scrollToSection(href: string) {
   const id = href.replace('#', '');
   const el = document.getElementById(id);
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth' });
-  }
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
 }
 
 export function Footer() {
@@ -62,7 +62,7 @@ export function Footer() {
         aria-hidden="true"
       />
 
-      <div className="max-w-6xl mx-auto px-4 pt-12 pb-8 md:pt-16 md:pb-12 relative">
+      <div className="max-w-5xl mx-auto px-4 pt-10 pb-8 md:pt-14 md:pb-10 relative">
         {/* Breathing organic glow */}
         <div
           className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none"
@@ -77,85 +77,81 @@ export function Footer() {
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12 relative z-10">
-          {/* Column 1 — Brand */}
-          <div>
-            <div className="inline-flex flex-col items-center">
-              <img
-                src="/logo-mark.svg"
-                alt="Helora"
-                className="h-8 sm:h-10 w-auto shrink-0 brightness-0 invert"
-              />
-              <p className="w-full text-center font-sans text-helora-gainsboro/80 text-sm mt-1 tracking-wider uppercase">
-                saúde integrada
-              </p>
-            </div>
-            <p className="font-sans text-helora-gainsboro/70 text-xs mt-3 leading-relaxed">
-              Clínica de psicologia em Brasília — DF, especializada em saúde mental, neuropsicologia e avaliação psicológica. Atendimento humanizado, ético e baseado em evidências científicas para todas as faixas etárias.
-            </p>
-          </div>
+        {/* Brand anchor — centered at top */}
+        <div className="flex flex-col items-center mb-10 relative z-10">
+          <img
+            src="/logo-mark.svg"
+            alt="Helora"
+            className="h-8 sm:h-9 w-auto shrink-0 brightness-0 invert"
+          />
+          <p className="font-sans text-helora-gainsboro/70 text-[11px] mt-1.5 tracking-[0.15em] uppercase">
+            saúde integrada
+          </p>
+        </div>
 
-          {/* Column 2 — Navigation */}
-          <nav
-            className="flex flex-col items-center"
-            aria-label="Navegação do rodapé"
-          >
-            <p className="font-sans text-xs font-medium text-helora-sage tracking-wider uppercase mb-3">
-              Navegação
-            </p>
-            <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+        {/* Divider */}
+        <div className="border-t border-helora-sage/10 mb-10 relative z-10" aria-hidden="true" />
+
+        {/* 3 info columns — all left-aligned, matching structure */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 lg:gap-10 relative z-10">
+
+          {/* Navegação */}
+          <nav className="flex flex-col" aria-label="Navegação do rodapé">
+            <p className={COL_HEADER}>Navegação</p>
+            <ul className="flex flex-col gap-2.5">
               {NAV_LINKS.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollToSection(link.href)}
-                  className="font-sans text-sm text-white/70 hover:text-white transition-colors duration-200 text-left focus:outline-none focus-visible:underline w-fit"
-                >
-                  {link.label}
-                </button>
+                <li key={link.href}>
+                  <button
+                    onClick={() => scrollToSection(link.href)}
+                    className="font-sans text-[13px] text-white/60 hover:text-white transition-colors duration-200 text-left focus:outline-none focus-visible:underline"
+                  >
+                    {link.label}
+                  </button>
+                </li>
               ))}
-            </div>
+            </ul>
           </nav>
 
-          {/* Column 3 — Contact & Credibility */}
-          <div className="flex flex-col gap-4">
-            <p className="font-sans text-xs font-medium text-helora-sage tracking-wider uppercase mb-1">
-              Contato
+          {/* Contato */}
+          <div className="flex flex-col">
+            <p className={COL_HEADER}>Contato</p>
+            <ul className="flex flex-col gap-2.5">
+              <li>
+                <a
+                  href={getWhatsAppLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-sans text-[13px] text-white/60 hover:text-white transition-colors duration-200"
+                >
+                  <MessageCircle size={14} className="text-helora-sage/50 shrink-0" aria-hidden="true" />
+                  {PHONE_DISPLAY}
+                </a>
+              </li>
+              <li>
+                <span className="inline-flex items-center gap-2 font-sans text-[13px] text-white/60">
+                  <MapPin size={14} className="text-helora-sage/50 shrink-0" aria-hidden="true" />
+                  Brasília — DF
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Sobre a clínica */}
+          <div className="flex flex-col">
+            <p className={COL_HEADER}>Sobre</p>
+            <p className="font-sans text-[13px] text-white/60 leading-relaxed">
+              Clínica de psicologia especializada em saúde mental, neuropsicologia e avaliação psicológica. Atendimento humanizado, ético e baseado em evidências para todas as faixas etárias.
             </p>
-
-            {/* WhatsApp */}
-            <a
-              href={getWhatsAppLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 font-sans text-sm text-white/80 hover:text-white transition-colors duration-200 w-fit group"
-            >
-              <span className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-colors">
-                <MessageCircle size={15} className="text-helora-sage" aria-hidden="true" />
-              </span>
-              <span>{PHONE_DISPLAY}</span>
-            </a>
-
-            {/* Location */}
-            <div className="inline-flex items-center gap-2.5 font-sans text-sm text-white/60">
-              <span className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                <MapPin size={15} className="text-helora-sage" aria-hidden="true" />
-              </span>
-              <span>Brasília — DF</span>
-            </div>
-
-            {/* LGPD / Professional compliance */}
-            <div className="inline-flex items-start gap-2.5 font-sans text-[13px] text-white/40 mt-1">
-              <ShieldCheck size={14} className="text-helora-sage/60 shrink-0 mt-0.5" aria-hidden="true" />
-              <span>
-                Dados tratados conforme a LGPD. Sigilo profissional garantido pelo Código de Ética do psicólogo.
-              </span>
-            </div>
+            <p className="font-sans text-[11px] text-white/30 leading-relaxed mt-3 inline-flex items-start gap-1.5">
+              <ShieldCheck size={12} className="text-helora-sage/40 shrink-0 mt-0.5" aria-hidden="true" />
+              Dados tratados conforme a LGPD. Sigilo garantido pelo Código de Ética do psicólogo.
+            </p>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="border-t border-helora-sage/10 pt-5 mt-10 relative z-10">
-          <p className="font-sans text-xs text-helora-gainsboro/50 text-center">
+          <p className="font-sans text-[11px] text-helora-gainsboro/40 text-center">
             © 2026 Helora Saúde Integrada. Todos os direitos reservados.
           </p>
         </div>
