@@ -136,12 +136,12 @@
     50% { transform: scale(1.02); opacity: 1; }
   }
 
-  .breathe-a { animation: breathe-a 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite both; will-change: transform; }
-  .breathe-b { animation: breathe-b 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) 2.5s infinite both; will-change: transform; }
-  .breathe-c { animation: breathe-c 14s cubic-bezier(0.45, 0.05, 0.55, 0.95) 5s infinite both; will-change: transform; }
-  .breathe-d { animation: breathe-d 11s cubic-bezier(0.45, 0.05, 0.55, 0.95) 3.5s infinite both; will-change: transform; }
-  .breathe-e { animation: breathe-e 13s cubic-bezier(0.45, 0.05, 0.55, 0.95) 1.5s infinite both; will-change: transform; }
-  .breathe-glow { animation: breathe-glow 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) 1s infinite both; will-change: transform; }
+  .breathe-a { animation: breathe-a 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite both; }
+  .breathe-b { animation: breathe-b 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) 2.5s infinite both; }
+  .breathe-c { animation: breathe-c 14s cubic-bezier(0.45, 0.05, 0.55, 0.95) 5s infinite both; }
+  .breathe-d { animation: breathe-d 11s cubic-bezier(0.45, 0.05, 0.55, 0.95) 3.5s infinite both; }
+  .breathe-e { animation: breathe-e 13s cubic-bezier(0.45, 0.05, 0.55, 0.95) 1.5s infinite both; }
+  .breathe-glow { animation: breathe-glow 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) 1s infinite both; }
 
   /* Slow drift animation */
   @keyframes drift {
@@ -151,7 +151,6 @@
   }
   .animate-drift {
     animation: drift 16s ease-in-out infinite;
-    will-change: transform;
   }
 
   /* Infinite marquee — convênios */
@@ -167,13 +166,38 @@
     animation-name: marquee-forward;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    will-change: transform;
   }
   .marquee-reverse {
     animation-name: marquee-reverse;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+  }
+}
+
+/* Only promote to compositor layer when animations are actually running */
+@media (prefers-reduced-motion: no-preference) {
+  .breathe-a,
+  .breathe-b,
+  .breathe-c,
+  .breathe-d,
+  .breathe-e,
+  .breathe-glow,
+  .animate-drift,
+  .marquee-forward,
+  .marquee-reverse {
     will-change: transform;
+  }
+}
+
+/* Pause marquee on hover / focus-within (WCAG 2.2 SC 2.2.2) */
+@media (hover: hover) {
+  .group:hover .marquee-forward,
+  .group:focus-within .marquee-forward {
+    animation-play-state: paused;
+  }
+  .group:hover .marquee-reverse,
+  .group:focus-within .marquee-reverse {
+    animation-play-state: paused;
   }
 }
 
@@ -227,4 +251,10 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #A39B82;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(119, 127, 92, 0.3) transparent;
 }

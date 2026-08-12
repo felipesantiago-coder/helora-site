@@ -224,12 +224,12 @@ export function AmbientSound() {
       }
     >
       {playing ? (
-        <Volume2 className="w-4 h-4" strokeWidth={1.5} />
+        <Volume2 className="w-4 h-4" strokeWidth={1.5} aria-hidden="true" />
       ) : (
-        <VolumeX className="w-4 h-4" strokeWidth={1.5} />
+        <VolumeX className="w-4 h-4" strokeWidth={1.5} aria-hidden="true" />
       )}
       {playing && (
-        <span className="absolute inset-0 rounded-full border border-helora-sage/30 animate-ping pointer-events-none" />
+        <span className="absolute inset-0 rounded-full border border-helora-sage/30 animate-ping pointer-events-none" aria-hidden="true" />
       )}
     </button>
   );

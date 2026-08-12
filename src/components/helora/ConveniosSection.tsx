@@ -68,13 +68,20 @@ function MarqueeRow({
   items,
   reverse = false,
   speed = 45,
+  rowIndex,
 }: {
   items: string[];
   reverse?: boolean;
   speed?: number;
+  rowIndex: number;
 }) {
   return (
-    <div className="overflow-hidden w-full">
+    <div
+      className="group overflow-hidden w-full"
+      tabIndex={0}
+      role="region"
+      aria-label={`Convênios — linha ${rowIndex}`}
+    >
       <div
         className={`flex w-max gap-10 py-2 ${reverse ? 'marquee-reverse' : 'marquee-forward'}`}
         style={{ animationDuration: `${speed}s` }}
@@ -83,16 +90,16 @@ function MarqueeRow({
           <ConvenioItem key={name} name={name} />
         ))}
         {items.map((name) => (
-          <ConvenioItem key={`${name}-dup`} name={name} />
+          <ConvenioItem key={`${name}-dup`} name={name} aria-hidden />
         ))}
       </div>
     </div>
   );
 }
 
-function ConvenioItem({ name }: { name: string }) {
+function ConvenioItem({ name, ariaHidden }: { name: string; ariaHidden?: boolean }) {
   return (
-    <div className="flex-shrink-0 px-4 py-2.5 border border-helora-gainsboro/40 rounded-full bg-white/60 backdrop-blur-sm whitespace-nowrap">
+    <div aria-hidden={ariaHidden} className="flex-shrink-0 px-4 py-2.5 border border-helora-gainsboro/40 rounded-full bg-white/60 backdrop-blur-sm whitespace-nowrap">
       <span className="font-sans text-sm font-medium text-helora-tan tracking-wide select-none">
         {name}
       </span>
@@ -117,9 +124,9 @@ export function ConveniosSection() {
       </div>
 
       <div className="space-y-3 relative z-10">
-        <MarqueeRow items={ROW_1} speed={50} />
-        <MarqueeRow items={ROW_2} reverse speed={55} />
-        <MarqueeRow items={ROW_3} speed={60} />
+        <MarqueeRow items={ROW_1} speed={50} rowIndex={1} />
+        <MarqueeRow items={ROW_2} reverse speed={55} rowIndex={2} />
+        <MarqueeRow items={ROW_3} speed={60} rowIndex={3} />
       </div>
 
       {/* Edge fade masks */}

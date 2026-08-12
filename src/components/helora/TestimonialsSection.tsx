@@ -45,7 +45,7 @@ export function TestimonialsSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {TESTIMONIALS.map((t, index) => (
             <ScrollReveal key={t.name} delay={index * 0.12}>
-              <div className="helora-card h-full flex flex-col hover:shadow-organic-lg transition-shadow duration-300 bg-gradient-to-b from-white to-helora-antique-white/20 relative overflow-hidden">
+              <figure className="helora-card h-full flex flex-col hover:shadow-organic-lg transition-shadow duration-300 bg-gradient-to-b from-white to-helora-antique-white/20 relative overflow-hidden">
                 {/* Organic quote mark — leaf-inspired */}
                 <div className="absolute top-4 right-4 pointer-events-none opacity-[0.04]" aria-hidden="true">
                   <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -64,20 +64,20 @@ export function TestimonialsSection() {
                 </span>
 
                 {/* Quote text */}
-                <p className="font-serif italic text-helora-dark-coffee text-base md:text-[17px] leading-relaxed flex-1 mb-6">
+                <blockquote className="font-serif italic text-helora-dark-coffee text-base md:text-[17px] leading-relaxed flex-1 mb-6">
                   {t.quote}
-                </p>
+                </blockquote>
 
                 {/* Attribution */}
-                <div className="border-t border-helora-gainsboro/60 pt-4">
+                <figcaption className="border-t border-helora-gainsboro/60 pt-4">
                   <p className="font-sans font-medium text-sm text-helora-dark-coffee">
                     {t.name}
                   </p>
                   <p className="font-sans text-sm text-helora-tan mt-0.5">
                     {t.role}
                   </p>
-                </div>
-              </div>
+                </figcaption>
+              </figure>
             </ScrollReveal>
           ))}
         </div>

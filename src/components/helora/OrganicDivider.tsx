@@ -17,7 +17,7 @@ interface OrganicDividerProps {
 export function OrganicDivider({ variant = 'sage', className = '' }: OrganicDividerProps) {
   if (variant === 'o') {
     return (
-      <div className={`max-w-4xl mx-auto px-4 organic-o-divider my-12 md:my-16 ${className}`}>
+      <div className={`max-w-4xl mx-auto px-4 organic-o-divider my-12 md:my-16 ${className}`} aria-hidden="true">
         <span className="organic-o">O</span>
       </div>
     );

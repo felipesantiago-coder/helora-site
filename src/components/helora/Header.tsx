@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { Menu, X, Leaf, MessageCircle } from 'lucide-react';
 import { getWhatsAppLink } from '@/lib/utils';
 
@@ -12,27 +12,37 @@ const NAV_LINKS = [
   { label: 'Equipe', href: '#equipe' },
 ] as const;
 
-function scrollToSection(href: string) {
-  const id = href.replace('#', '');
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
-}
-
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isTransparent, setIsTransparent] = useState(true);
+  const firstMobileItemRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const THRESHOLD = 80;
     const handleScroll = () => setIsTransparent(window.scrollY < THRESHOLD);
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileOpen(false);
+    };
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, []);
 
-  const handleNavClick = useCallback((href: string) => {
+  useEffect(() => {
+    if (mobileOpen) {
+      requestAnimationFrame(() => firstMobileItemRef.current?.focus());
+    }
+  }, [mobileOpen]);
+
+  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const id = href.replace('#', '');
     setMobileOpen(false);
-    scrollToSection(href);
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
   const handleBooking = useCallback(() => {
@@ -51,13 +61,16 @@ export function Header() {
       <div className="max-w-6xl mx-auto px-4 h-14 sm:h-16 lg:h-[72px] flex items-center justify-between">
         {/* Logo */}
         <button
-          onClick={() => scrollToSection('#hero')}
+          onClick={() => {
+            const el = document.getElementById('hero');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }}
           className="focus:outline-none transition-all duration-300 inline-flex flex-col items-center"
           aria-label="Voltar ao início"
         >
           <img
             src="/logo-mark.svg"
-            alt="Helora"
+            alt=""
             className={`h-6 sm:h-7 w-auto shrink-0 transition-all duration-300 ${!isTransparent ? 'invert' : ''}`}
           />
           <span
@@ -73,9 +86,10 @@ export function Header() {
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6 lg:gap-8" aria-label="Navegação principal">
           {NAV_LINKS.map((link) => (
-            <button
+            <a
               key={link.href}
-              onClick={() => handleNavClick(link.href)}
+              href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className={`font-sans text-sm font-medium transition-colors duration-200 focus:outline-none focus-visible:underline hover:font-semibold ${
                 isTransparent
                   ? 'text-white/80 hover:text-white'
@@ -83,7 +97,7 @@ export function Header() {
               }`}
             >
               {link.label}
-            </button>
+            </a>
           ))}
           <button
             onClick={handleBooking}
@@ -96,6 +110,7 @@ export function Header() {
             <span className="flex items-center gap-1.5">
               <MessageCircle size={14} aria-hidden="true" />
               Agendar sessão
+              <span className="sr-only">(abre em nova janela)</span>
             </span>
           </button>
         </nav>
@@ -129,10 +144,15 @@ export function Header() {
         }`}
       >
         <nav className="flex flex-col py-3 px-4 gap-0.5" aria-label="Menu mobile">
-          {NAV_LINKS.map((link) => (
+          {NAV_LINKS.map((link, i) => (
             <button
               key={link.href}
-              onClick={() => handleNavClick(link.href)}
+              ref={i === 0 ? firstMobileItemRef : undefined}
+              onClick={() => {
+                setMobileOpen(false);
+                const id = link.href.replace('#', '');
+                document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+              }}
               className="font-sans text-base font-medium text-helora-dark-coffee hover:text-helora-sage py-3 px-3 rounded-xl hover:bg-helora-gainsboro/50 transition-colors duration-200 text-left focus:outline-none focus-visible:bg-helora-gainsboro/50"
             >
               {link.label}
@@ -145,6 +165,7 @@ export function Header() {
             >
               <MessageCircle size={16} aria-hidden="true" />
               Agendar sessão
+              <span className="sr-only">(abre em nova janela)</span>
             </button>
           </div>
         </nav>

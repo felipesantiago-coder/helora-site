@@ -24,7 +24,7 @@ export function ConceptSection() {
 
           <div className="space-y-6 text-helora-dark-coffee font-sans relative leading-[1.85]">
             {/* Organic sienna accent — curved leaf-like border */}
-            <div className="absolute left-0 top-0 bottom-0 w-[3px] rounded-full overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-[3px] rounded-full overflow-hidden" aria-hidden="true">
               <svg width="3" height="100%" viewBox="0 0 3 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1.5 0 Q0 75, 2 150 Q3 225, 1.5 300" stroke="#9C6146" strokeWidth="3" fill="none" strokeLinecap="round" />
               </svg>

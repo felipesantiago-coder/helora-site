@@ -7,7 +7,7 @@ import { getWhatsAppLink } from '@/lib/utils';
 
 export function CTASection() {
   return (
-    <section className="relative overflow-hidden py-16 md:py-28">
+    <section id="agendamento" className="relative overflow-hidden py-16 md:py-28">
       <OrganicNatureBg variant="soil" />
 
       <div className="max-w-2xl mx-auto px-4 text-center relative z-10">

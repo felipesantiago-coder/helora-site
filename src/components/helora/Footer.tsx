@@ -16,12 +16,6 @@ const PHONE_DISPLAY = '(61) 9 9999-9999'; // ← Replace with real number
 
 const COL_HEADER = 'font-sans text-[11px] font-medium text-helora-sage/70 tracking-[0.15em] uppercase mb-4';
 
-function scrollToSection(href: string) {
-  const id = href.replace('#', '');
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
-}
-
 export function Footer() {
   return (
     <footer className="bg-gradient-to-b from-[#141E03] to-[#283107] text-white mt-auto relative overflow-hidden">
@@ -101,12 +95,17 @@ export function Footer() {
             <ul className="flex flex-col gap-2.5">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                  <button
-                    onClick={() => scrollToSection(link.href)}
+                  <a
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const id = link.href.replace('#', '');
+                      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+                    }}
                     className="font-sans text-[13px] text-white/60 hover:text-white transition-colors duration-200 text-left focus:outline-none focus-visible:underline"
                   >
                     {link.label}
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -128,10 +127,10 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <span className="inline-flex items-center gap-2 font-sans text-[13px] text-white/60">
+                <address className="not-italic inline-flex items-center gap-2 font-sans text-[13px] text-white/60" aria-label="Localização">
                   <MapPin size={14} className="text-helora-sage/50 shrink-0" aria-hidden="true" />
                   Brasília — DF
-                </span>
+                </address>
               </li>
             </ul>
           </div>

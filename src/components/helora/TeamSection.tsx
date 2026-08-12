@@ -63,7 +63,7 @@ function ProfessionalCard({ person, index }: { person: Professional; index: numb
 
   return (
     <ScrollReveal delay={index * 0.1}>
-      <div className="helora-card flex flex-col hover:shadow-organic-lg transition-shadow duration-300 relative overflow-hidden">
+      <article className="helora-card flex flex-col hover:shadow-organic-lg transition-shadow duration-300 relative overflow-hidden" aria-label={person.name}>
         {/* Left organic border */}
         <div className="absolute left-0 top-0 bottom-0 w-[3px]" aria-hidden="true">
           <svg
@@ -166,7 +166,7 @@ function ProfessionalCard({ person, index }: { person: Professional; index: numb
             />
           </svg>
         </div>
-      </div>
+      </article>
     </ScrollReveal>
   );
 }
@@ -188,7 +188,7 @@ export function TeamSection() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl">
           {PROFESSIONALS.map((person, index) => (
             <ProfessionalCard key={person.id} person={person} index={index} />
           ))}
