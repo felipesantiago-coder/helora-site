@@ -97,21 +97,23 @@ export function Footer() {
 
           {/* Column 2 — Navigation */}
           <nav
-            className="flex flex-col gap-2.5 sm:items-center"
+            className="flex flex-col items-center"
             aria-label="Navegação do rodapé"
           >
-            <p className="font-sans text-xs font-medium text-helora-sage tracking-wider uppercase mb-1">
+            <p className="font-sans text-xs font-medium text-helora-sage tracking-wider uppercase mb-3">
               Navegação
             </p>
-            {NAV_LINKS.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="font-sans text-sm text-white/70 hover:text-white transition-colors duration-200 text-left sm:text-center focus:outline-none focus-visible:underline w-fit sm:w-auto"
-              >
-                {link.label}
-              </button>
-            ))}
+            <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+              {NAV_LINKS.map((link) => (
+                <button
+                  key={link.href}
+                  onClick={() => scrollToSection(link.href)}
+                  className="font-sans text-sm text-white/70 hover:text-white transition-colors duration-200 text-left focus:outline-none focus-visible:underline w-fit"
+                >
+                  {link.label}
+                </button>
+              ))}
+            </div>
           </nav>
 
           {/* Column 3 — Contact & Credibility */}
