@@ -153,6 +153,28 @@
     animation: drift 16s ease-in-out infinite;
     will-change: transform;
   }
+
+  /* Infinite marquee — convênios */
+  @keyframes marquee-forward {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes marquee-reverse {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+  .marquee-forward {
+    animation-name: marquee-forward;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    will-change: transform;
+  }
+  .marquee-reverse {
+    animation-name: marquee-reverse;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    will-change: transform;
+  }
 }
 
 /* ── Reusable Components ── */
@@ -185,7 +207,9 @@
   .breathe-d,
   .breathe-e,
   .breathe-glow,
-  .animate-drift {
+  .animate-drift,
+  .marquee-forward,
+  .marquee-reverse {
     animation: none;
   }
 }
