@@ -58,7 +58,7 @@ export function Header() {
           <img
             src="/logo-mark.svg"
             alt="Helora"
-            className="h-6 sm:h-7 w-auto shrink-0 transition-all duration-300 brightness-0 invert"
+            className={`h-6 sm:h-7 w-auto shrink-0 transition-all duration-300 ${isTransparent ? 'brightness-0 invert' : ''}`}
           />
           <span
             className={
