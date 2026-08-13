@@ -61,7 +61,7 @@ function ConvenioCard({ name, src, ariaHidden }: { name: string; src: string | n
   return (
     <div
       aria-hidden={ariaHidden}
-      className="flex-shrink-0 w-[72px] h-[72px] sm:w-[88px] sm:h-[88px] md:w-[108px] md:h-[108px] rounded-xl bg-white border border-helora-gainsboro/30 flex items-center justify-center p-2.5 sm:p-3 overflow-hidden"
+      className="flex-shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px] rounded-xl bg-white border border-helora-gainsboro/30 flex items-center justify-center p-1.5 sm:p-2 overflow-hidden"
     >
       {src ? (
         <img
