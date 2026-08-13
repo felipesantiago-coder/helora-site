@@ -334,13 +334,13 @@ export function HeroSection() {
             href={getWhatsAppLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-pill bg-helora-sage text-white font-medium py-2.5 px-5 sm:py-3.5 sm:px-9 hover:bg-helora-gainsboro/25 hover:text-white border border-helora-sage/40 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 text-sm sm:text-base active:scale-[0.98] w-auto text-center"
+            className="btn-pill bg-helora-sage text-white font-medium py-2.5 px-6 sm:py-3.5 sm:px-9 hover:bg-helora-gainsboro/25 hover:text-white border border-helora-sage/40 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 text-[15px] sm:text-base active:scale-[0.98] w-auto text-center"
           >
             Agendar sessão
           </a>
           <button
             onClick={() => document.getElementById('equipe')?.scrollIntoView({ behavior: 'smooth' })}
-            className="font-sans font-medium text-sm text-helora-gainsboro/80 hover:text-white/90 border border-helora-gainsboro/20 hover:border-helora-gainsboro/40 rounded-full px-5 py-2.5 sm:px-6 sm:py-3 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50"
+            className="font-sans font-medium text-[15px] text-helora-gainsboro/80 hover:text-white/90 border border-helora-gainsboro/20 hover:border-helora-gainsboro/40 rounded-full px-5 py-2.5 sm:px-6 sm:py-3 sm:text-base transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50"
           >
             Conheça a equipe
           </button>
