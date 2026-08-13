@@ -16,7 +16,7 @@ const SERVICES: Service[] = [
     id: '1',
     name: 'Primeira sessão',
     price: 180,
-    description: 'Um momento para se conhecer, entender suas demandas e ver como podemos te ajudar. Sem compromisso.
+    description: 'Um momento para se conhecer, entender suas demandas e ver como podemos te ajudar. Sem compromisso.',
   },
   {
     id: '2',
