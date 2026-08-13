@@ -4,7 +4,6 @@ import dynamic from 'next/dynamic';
 import { Header } from '@/components/helora/Header';
 import { ConceptSection } from '@/components/helora/ConceptSection';
 import { ServicesSection } from '@/components/helora/ServicesSection';
-import { ConveniosSection } from '@/components/helora/ConveniosSection';
 import { TeamSection } from '@/components/helora/TeamSection';
 import { TestimonialsSection } from '@/components/helora/TestimonialsSection';
 import { CTASection } from '@/components/helora/CTASection';
@@ -51,7 +50,6 @@ export default function Home() {
         <OrganicDivider variant="leaf" />
         <ServicesSection />
         <OrganicDivider variant="sage" />
-        <ConveniosSection />
         <TeamSection />
         <TestimonialsSection />
         <CTASection />

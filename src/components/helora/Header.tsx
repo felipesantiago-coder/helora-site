@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { label: 'Início', href: '#hero' },
   { label: 'Conceito', href: '#conceito' },
   { label: 'Serviços', href: '#servicos' },
-  { label: 'Convênios', href: '#convenios' },
+  { label: 'Convênios', href: '/convenios' },
   { label: 'Equipe', href: '#equipe' },
 ] as const;
 
@@ -39,6 +39,10 @@ export function Header() {
   }, [mobileOpen]);
 
   const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('/')) {
+      setMobileOpen(false);
+      return; // let default <a> navigation happen
+    }
     e.preventDefault();
     const id = href.replace('#', '');
     setMobileOpen(false);
@@ -150,6 +154,10 @@ export function Header() {
               ref={i === 0 ? firstMobileItemRef : undefined}
               onClick={() => {
                 setMobileOpen(false);
+                if (link.href.startsWith('/')) {
+                  window.location.href = link.href;
+                  return;
+                }
                 const id = link.href.replace('#', '');
                 document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
               }}

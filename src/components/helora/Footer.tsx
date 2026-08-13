@@ -4,12 +4,12 @@ import { MessageCircle, MapPin, ShieldCheck, Lock, FileCheck, Eye, HeartHandshak
 import { getWhatsAppLink } from '@/lib/utils';
 
 const NAV_LINKS = [
-  { label: 'Início', href: '#hero' },
-  { label: 'Conceito', href: '#conceito' },
-  { label: 'Serviços', href: '#servicos' },
-  { label: 'Convênios', href: '#convenios' },
-  { label: 'Equipe', href: '#equipe' },
-  { label: 'Depoimentos', href: '#depoimentos' },
+  { label: 'Início', href: '#' },
+  { label: 'Conceito', href: '/#conceito' },
+  { label: 'Serviços', href: '/#servicos' },
+  { label: 'Convênios', href: '/convenios' },
+  { label: 'Equipe', href: '/#equipe' },
+  { label: 'Depoimentos', href: '/#depoimentos' },
 ] as const;
 
 const PHONE_DISPLAY = '(61) 9 9999-9999'; // ← Replace with real number
@@ -98,9 +98,12 @@ export function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => {
-                      e.preventDefault();
-                      const id = link.href.replace('#', '');
-                      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+                      if (link.href.startsWith('/#')) {
+                        // hash link on main page
+                        e.preventDefault();
+                        window.location.href = link.href;
+                      }
+                      // absolute paths like /convenios work via default <a> behavior
                     }}
                     className="font-sans text-[13px] text-white/60 hover:text-white transition-colors duration-200 text-left focus:outline-none focus-visible:underline"
                   >
