@@ -28,7 +28,7 @@ function ConvenioCard({ name, src }: { name: string; src: string | null }) {
           </span>
         )}
       </div>
-      <span className="w-full px-1.5 sm:px-2 pb-2.5 sm:pb-3 font-sans text-[11px] sm:text-xs font-medium text-helora-tan/80 text-center leading-snug tracking-wide line-clamp-2">
+      <span className="w-full px-1.5 sm:px-2 pb-2.5 sm:pb-3 font-sans text-[11px] sm:text-xs font-medium text-helora-tan text-center leading-snug tracking-wide line-clamp-2">
         {name}
       </span>
     </div>
@@ -90,7 +90,7 @@ export default function ConveniosPage() {
 
         {/* Logo grid */}
         <section className="max-w-5xl mx-auto px-4 pb-16 sm:pb-20 md:pb-24">
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 md:gap-5">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
             {ALL_CONVENIOS.map((item) => (
               <ConvenioCard key={item.name} name={item.name} src={item.src} />
             ))}
