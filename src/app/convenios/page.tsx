@@ -28,9 +28,11 @@ function ConvenioCard({ name, src }: { name: string; src: string | null }) {
           </span>
         )}
       </div>
-      <span className="w-full px-1.5 sm:px-2 pb-2.5 sm:pb-3 font-sans text-[11px] sm:text-xs font-medium text-helora-tan text-center leading-snug tracking-wide line-clamp-2">
-        {name}
-      </span>
+      <div className="w-full rounded-b-2xl bg-helora-antique-white/60 px-1.5 sm:px-2 pb-2.5 sm:pb-3 pt-1">
+        <span className="font-sans text-[11px] sm:text-xs font-medium text-helora-tan text-center leading-snug tracking-wide line-clamp-2 block">
+          {name}
+        </span>
+      </div>
     </div>
   );
 }
