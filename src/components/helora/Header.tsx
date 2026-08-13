@@ -65,7 +65,7 @@ export function Header() {
             const el = document.getElementById('hero');
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           }}
-          className="focus:outline-none transition-all duration-300 inline-flex flex-col items-center"
+          className="focus:outline-none transition-all duration-300 hidden md:inline-flex flex-col items-center"
           aria-label="Voltar ao início"
         >
           <img
