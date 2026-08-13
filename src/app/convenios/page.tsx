@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { ArrowLeft, MessageCircle } from 'lucide-react';
 import { Header } from '@/components/helora/Header';
 import { Footer } from '@/components/helora/Footer';
@@ -10,13 +11,16 @@ function ConvenioCard({ name, src }: { name: string; src: string | null }) {
   return (
     <div className="group relative flex flex-col items-center justify-center rounded-2xl bg-white border border-helora-gainsboro/30 shadow-organic aspect-square p-3 sm:p-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
       {src ? (
-        <img
-          src={src}
-          alt={`Logo ${name}`}
-          className="w-full h-full object-contain"
-          loading="lazy"
-          decoding="async"
-        />
+        <div className="relative w-full h-full">
+          <Image
+            src={src}
+            alt={`Logo ${name}`}
+            fill
+            sizes="(max-width: 639px) 33vw, (max-width: 1023px) 25vw, 25vw"
+            className="object-contain"
+            loading="lazy"
+          />
+        </div>
       ) : (
         <span className="font-sans text-xs sm:text-sm font-medium text-helora-tan text-center leading-tight select-none">
           {name}
