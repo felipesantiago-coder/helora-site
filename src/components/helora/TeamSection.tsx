@@ -58,6 +58,7 @@ function getInitials(name: string): string {
 
 function ProfessionalCard({ person, index }: { person: Professional; index: number }) {
   const [expanded, setExpanded] = useState(false);
+  const bioId = `bio-${person.id}`;
 
   const toggle = useCallback(() => setExpanded((prev) => !prev), []);
 
@@ -94,7 +95,7 @@ function ProfessionalCard({ person, index }: { person: Professional; index: numb
             <h3 className="font-serif font-normal text-lg text-helora-dark-coffee tracking-tight leading-tight">
               {person.name}
             </h3>
-            <p className="font-sans text-xs text-helora-tan/70 mt-0.5 tracking-wide uppercase">
+            <p className="font-sans text-xs text-helora-tan mt-0.5 tracking-wide uppercase">
               {person.registration}
             </p>
           </div>
@@ -117,6 +118,7 @@ function ProfessionalCard({ person, index }: { person: Professional; index: numb
 
         {/* Expandable full bio */}
         <div
+          id={bioId}
           className={cn(
             'grid transition-[grid-template-rows] duration-500 ease-in-out',
             expanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
@@ -142,6 +144,7 @@ function ProfessionalCard({ person, index }: { person: Professional; index: numb
           onClick={toggle}
           className="mt-3 flex items-center gap-1.5 font-sans text-[13px] font-medium text-helora-sage hover:text-helora-dark-green transition-colors duration-200 group w-fit"
           aria-expanded={expanded}
+          aria-controls={bioId}
         >
           <span>{expanded ? 'Recolher' : 'Ler mais'}</span>
           <ChevronDown

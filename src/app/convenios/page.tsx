@@ -9,7 +9,7 @@ import { getWhatsAppLink } from '@/lib/utils';
 
 function ConvenioCard({ name, src }: { name: string; src: string | null }) {
   return (
-    <div className="group relative flex flex-col items-center rounded-2xl overflow-hidden bg-white border border-helora-gainsboro/30 shadow-organic transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+    <div className="group relative flex flex-col items-center rounded-2xl overflow-hidden bg-white border border-helora-gainsboro/30 shadow-organic transition-all duration-300 hover:shadow-lg hover:-translate-y-1 focus-within:ring-2 focus-within:ring-helora-sage/50" role="listitem">
       <div className="relative w-full aspect-square p-3 sm:p-4">
         {src ? (
           <div className="relative w-full h-full">
@@ -92,7 +92,7 @@ export default function ConveniosPage() {
 
         {/* Logo grid */}
         <section className="max-w-5xl mx-auto px-4 pb-16 sm:pb-20 md:pb-24">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5" role="list" aria-label="Lista de convênios aceitos">
             {ALL_CONVENIOS.map((item) => (
               <ConvenioCard key={item.name} name={item.name} src={item.src} />
             ))}

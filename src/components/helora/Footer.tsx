@@ -1,10 +1,11 @@
 'use client';
 
 import { MessageCircle, MapPin, ShieldCheck, Lock, FileCheck, Eye, HeartHandshake } from 'lucide-react';
+import { useRouter, usePathname } from 'next/navigation';
 import { getWhatsAppLink } from '@/lib/utils';
 
 const NAV_LINKS = [
-  { label: 'Início', href: '#' },
+  { label: 'Início', href: '/' },
   { label: 'Conceito', href: '/#conceito' },
   { label: 'Serviços', href: '/#servicos' },
   { label: 'Convênios', href: '/convenios' },
@@ -14,9 +15,28 @@ const NAV_LINKS = [
 
 const PHONE_DISPLAY = '(61) 9 9999-9999'; // ← Replace with real number
 
-const COL_HEADER = 'font-sans text-[11px] font-medium text-helora-sage/70 tracking-[0.15em] uppercase mb-4';
+const COL_HEADER = 'font-sans text-[11px] font-medium text-helora-gainsboro/80 tracking-[0.15em] uppercase mb-4';
 
 export function Footer() {
+  const router = useRouter();
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+
+  function handleFooterNav(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
+    if (href.startsWith('/#')) {
+      e.preventDefault();
+      if (isHome) {
+        const id = href.replace('/#', '');
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        router.push(href);
+      }
+    } else if (href === '/' && isHome) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
   return (
     <footer className="bg-gradient-to-b from-[#141E03] to-[#283107] text-white mt-auto relative overflow-hidden">
       {/* Organic nature wave top */}
@@ -97,15 +117,8 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    onClick={(e) => {
-                      if (link.href.startsWith('/#')) {
-                        // hash link on main page
-                        e.preventDefault();
-                        window.location.href = link.href;
-                      }
-                      // absolute paths like /convenios work via default <a> behavior
-                    }}
-                    className="font-sans text-[13px] text-white/60 hover:text-white transition-colors duration-200 text-left focus:outline-none focus-visible:underline"
+                    onClick={(e) => handleFooterNav(e, link.href)}
+                    className="font-sans text-[13px] text-white/75 hover:text-white transition-colors duration-200 text-left focus:outline-none focus-visible:underline focus-visible:ring-2 focus-visible:ring-helora-sage/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#141E03] rounded-sm"
                   >
                     {link.label}
                   </a>
@@ -123,14 +136,15 @@ export function Footer() {
                   href={getWhatsAppLink()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 font-sans text-[13px] text-white/60 hover:text-white transition-colors duration-200"
+                  className="inline-flex items-center gap-2 font-sans text-[13px] text-white/75 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:underline focus-visible:ring-2 focus-visible:ring-helora-sage/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#141E03] rounded-sm"
                 >
                   <MessageCircle size={14} className="text-helora-sage/50 shrink-0" aria-hidden="true" />
                   {PHONE_DISPLAY}
+                  <span className="sr-only">(abre em nova janela)</span>
                 </a>
               </li>
               <li>
-                <address className="not-italic inline-flex items-center gap-2 font-sans text-[13px] text-white/60" aria-label="Localização">
+                <address className="not-italic inline-flex items-center gap-2 font-sans text-[13px] text-white/75" aria-label="Localização">
                   <MapPin size={14} className="text-helora-sage/50 shrink-0" aria-hidden="true" />
                   Brasília, DF
                 </address>
@@ -146,31 +160,31 @@ export function Footer() {
                 <span className="flex items-center justify-center w-7 h-7 rounded-full bg-helora-sage/15 text-helora-sage/70 shrink-0">
                   <Lock size={13} aria-hidden="true" />
                 </span>
-                <span className="font-sans text-[13px] text-white/60 leading-tight">Site seguro (SSL/HTTPS)</span>
+                <span className="font-sans text-[13px] text-white/75 leading-tight">Site seguro (SSL/HTTPS)</span>
               </li>
               <li className="inline-flex items-center gap-2.5">
                 <span className="flex items-center justify-center w-7 h-7 rounded-full bg-helora-sage/15 text-helora-sage/70 shrink-0">
                   <ShieldCheck size={13} aria-hidden="true" />
                 </span>
-                <span className="font-sans text-[13px] text-white/60 leading-tight">Dados protegidos pela LGPD</span>
+                <span className="font-sans text-[13px] text-white/75 leading-tight">Dados protegidos pela LGPD</span>
               </li>
               <li className="inline-flex items-center gap-2.5">
                 <span className="flex items-center justify-center w-7 h-7 rounded-full bg-helora-sage/15 text-helora-sage/70 shrink-0">
                   <FileCheck size={13} aria-hidden="true" />
                 </span>
-                <span className="font-sans text-[13px] text-white/60 leading-tight">Profissionais registrados no CRP</span>
+                <span className="font-sans text-[13px] text-white/75 leading-tight">Profissionais registrados no CRP</span>
               </li>
               <li className="inline-flex items-center gap-2.5">
                 <span className="flex items-center justify-center w-7 h-7 rounded-full bg-helora-sage/15 text-helora-sage/70 shrink-0">
                   <Eye size={13} aria-hidden="true" />
                 </span>
-                <span className="font-sans text-[13px] text-white/60 leading-tight">Sigilo profissional garantido</span>
+                <span className="font-sans text-[13px] text-white/75 leading-tight">Sigilo profissional garantido</span>
               </li>
               <li className="inline-flex items-center gap-2.5">
                 <span className="flex items-center justify-center w-7 h-7 rounded-full bg-helora-sage/15 text-helora-sage/70 shrink-0">
                   <HeartHandshake size={13} aria-hidden="true" />
                 </span>
-                <span className="font-sans text-[13px] text-white/60 leading-tight">Atendimento ético e humanizado</span>
+                <span className="font-sans text-[13px] text-white/75 leading-tight">Atendimento ético e humanizado</span>
               </li>
             </ul>
           </div>

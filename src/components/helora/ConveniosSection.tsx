@@ -40,7 +40,7 @@ function MarqueeRow({
 }) {
   return (
     <div
-      className="group overflow-hidden w-full"
+      className="group overflow-hidden w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 focus-visible:ring-inset rounded-lg"
       tabIndex={0}
       role="region"
       aria-label={`Convênios — linha ${rowIndex}`}

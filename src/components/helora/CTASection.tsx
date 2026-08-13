@@ -26,6 +26,7 @@ export function CTASection() {
           >
             <MessageCircle size={18} aria-hidden="true" />
             Agendar sessão
+            <span className="sr-only">(abre em nova janela)</span>
           </a>
         </ScrollReveal>
       </div>

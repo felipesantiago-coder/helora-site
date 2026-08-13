@@ -337,6 +337,7 @@ export function HeroSection() {
             className="btn-pill bg-helora-sage text-white font-medium py-2.5 px-6 sm:py-3.5 sm:px-9 hover:bg-helora-gainsboro/25 hover:text-white border border-helora-sage/40 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 text-[15px] sm:text-base active:scale-[0.98] w-auto text-center"
           >
             Agendar sessão
+            <span className="sr-only">(abre em nova janela)</span>
           </a>
           <button
             onClick={() => document.getElementById('equipe')?.scrollIntoView({ behavior: 'smooth' })}
