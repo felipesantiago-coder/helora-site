@@ -13,7 +13,7 @@ export const ALL_CONVENIOS: Convenio[] = [
   { name: 'AFEB', src: null },
   { name: 'AFFEGO', src: null },
   { name: 'ANAFE SAÚDE', src: null },
-  { name: 'BACEN SAÚDE', src: null },
+  { name: 'BC SAÚDE', src: null },
   { name: 'BNDES', src: null },
   { name: 'CAEME', src: null },
   { name: 'SAÚDE CAIXA', src: null },
