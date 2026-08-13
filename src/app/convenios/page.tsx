@@ -28,7 +28,7 @@ function ConvenioCard({ name, src }: { name: string; src: string | null }) {
           </span>
         )}
       </div>
-      <div className="w-full flex items-center justify-center rounded-b-2xl bg-helora-sage/15 px-1.5 sm:px-2 py-2.5 sm:py-3">
+      <div className="w-full flex items-center justify-center rounded-b-2xl bg-helora-sage/25 px-1.5 sm:px-2 py-2.5 sm:py-3">
         <span className="font-sans text-[11px] sm:text-xs font-semibold text-helora-dark-green text-center leading-snug tracking-wide line-clamp-2 block">
           {name}
         </span>
