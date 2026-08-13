@@ -1,3 +1,4 @@
+# Helora Saúde Integrada — robots.txt
 User-agent: Googlebot
 Allow: /
 
@@ -12,3 +13,6 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /api/
+
+Sitemap: https://www.clinicahelora.com/sitemap.xml
