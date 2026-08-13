@@ -292,7 +292,7 @@ export function HeroSection() {
       <div className="relative z-10 max-w-2xl mx-auto px-6 text-center">
         {/* Mobile-only logo */}
         <motion.div
-          className="md:hidden mb-12"
+          className="md:hidden mb-16"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
@@ -305,7 +305,7 @@ export function HeroSection() {
         </motion.div>
 
         <motion.h1
-          className="font-serif font-light text-[1.85rem] sm:text-[2.75rem] md:text-5xl lg:text-6xl text-white tracking-tight text-balance leading-[1.2] mb-6 md:mb-6"
+          className="font-serif font-light text-[1.85rem] sm:text-[2.75rem] md:text-5xl lg:text-6xl text-white tracking-tight text-balance leading-[1.2] mb-8 md:mb-6"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.3 }}
@@ -316,7 +316,7 @@ export function HeroSection() {
         </motion.h1>
 
         <motion.p
-          className="font-sans text-helora-gainsboro/80 text-[0.938rem] sm:text-base md:text-[1.063rem] max-w-md mx-auto mb-10 md:mb-10 leading-relaxed"
+          className="font-sans text-helora-gainsboro/80 text-[0.938rem] sm:text-base md:text-[1.063rem] max-w-md mx-auto mb-12 md:mb-10 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
@@ -325,7 +325,7 @@ export function HeroSection() {
         </motion.p>
 
         <motion.div
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.65 }}
