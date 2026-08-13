@@ -9,23 +9,28 @@ import { getWhatsAppLink } from '@/lib/utils';
 
 function ConvenioCard({ name, src }: { name: string; src: string | null }) {
   return (
-    <div className="group relative flex flex-col items-center justify-center rounded-2xl bg-white border border-helora-gainsboro/30 shadow-organic aspect-square p-3 sm:p-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-      {src ? (
-        <div className="relative w-full h-full">
-          <Image
-            src={src}
-            alt={`Logo ${name}`}
-            fill
-            sizes="(max-width: 639px) 33vw, (max-width: 1023px) 25vw, 25vw"
-            className="object-contain"
-            loading="lazy"
-          />
-        </div>
-      ) : (
-        <span className="font-sans text-xs sm:text-sm font-medium text-helora-tan text-center leading-tight select-none">
-          {name}
-        </span>
-      )}
+    <div className="group relative flex flex-col items-center rounded-2xl bg-white border border-helora-gainsboro/30 shadow-organic transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+      <div className="relative w-full aspect-square p-3 sm:p-4">
+        {src ? (
+          <div className="relative w-full h-full">
+            <Image
+              src={src}
+              alt={`Logo ${name}`}
+              fill
+              sizes="(max-width: 639px) 33vw, (max-width: 1023px) 25vw, 25vw"
+              className="object-contain"
+              loading="lazy"
+            />
+          </div>
+        ) : (
+          <span className="font-sans text-xs sm:text-sm font-medium text-helora-tan text-center leading-tight select-none">
+            {name}
+          </span>
+        )}
+      </div>
+      <span className="w-full px-1.5 sm:px-2 pb-2.5 sm:pb-3 font-sans text-[10px] sm:text-xs font-medium text-helora-tan text-center leading-tight truncate">
+        {name}
+      </span>
     </div>
   );
 }
