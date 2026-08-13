@@ -183,7 +183,7 @@ export function TeamSection() {
               Quem te acompanha
             </h2>
             <p className="font-sans text-helora-tan text-base md:text-lg leading-relaxed">
-              Profissionais que escolheram o cuidado como caminho.
+              Quem cuida de você aqui dentro.
             </p>
           </div>
         </ScrollReveal>

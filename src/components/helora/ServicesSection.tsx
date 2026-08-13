@@ -14,21 +14,21 @@ interface Service {
 const SERVICES: Service[] = [
   {
     id: '1',
-    name: 'Primeira sessão de cuidado',
+    name: 'Primeira sessão',
     price: 180,
-    description: 'Um espaço inicial para se conhecer e entender como posso te acompanhar. Sem pressa, sem compromisso imediato.',
+    description: 'Um momento para se conhecer, entender suas demandas e ver como podemos te ajudar. Sem compromisso.
   },
   {
     id: '2',
     name: 'Sessão individual',
     price: 200,
-    description: 'Sessão contínua de cuidado, com foco no seu ritmo e nas suas necessidades.',
+    description: 'Psicoterapia contínua, no seu ritmo e focada no que você precisa agora.',
   },
   {
     id: '3',
     name: 'Sessão de casal',
     price: 300,
-    description: 'Um espaço compartilhado para reconstruir laços e fortalecer a conexão.',
+    description: 'Um espaço para o casal se reconectar e fortalecer a relação.',
   },
 ];
 
@@ -48,10 +48,10 @@ export function ServicesSection() {
         <ScrollReveal>
           <div className="max-w-2xl mb-14">
             <h2 className="font-serif font-normal text-2xl md:text-4xl text-helora-dark-green tracking-tight text-balance mb-4">
-              Como podemos te acompanhar
+              Nossos encontros
             </h2>
             <p className="font-sans text-helora-tan text-base md:text-lg leading-relaxed">
-              Cada sessão é pensada para o seu momento. Escolha o que faz sentido para você agora.
+              Escolha o formato que combina com o seu momento.
             </p>
           </div>
         </ScrollReveal>

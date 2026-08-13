@@ -31,17 +31,12 @@ export function ConceptSection() {
             </div>
 
             <p className="text-base md:text-[17px] pl-8">
-              A Helora nasceu da crença de que cuidado verdadeiro começa com presença. Não somos apenas um
-              consultório. Somos um espaço onde você pode ser exatamente quem é, no seu tempo.
+              A Helora nasceu da vontade de oferecer um cuidado de verdade. Não somos só um
+              consultório — somos um lugar onde você pode ser quem é, no seu tempo.
             </p>
             <p className="text-base md:text-[17px] pl-8">
-              Aqui, saúde integrada significa olhar para você por completo: corpo, mente e emoção. Sem
-              rótulos, sem pressa. Apenas cuidado que faz sentido.
-            </p>
-            <p className="text-base md:text-[17px] pl-8">
-              Acreditamos na saúde integrada como filosofia de vida: cada aspecto de quem você é merece
-              atenção e respeito. Na Helora, você encontra um espaço acolhedor para cuidar de si com
-              serenidade e confiança, no seu próprio ritmo.
+              Saúde integrada é olhar para você por inteiro: corpo, mente e emoção. Sem rótulos,
+              sem pressa. Cuidado que faz sentido para a sua vida.
             </p>
           </div>
         </ScrollReveal>

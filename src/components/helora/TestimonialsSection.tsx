@@ -37,7 +37,7 @@ export function TestimonialsSection() {
               O que dizem sobre nós
             </h2>
             <p className="font-sans text-helora-tan text-base md:text-lg leading-relaxed">
-              Palavras de quem viveu essa experiência.
+              Palavras de quem passou por aqui.
             </p>
           </div>
         </ScrollReveal>

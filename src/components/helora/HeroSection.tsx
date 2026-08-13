@@ -321,7 +321,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
         >
-          Um espaço de acolhimento onde você pode respirar, ser ouvido e cuidar de si. Sem pressa, sem julgamento.
+          Um espaço seguro para respirar, ser ouvido e cuidar de você. Sem pressa.
         </motion.p>
 
         <motion.div
@@ -334,9 +334,9 @@ export function HeroSection() {
             href={getWhatsAppLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-pill bg-helora-sage text-white font-medium py-3 px-7 sm:py-3.5 sm:px-9 hover:bg-helora-gainsboro/25 hover:text-white border border-helora-sage/40 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 text-sm sm:text-base active:scale-[0.98] w-full sm:w-auto text-center"
+            className="btn-pill bg-helora-sage text-white font-medium py-2.5 px-5 sm:py-3.5 sm:px-9 hover:bg-helora-gainsboro/25 hover:text-white border border-helora-sage/40 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 text-[13px] sm:text-base active:scale-[0.98] w-full sm:w-auto text-center"
           >
-            Agendar sua primeira sessão
+            Agendar sessão
           </a>
           <button
             onClick={() => document.getElementById('equipe')?.scrollIntoView({ behavior: 'smooth' })}
