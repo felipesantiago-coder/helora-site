@@ -1,6 +1,6 @@
 'use client';
 
-import { MessageCircle, MapPin, ShieldCheck } from 'lucide-react';
+import { MessageCircle, MapPin, ShieldCheck, Lock, FileCheck, Eye, HeartHandshake } from 'lucide-react';
 import { getWhatsAppLink } from '@/lib/utils';
 
 const NAV_LINKS = [
@@ -135,16 +135,41 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Sobre a clínica */}
+          {/* Segurança e confiança */}
           <div className="flex flex-col">
-            <p className={COL_HEADER}>Sobre</p>
-            <p className="font-sans text-[13px] text-white/60 leading-relaxed">
-              Clínica de psicologia especializada em saúde mental, neuropsicologia e avaliação psicológica. Atendimento humanizado, ético e baseado em evidências para todas as faixas etárias.
-            </p>
-            <p className="font-sans text-[11px] text-white/30 leading-relaxed mt-3 inline-flex items-start gap-1.5">
-              <ShieldCheck size={12} className="text-helora-sage/40 shrink-0 mt-0.5" aria-hidden="true" />
-              Dados tratados conforme a LGPD. Sigilo garantido pelo Código de Ética do psicólogo.
-            </p>
+            <p className={COL_HEADER}>Segurança</p>
+            <ul className="flex flex-col gap-3">
+              <li className="inline-flex items-center gap-2.5">
+                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-helora-sage/15 text-helora-sage/70 shrink-0">
+                  <Lock size={13} aria-hidden="true" />
+                </span>
+                <span className="font-sans text-[13px] text-white/60 leading-tight">Site seguro (SSL/HTTPS)</span>
+              </li>
+              <li className="inline-flex items-center gap-2.5">
+                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-helora-sage/15 text-helora-sage/70 shrink-0">
+                  <ShieldCheck size={13} aria-hidden="true" />
+                </span>
+                <span className="font-sans text-[13px] text-white/60 leading-tight">Dados protegidos pela LGPD</span>
+              </li>
+              <li className="inline-flex items-center gap-2.5">
+                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-helora-sage/15 text-helora-sage/70 shrink-0">
+                  <FileCheck size={13} aria-hidden="true" />
+                </span>
+                <span className="font-sans text-[13px] text-white/60 leading-tight">Profissionais registrados no CRP</span>
+              </li>
+              <li className="inline-flex items-center gap-2.5">
+                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-helora-sage/15 text-helora-sage/70 shrink-0">
+                  <Eye size={13} aria-hidden="true" />
+                </span>
+                <span className="font-sans text-[13px] text-white/60 leading-tight">Sigilo profissional garantido</span>
+              </li>
+              <li className="inline-flex items-center gap-2.5">
+                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-helora-sage/15 text-helora-sage/70 shrink-0">
+                  <HeartHandshake size={13} aria-hidden="true" />
+                </span>
+                <span className="font-sans text-[13px] text-white/60 leading-tight">Atendimento ético e humanizado</span>
+              </li>
+            </ul>
           </div>
         </div>
 
