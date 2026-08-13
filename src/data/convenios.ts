@@ -49,6 +49,7 @@ export const ALL_CONVENIOS: Convenio[] = [
   { name: 'TRE SAÚDE', src: '/convenios/tre-saude.webp' },
   { name: 'TRT', src: '/convenios/trt.webp' },
   { name: 'UNAFISCO SAÚDE', src: '/convenios/unafisco-saude.webp' },
+  { name: 'STF MED', src: '/convenios/stf-med.webp' },
 ];
 
 /* Marquee rows — para o componente ConveniosSection (carrossel na home) */
