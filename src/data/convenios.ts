@@ -10,7 +10,7 @@ export interface Convenio {
  */
 
 export const ALL_CONVENIOS: Convenio[] = [
-  { name: 'AFEB', src: null },
+  { name: 'AFEB (BRASAL)', src: null },
   { name: 'AFFEGO', src: null },
   { name: 'ANAFE SAÚDE', src: null },
   { name: 'BC SAÚDE', src: null },
