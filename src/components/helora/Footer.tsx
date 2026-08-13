@@ -129,7 +129,7 @@ export function Footer() {
               <li>
                 <address className="not-italic inline-flex items-center gap-2 font-sans text-[13px] text-white/60" aria-label="Localização">
                   <MapPin size={14} className="text-helora-sage/50 shrink-0" aria-hidden="true" />
-                  Brasília — DF
+                  Brasília, DF
                 </address>
               </li>
             </ul>
