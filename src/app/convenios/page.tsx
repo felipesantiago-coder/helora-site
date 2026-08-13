@@ -9,7 +9,7 @@ import { getWhatsAppLink } from '@/lib/utils';
 
 function ConvenioCard({ name, src }: { name: string; src: string | null }) {
   return (
-    <div className="group relative flex flex-col items-center rounded-2xl bg-white border border-helora-gainsboro/30 shadow-organic transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+    <div className="group relative flex flex-col items-center rounded-2xl overflow-hidden bg-white border border-helora-gainsboro/30 shadow-organic transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
       <div className="relative w-full aspect-square p-3 sm:p-4">
         {src ? (
           <div className="relative w-full h-full">
@@ -17,7 +17,7 @@ function ConvenioCard({ name, src }: { name: string; src: string | null }) {
               src={src}
               alt={`Logo ${name}`}
               fill
-              sizes="(max-width: 767px) 33vw, 25vw"
+              sizes="(max-width: 639px) 50vw, (max-width: 767px) 33vw, 25vw"
               className="object-contain"
               loading="lazy"
             />
@@ -28,7 +28,7 @@ function ConvenioCard({ name, src }: { name: string; src: string | null }) {
           </span>
         )}
       </div>
-      <div className="w-full flex items-center justify-center rounded-b-2xl border-t border-helora-sage/20 bg-helora-antique-white/50 px-1.5 sm:px-2 py-2.5 sm:py-3">
+      <div className="w-full flex items-center justify-center border-t border-helora-sage/20 bg-helora-antique-white/50 px-1.5 sm:px-2 py-2.5 sm:py-3">
         <span className="font-sans text-[11px] sm:text-xs font-semibold text-helora-dark-green text-center leading-snug tracking-wide line-clamp-2 block">
           {name}
         </span>
@@ -92,7 +92,7 @@ export default function ConveniosPage() {
 
         {/* Logo grid */}
         <section className="max-w-5xl mx-auto px-4 pb-16 sm:pb-20 md:pb-24">
-          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
             {ALL_CONVENIOS.map((item) => (
               <ConvenioCard key={item.name} name={item.name} src={item.src} />
             ))}
