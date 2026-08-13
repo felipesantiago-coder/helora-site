@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useCallback, useEffect, useRef } from 'react';
-import { Menu, X, Leaf, MessageCircle } from 'lucide-react';
+import { usePathname, useRouter } from 'next/navigation';
+import { Menu, X, MessageCircle } from 'lucide-react';
 import { getWhatsAppLink } from '@/lib/utils';
 
 const NAV_LINKS = [
@@ -13,23 +14,28 @@ const NAV_LINKS = [
 ] as const;
 
 export function Header() {
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHome = pathname === '/';
+  const [scrollY, setScrollY] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [isTransparent, setIsTransparent] = useState(true);
   const firstMobileItemRef = useRef<HTMLButtonElement>(null);
+  const isTransparent = scrollY < 80 && isHome;
+
+  // Scroll listener — only active on homepage
+  useEffect(() => {
+    if (!isHome) return;
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isHome]);
 
   useEffect(() => {
-    const THRESHOLD = 80;
-    const handleScroll = () => setIsTransparent(window.scrollY < THRESHOLD);
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setMobileOpen(false);
     };
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('keydown', handleKeyDown);
-    };
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   useEffect(() => {
@@ -38,16 +44,52 @@ export function Header() {
     }
   }, [mobileOpen]);
 
-  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('/')) {
+  /** Navigate to a hash link — on homepage scroll, otherwise go to /#hash */
+  const navigateToHash = useCallback(
+    (hash: string) => {
+      if (isHome) {
+        const id = hash.replace('#', '');
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        router.push('/' + hash);
+      }
+    },
+    [isHome, router]
+  );
+
+  const handleNavClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+      if (href.startsWith('/')) {
+        setMobileOpen(false);
+        return; // let default <a> navigation happen
+      }
+      e.preventDefault();
       setMobileOpen(false);
-      return; // let default <a> navigation happen
-    }
-    e.preventDefault();
-    const id = href.replace('#', '');
+      navigateToHash(href);
+    },
+    [navigateToHash]
+  );
+
+  const handleMobileNavClick = useCallback(
+    (href: string) => {
+      setMobileOpen(false);
+      if (href.startsWith('/')) {
+        router.push(href);
+        return;
+      }
+      navigateToHash(href);
+    },
+    [navigateToHash, router]
+  );
+
+  const handleLogoClick = useCallback(() => {
     setMobileOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-  }, []);
+    if (isHome) {
+      document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      router.push('/');
+    }
+  }, [isHome, router]);
 
   const handleBooking = useCallback(() => {
     setMobileOpen(false);
@@ -65,10 +107,7 @@ export function Header() {
       <div className="max-w-6xl mx-auto px-4 h-14 sm:h-16 lg:h-[72px] flex items-center justify-between">
         {/* Logo */}
         <button
-          onClick={() => {
-            const el = document.getElementById('hero');
-            if (el) el.scrollIntoView({ behavior: 'smooth' });
-          }}
+          onClick={handleLogoClick}
           className="focus:outline-none transition-all duration-300 hidden md:inline-flex flex-col items-center"
           aria-label="Voltar ao início"
         >
@@ -152,15 +191,7 @@ export function Header() {
             <button
               key={link.href}
               ref={i === 0 ? firstMobileItemRef : undefined}
-              onClick={() => {
-                setMobileOpen(false);
-                if (link.href.startsWith('/')) {
-                  window.location.href = link.href;
-                  return;
-                }
-                const id = link.href.replace('#', '');
-                document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-              }}
+              onClick={() => handleMobileNavClick(link.href)}
               className="font-sans text-base font-medium text-helora-dark-coffee hover:text-helora-sage py-3 px-3 rounded-xl hover:bg-helora-gainsboro/50 transition-colors duration-200 text-left focus:outline-none focus-visible:bg-helora-gainsboro/50"
             >
               {link.label}
