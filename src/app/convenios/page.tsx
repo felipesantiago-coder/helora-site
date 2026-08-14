@@ -104,7 +104,7 @@ export default function ConveniosPage() {
               Não encontrou seu plano? Entre em contato e verificamos para você.
             </p>
             <a
-              href={getWhatsAppLink()}
+              href={getWhatsAppLink('convenio')}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-pill inline-flex items-center gap-2 bg-helora-sage text-white text-sm sm:text-base font-medium px-6 sm:px-8 py-3 sm:py-3.5 hover:bg-helora-dark-green transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50"

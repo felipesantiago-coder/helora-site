@@ -90,9 +90,9 @@ const structuredData = {
       alternateName: "Helora",
       url: SITE_URL,
       logo: `${SITE_URL}/logo-mark.svg`,
-      telephone: "+55-61-99999-9999",
+      telephone: "+55-61-99593-8870",
       email: "contato@clinicahelora.com",
-      sameAs: ["https://www.instagram.com/helora.saude"],
+      sameAs: ["https://www.instagram.com/heloraclinica?igsh=bXJkbTg3Z2VzYXRs"],
     },
     {
       "@type": ["LocalBusiness", "MedicalBusiness"],
@@ -106,7 +106,7 @@ const structuredData = {
         addressRegion: "DF",
         addressCountry: "BR",
       },
-      telephone: "+55-61-99999-9999",
+      telephone: "+55-61-99593-8870",
       priceRange: "$$",
       openingHoursSpecification: [
         {
@@ -245,7 +245,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <link rel="preconnect" href="https://api.whatsapp.com" crossOrigin="anonymous" />
-        <link rel="me" href="https://www.instagram.com/helora.saude" />
+        <link rel="me" href="https://www.instagram.com/heloraclinica?igsh=bXJkbTg3Z2VzYXRs" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

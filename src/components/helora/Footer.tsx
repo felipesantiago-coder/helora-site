@@ -1,8 +1,8 @@
 'use client';
 
-import { MessageCircle, MapPin, ShieldCheck, Lock, FileCheck, Eye, HeartHandshake } from 'lucide-react';
+import { MessageCircle, MapPin, ShieldCheck, Lock, FileCheck, Eye, HeartHandshake, Instagram } from 'lucide-react';
 import { useRouter, usePathname } from 'next/navigation';
-import { getWhatsAppLink } from '@/lib/utils';
+import { getWhatsAppLink, WHATSAPP_DISPLAY } from '@/lib/utils';
 
 const NAV_LINKS = [
   { label: 'Início', href: '/' },
@@ -13,7 +13,7 @@ const NAV_LINKS = [
   { label: 'Depoimentos', href: '/#depoimentos' },
 ] as const;
 
-const PHONE_DISPLAY = '(61) 9 9999-9999'; // ← Replace with real number
+const INSTAGRAM_URL = 'https://www.instagram.com/heloraclinica?igsh=bXJkbTg3Z2VzYXRs';
 
 const COL_HEADER = 'font-sans text-[11px] font-medium text-helora-gainsboro/80 tracking-[0.15em] uppercase mb-4';
 
@@ -139,7 +139,19 @@ export function Footer() {
                   className="inline-flex items-center gap-2 font-sans text-[13px] text-white/75 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:underline focus-visible:ring-2 focus-visible:ring-helora-sage/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#141E03] rounded-sm"
                 >
                   <MessageCircle size={14} className="text-helora-sage/50 shrink-0" aria-hidden="true" />
-                  {PHONE_DISPLAY}
+                  {WHATSAPP_DISPLAY}
+                  <span className="sr-only">(abre em nova janela)</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-sans text-[13px] text-white/75 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:underline focus-visible:ring-2 focus-visible:ring-helora-sage/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#141E03] rounded-sm"
+                >
+                  <Instagram size={14} className="text-helora-sage/50 shrink-0" aria-hidden="true" />
+                  @heloraclinica
                   <span className="sr-only">(abre em nova janela)</span>
                 </a>
               </li>
