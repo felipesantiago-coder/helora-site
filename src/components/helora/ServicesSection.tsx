@@ -7,7 +7,7 @@ import { OrganicNatureBg } from './OrganicNatureBg';
 interface Service {
   id: string;
   name: string;
-  price: number;
+  duration: string;
   description: string;
 }
 
@@ -15,29 +15,22 @@ const SERVICES: Service[] = [
   {
     id: '1',
     name: 'Primeira sessão',
-    price: 180,
+    duration: '50 min',
     description: 'Um momento para se conhecer, entender suas demandas e ver como podemos te ajudar. Sem compromisso.',
   },
   {
     id: '2',
     name: 'Sessão individual',
-    price: 200,
+    duration: '60 min',
     description: 'Psicoterapia contínua, no seu ritmo e focada no que você precisa agora.',
   },
   {
     id: '3',
     name: 'Sessão de casal',
-    price: 300,
+    duration: '90 min',
     description: 'Um espaço para o casal se reconectar e fortalecer a relação.',
   },
 ];
-
-function formatPrice(price: number): string {
-  return price.toLocaleString('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
-  });
-}
 
 export function ServicesSection() {
   return (
@@ -80,9 +73,9 @@ export function ServicesSection() {
                   {service.description}
                 </p>
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-helora-sienna shrink-0" aria-hidden="true" />
-                  <span className="font-sans font-semibold text-lg text-helora-sienna">
-                    {formatPrice(service.price)}
+                  <span className="w-2 h-2 rounded-full bg-helora-sage shrink-0" aria-hidden="true" />
+                  <span className="font-sans text-sm text-helora-tan">
+                    {service.duration}
                   </span>
                 </div>
               </article>
