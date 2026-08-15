@@ -41,7 +41,7 @@ export function ServicesSection() {
         <ScrollReveal>
           <div className="max-w-2xl mb-14">
             <h2 className="font-serif font-normal text-2xl md:text-4xl text-helora-dark-green tracking-tight text-balance mb-4">
-              Nossas sessões
+              Como cuidamos de você
             </h2>
             <p className="font-sans text-helora-tan text-base md:text-lg leading-relaxed">
               Escolha o formato que combina com o seu momento.

@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
 
 const FADE_DURATION = 1.5;
-const MASTER_VOLUME = 1.0;
+const MASTER_VOLUME = 1.5;
 const LOOP_S = 48;
 
 function snap(f: number): number {
@@ -108,7 +108,7 @@ function generateMusicBuffer(ctx: AudioContext): AudioBuffer {
 }
 
 export function AmbientSound() {
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(true);
   const audioRef = useRef<{
     ctx: AudioContext;
     master: GainNode;
@@ -116,6 +116,7 @@ export function AmbientSound() {
     oscillators: (AudioBufferSourceNode | OscillatorNode)[];
     noiseProcessor: ScriptProcessorNode | null;
   } | null>(null);
+  const startedRef = useRef(false);
 
   const startAudio = useCallback(() => {
     const ctx = new AudioContext();
@@ -186,6 +187,24 @@ export function AmbientSound() {
     audioRef.current = { ctx, master, musicSrc, oscillators, noiseProcessor: noiseProc };
     setPlaying(true);
   }, []);
+
+  /* Auto-start on mount (browsers require user gesture, so we
+   * attempt on first interaction via a one-time listener) */
+  useEffect(() => {
+    if (startedRef.current) return;
+    const handler = () => {
+      startedRef.current = true;
+      startAudio();
+      document.removeEventListener('click', handler);
+      document.removeEventListener('touchstart', handler);
+    };
+    document.addEventListener('click', handler, { once: false });
+    document.addEventListener('touchstart', handler, { once: false });
+    return () => {
+      document.removeEventListener('click', handler);
+      document.removeEventListener('touchstart', handler);
+    };
+  }, [startAudio]);
 
   const stopAudio = useCallback(() => {
     if (!audioRef.current) return;
