@@ -197,7 +197,7 @@ export function Footer() {
                 <span className="flex items-center justify-center w-7 h-7 rounded-full bg-helora-sage/15 text-helora-sage/70 shrink-0">
                   <FileCheck size={13} aria-hidden="true" />
                 </span>
-                <span className="font-sans text-[13px] text-white/75 leading-tight">Profissionais registrados no CRP</span>
+                <span className="font-sans text-[13px] text-white/75 leading-tight">Profissionais certificados</span>
               </li>
               <li className="inline-flex items-center gap-2.5">
                 <span className="flex items-center justify-center w-7 h-7 rounded-full bg-helora-sage/15 text-helora-sage/70 shrink-0">
