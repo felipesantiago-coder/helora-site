@@ -31,12 +31,23 @@ export function ConceptSection() {
             </div>
 
             <p className="text-base md:text-[17px] pl-8">
-              A Helora nasceu da vontade de oferecer um cuidado de verdade. Não somos só um
-              consultório. Somos um lugar onde você pode ser quem é, no seu tempo.
+              A Helora nasceu da vontade de oferecer um cuidado de verdade. Não somos
+              apenas um consultório — somos um espaço pensado para que você se sinta
+              acolhido de verdade. Aqui, cada detalhe existe para que você possa
+              respirar, ser ouvido e cuidar de si no seu próprio tempo.
             </p>
             <p className="text-base md:text-[17px] pl-8">
-              Saúde integrada é olhar para você por inteiro: corpo, mente e emoção. Sem rótulos,
-              sem pressa. Cuidado que faz sentido para a sua vida.
+              Saúde integrada é olhar para você por inteiro: corpo, mente e emoção.
+              Acreditamos que cada aspecto de quem você é merece atenção e respeito, e
+              por isso nosso trabalho não se limita a uma abordagem única. Trabalhamos
+              para que o cuidado faça sentido para a sua vida, sem rótulos e sem
+              pressa.
+            </p>
+            <p className="text-base md:text-[17px] pl-8">
+              Nosso espaço em Brasília foi projetado para transmitir calma e
+              segurança. Desde o primeiro contato até o acompanhamento contínuo,
+              você encontra profissionais que escolheram o cuidado como caminho —
+              porque acreditamos que cuidar é a forma mais genuína de estar presente.
             </p>
           </div>
         </ScrollReveal>

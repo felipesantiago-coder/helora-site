@@ -4,7 +4,7 @@ import { useState, useRef, useCallback, useEffect } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
 
 const FADE_DURATION = 1.5;
-const MASTER_VOLUME = 1.5;
+const MASTER_VOLUME = 2.5;
 const LOOP_S = 48;
 
 function snap(f: number): number {
@@ -109,17 +109,17 @@ function generateMusicBuffer(ctx: AudioContext): AudioBuffer {
 
 export function AmbientSound() {
   const [playing, setPlaying] = useState(true);
-  const audioRef = useRef<{
+  const nodesRef = useRef<{
     ctx: AudioContext;
     master: GainNode;
     musicSrc: AudioBufferSourceNode;
     oscillators: (AudioBufferSourceNode | OscillatorNode)[];
     noiseProcessor: ScriptProcessorNode | null;
   } | null>(null);
-  const startedRef = useRef(false);
+  const userInteractedRef = useRef(false);
 
-  const startAudio = useCallback(() => {
-    const ctx = new AudioContext();
+  /** Build all audio nodes (shared by init and re-init) */
+  const buildNodes = useCallback((ctx: AudioContext) => {
     const now = ctx.currentTime;
 
     const master = ctx.createGain();
@@ -155,7 +155,7 @@ export function AmbientSound() {
     };
     noiseProc.connect(waterLPF);
 
-    /* SUB-BASS: C2 + 60 BPM pulse */
+    /* SUB-BASS */
     const subBass = ctx.createOscillator();
     subBass.type = 'sine';
     subBass.frequency.value = 65.41;
@@ -176,7 +176,7 @@ export function AmbientSound() {
     pulseLFO.start(now);
     oscillators.push(pulseLFO);
 
-    /* MUSIC: 48 s phase-aligned buffer */
+    /* MUSIC */
     const musicBuf = generateMusicBuffer(ctx);
     const musicSrc = ctx.createBufferSource();
     musicSrc.buffer = musicBuf;
@@ -184,50 +184,79 @@ export function AmbientSound() {
     musicSrc.connect(master);
     musicSrc.start(now);
 
-    audioRef.current = { ctx, master, musicSrc, oscillators, noiseProcessor: noiseProc };
-    setPlaying(true);
+    return { ctx, master, musicSrc, oscillators, noiseProcessor: noiseProc };
   }, []);
 
-  /* Auto-start on mount (browsers require user gesture, so we
-   * attempt on first interaction via a one-time listener) */
-  useEffect(() => {
-    if (startedRef.current) return;
-    const handler = () => {
-      startedRef.current = true;
-      startAudio();
-      document.removeEventListener('click', handler);
-      document.removeEventListener('touchstart', handler);
-    };
-    document.addEventListener('click', handler, { once: false });
-    document.addEventListener('touchstart', handler, { once: false });
-    return () => {
-      document.removeEventListener('click', handler);
-      document.removeEventListener('touchstart', handler);
-    };
-  }, [startAudio]);
+  /** Initialize audio: create context + nodes, try resume */
+  const initAudio = useCallback(() => {
+    if (nodesRef.current) return;
+    const ctx = new AudioContext();
+    const nodes = buildNodes(ctx);
+    nodesRef.current = nodes;
+    setPlaying(true);
 
-  const stopAudio = useCallback(() => {
-    if (!audioRef.current) return;
-    const { ctx, master } = audioRef.current;
+    /* Browser autoplay policy: try resume immediately.
+     * Works if the user already interacted with the domain. */
+    if (ctx.state === 'suspended') {
+      ctx.resume().then(() => {
+        if (ctx.state === 'running') setPlaying(true);
+      }).catch(() => { /* will resume on gesture */ });
+    }
+  }, [buildNodes]);
+
+  /** Destroy all nodes */
+  const destroyNodes = useCallback((nodes: NonNullable<typeof nodesRef.current>) => {
+    const { ctx, master } = nodes;
     const now = ctx.currentTime;
     master.gain.cancelScheduledValues(now);
     master.gain.setValueAtTime(master.gain.value, now);
     master.gain.linearRampToValueAtTime(0, now + FADE_DURATION);
-    const ref = audioRef.current;
     setTimeout(() => {
-      try { ref.musicSrc.stop(); } catch { /* ok */ }
-      ref.oscillators.forEach((n) => { try { n.stop(); } catch { /* ok */ } });
-      if (ref.noiseProcessor) ref.noiseProcessor.disconnect();
-      ref.ctx.close();
+      try { nodes.musicSrc.stop(); } catch { /* ok */ }
+      nodes.oscillators.forEach((n) => { try { n.stop(); } catch { /* ok */ } });
+      if (nodes.noiseProcessor) nodes.noiseProcessor.disconnect();
+      ctx.close();
     }, FADE_DURATION * 1000 + 150);
-    audioRef.current = null;
-    setPlaying(false);
   }, []);
+
+  const stopAudio = useCallback(() => {
+    if (!nodesRef.current) return;
+    const ref = nodesRef.current;
+    nodesRef.current = null;
+    destroyNodes(ref);
+    setPlaying(false);
+  }, [destroyNodes]);
 
   const toggle = useCallback(() => {
     if (playing) stopAudio();
-    else startAudio();
-  }, [playing, startAudio, stopAudio]);
+    else initAudio();
+  }, [playing, stopAudio, initAudio]);
+
+  /* ── Auto-start: create context on mount, resume on gesture ── */
+  useEffect(() => {
+    // Create context immediately
+    initAudio();
+
+    // If context is still suspended, listen for any user gesture
+    const resumeOnGesture = () => {
+      if (userInteractedRef.current) return;
+      userInteractedRef.current = true;
+      const nodes = nodesRef.current;
+      if (nodes?.ctx.state === 'suspended') {
+        nodes.ctx.resume().then(() => setPlaying(true)).catch(() => {});
+      }
+    };
+
+    document.addEventListener('click', resumeOnGesture);
+    document.addEventListener('touchstart', resumeOnGesture);
+    document.addEventListener('keydown', resumeOnGesture);
+
+    return () => {
+      document.removeEventListener('click', resumeOnGesture);
+      document.removeEventListener('touchstart', resumeOnGesture);
+      document.removeEventListener('keydown', resumeOnGesture);
+    };
+  }, [initAudio]);
 
   return (
     <button
