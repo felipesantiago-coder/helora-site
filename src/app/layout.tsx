@@ -102,6 +102,7 @@ const structuredData = {
       image: `${SITE_URL}/og-image.png`,
       address: {
         "@type": "PostalAddress",
+        streetAddress: "SEPS 707/907 Conjunto E Sala 214, Edifício San Marino, Asa Sul",
         addressLocality: "Brasília",
         addressRegion: "DF",
         addressCountry: "BR",

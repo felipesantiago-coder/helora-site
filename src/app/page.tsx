@@ -7,6 +7,7 @@ import { ServicesSection } from '@/components/helora/ServicesSection';
 import { TeamSection } from '@/components/helora/TeamSection';
 import { TestimonialsSection } from '@/components/helora/TestimonialsSection';
 import { CTASection } from '@/components/helora/CTASection';
+import { LocationSection } from '@/components/helora/LocationSection';
 import { Footer } from '@/components/helora/Footer';
 import { OrganicDivider } from '@/components/helora/OrganicDivider';
 
@@ -52,6 +53,8 @@ export default function Home() {
         <OrganicDivider variant="sage" />
         <TeamSection />
         <TestimonialsSection />
+        <OrganicDivider variant="leaf" />
+        <LocationSection />
         <CTASection />
       </main>
       <Footer />

@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { label: 'Convênios', href: '/convenios' },
   { label: 'Equipe', href: '/#equipe' },
   { label: 'Depoimentos', href: '/#depoimentos' },
+  { label: 'Localização', href: '/#localizacao' },
 ] as const;
 
 const INSTAGRAM_URL = 'https://www.instagram.com/heloraclinica?igsh=bXJkbTg3Z2VzYXRs';
@@ -171,7 +172,7 @@ export function Footer() {
               <li>
                 <address className="not-italic inline-flex items-center gap-2 font-sans text-[13px] text-white/75" aria-label="Localização">
                   <MapPin size={14} className="text-helora-sage/50 shrink-0" aria-hidden="true" />
-                  Brasília, DF
+                  Brasília, DF — Asa Sul
                 </address>
               </li>
             </ul>

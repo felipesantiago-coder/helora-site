@@ -30,11 +30,11 @@ const PROFESSIONALS: Professional[] = [
     id: '2',
     name: 'Juliana Santos Ribeiro Veras de Alencar',
     registration: 'CRP 01/25845 – DF',
-    title: 'Psicóloga · TCC e Terapia do Esquema',
+    title: 'Psicóloga · TCC, Terapia do Esquema, TDAH e TEA',
     summary:
-      'Atua com Terapia Cognitivo-Comportamental e Terapia do Esquema para adultos e idosos a partir de 18 anos, com foco em ansiedade, depressão, autoestima, relacionamentos e desenvolvimento pessoal.',
+      'Atua com Terapia Cognitivo-Comportamental e Terapia do Esquema para adultos e idosos a partir de 18 anos, com foco em ansiedade, depressão, autoestima, relacionamentos, desenvolvimento pessoal, TDAH e TEA.',
     fullBio:
-      'Atuo com Terapia Cognitivo-Comportamental (TCC) associada à Terapia do Esquema, abordagens baseadas em evidências científicas que promovem mudanças nos pensamentos, emoções e comportamentos. Enquanto a TCC trabalha as dificuldades do presente, a Terapia do Esquema auxilia na compreensão e transformação de padrões emocionais e crenças profundas.\n\nRealizo atendimento psicológico individual para adultos e idosos (a partir de 18 anos), com foco em ansiedade, depressão, autoestima, relacionamentos, perfeccionismo, medo de rejeição e desenvolvimento pessoal.\n\nAcredito em uma psicoterapia acolhedora, ética e sem julgamentos, oferecendo um espaço seguro para o autoconhecimento, o fortalecimento emocional e a construção de uma vida mais saudável e equilibrada.',
+      'Atuo com Terapia Cognitivo-Comportamental (TCC) associada à Terapia do Esquema, abordagens baseadas em evidências científicas que promovem mudanças nos pensamentos, emoções e comportamentos. Enquanto a TCC trabalha as dificuldades do presente, a Terapia do Esquema auxilia na compreensão e transformação de padrões emocionais e crenças profundas.\n\nRealizo atendimento psicológico individual para adultos e idosos (a partir de 18 anos), com foco em ansiedade, depressão, autoestima, relacionamentos, perfeccionismo, medo de rejeição, desenvolvimento pessoal, TDAH (Transtorno de Déficit de Atenção e Hiperatividade) e TEA (Transtorno do Espectro Autista).\n\nAcredito em uma psicoterapia acolhedora, ética e sem julgamentos, oferecendo um espaço seguro para o autoconhecimento, o fortalecimento emocional e a construção de uma vida mais saudável e equilibrada.',
   },
   {
     id: '3',
