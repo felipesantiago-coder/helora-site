@@ -7,7 +7,7 @@ interface OrganicNatureBgProps {
 
 export function OrganicNatureBg({ variant = 'understory', className = '' }: OrganicNatureBgProps) {
 
-  /* ─── UNDERSTORY — Vertical vine & light-ray patterns ─── */
+  /* ─── UNDERSTORY | Vertical vine & light-ray patterns ─── */
   if (variant === 'understory') {
     return (
       <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`} aria-hidden="true">
@@ -54,7 +54,7 @@ export function OrganicNatureBg({ variant = 'understory', className = '' }: Orga
     );
   }
 
-  /* ─── FOREST-FLOOR — Scattered horizontal leaf-litter & ground-cover ─── */
+  /* ─── FOREST-FLOOR | Scattered horizontal leaf-litter & ground-cover ─── */
   if (variant === 'forest-floor') {
     return (
       <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`} aria-hidden="true">
@@ -110,7 +110,7 @@ export function OrganicNatureBg({ variant = 'understory', className = '' }: Orga
     );
   }
 
-  /* ─── SOIL / MYCELIUM — Interconnected network ─── */
+  /* ─── SOIL / MYCELIUM | Interconnected network ─── */
   return (
     <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`} aria-hidden="true">
       <div className="absolute inset-0 bg-gradient-to-b from-[rgba(156,97,70,0.02)] via-[rgba(44,36,28,0.015)] to-[rgba(40,49,6,0.025)]" />
@@ -151,7 +151,7 @@ export function OrganicNatureBg({ variant = 'understory', className = '' }: Orga
   );
 }
 
-/** Floating leaf decoration — CSS-only animation, hidden on mobile */
+/** Floating leaf decoration (CSS-only animation, hidden on mobile) */
 export function FloatingLeaf({ className = '', size = 'md', color = 'sage' }: { className?: string; size?: 'sm' | 'md' | 'lg'; color?: 'sage' | 'dark' | 'sienna' }) {
   const sizeMap = { sm: 32, md: 48, lg: 64 };
   const colorMap = { sage: 'rgba(119,127,92,0.12)', dark: 'rgba(40,49,6,0.12)', sienna: 'rgba(156,97,70,0.12)' };
@@ -170,7 +170,7 @@ export function FloatingLeaf({ className = '', size = 'md', color = 'sage' }: { 
   );
 }
 
-/** Organic branch decoration — hidden on mobile */
+/** Organic branch decoration (hidden on mobile) */
 export function OrganicBranch({ className = '', flip = false }: { className?: string; flip?: boolean }) {
   return (
     <div

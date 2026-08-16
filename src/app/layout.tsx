@@ -13,7 +13,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Helora — Clínica de Psicologia em Brasília | Saúde Integrada",
+  title: "Helora | Clínica de Psicologia em Brasília | Saúde Integrada",
   description:
     "Clínica de psicologia em Brasília, DF. Atendimento em psicoterapia, neuropsicologia e avaliação psicológica para todas as faixas etárias. Agende por WhatsApp.",
   keywords: [
@@ -34,25 +34,25 @@ export const metadata: Metadata = {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
   openGraph: {
-    title: "Helora — Clínica de Psicologia em Brasília | Saúde Integrada",
+    title: "Helora | Clínica de Psicologia em Brasília | Saúde Integrada",
     description:
       "Clínica de psicologia em Brasília, DF. Atendimento em psicoterapia, neuropsicologia e avaliação psicológica para todas as faixas etárias. Agende por WhatsApp.",
     type: "website",
     locale: "pt_BR",
     url: `${SITE_URL}/`,
-    siteName: "Helora — Saúde Integrada",
+    siteName: "Helora | Saúde Integrada",
     images: [
       {
         url: "/og-image.png",
         width: 1152,
         height: 864,
-        alt: "Helora — Clínica de Psicologia em Brasília",
+        alt: "Helora | Clínica de Psicologia em Brasília",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Helora — Clínica de Psicologia em Brasília | Saúde Integrada",
+    title: "Helora | Clínica de Psicologia em Brasília | Saúde Integrada",
     description:
       "Clínica de psicologia em Brasília, DF. Atendimento em psicoterapia, neuropsicologia e avaliação psicológica para todas as faixas etárias. Agende por WhatsApp.",
     images: ["/og-image.png"],
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * JSON-LD Structured Data — @graph com todos os schemas.
+ * JSON-LD Structured Data: @graph com todos os schemas.
  * MedicalBusiness  → rich card com info do negócio
  * WebSite         → sitelinks + caixa de busca
  * FAQPage         → perguntas expandíveis nos resultados
@@ -86,7 +86,7 @@ const structuredData = {
     {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
-      name: "Helora — Saúde Integrada",
+      name: "Helora | Saúde Integrada",
       alternateName: "Helora",
       url: SITE_URL,
       logo: `${SITE_URL}/logo-mark.svg`,
@@ -97,7 +97,7 @@ const structuredData = {
     {
       "@type": ["LocalBusiness", "MedicalBusiness"],
       "@id": `${SITE_URL}/#business`,
-      name: "Helora — Saúde Integrada",
+      name: "Helora | Saúde Integrada",
       url: SITE_URL,
       image: `${SITE_URL}/og-image.png`,
       address: {
@@ -164,7 +164,7 @@ const structuredData = {
     {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
-      name: "Helora — Saúde Integrada",
+      name: "Helora | Saúde Integrada",
       url: SITE_URL,
       inLanguage: "pt-BR",
       potentialAction: {

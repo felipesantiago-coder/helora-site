@@ -5,7 +5,7 @@ export interface Convenio {
 
 /*
  * Convênios Helora Saúde
- * Logos WebP em /public/convenios/ — qualidade 88, max 800px
+ * Logos WebP em /public/convenios/ (qualidade 88, max 800px)
  */
 
 export const ALL_CONVENIOS: Convenio[] = [
@@ -52,7 +52,7 @@ export const ALL_CONVENIOS: Convenio[] = [
   { name: 'STF MED', src: '/convenios/stf-med.webp' },
 ];
 
-/* Marquee rows — para o componente ConveniosSection (carrossel na home) */
+/* Marquee rows: para o componente ConveniosSection (carrossel na home) */
 export const ROW_1 = ALL_CONVENIOS.slice(0, 14);
 export const ROW_2 = ALL_CONVENIOS.slice(14, 28);
 export const ROW_3 = ALL_CONVENIOS.slice(28);

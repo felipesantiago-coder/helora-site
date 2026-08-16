@@ -92,7 +92,7 @@ export function Footer() {
           />
         </div>
 
-        {/* Brand anchor — centered at top */}
+        {/* Brand anchor, centered at top */}
         <div className="flex flex-col items-center mb-10 relative z-10">
           <img
             src="/logo-mark.svg"
@@ -107,7 +107,7 @@ export function Footer() {
         {/* Divider */}
         <div className="border-t border-helora-sage/10 mb-10 relative z-10" aria-hidden="true" />
 
-        {/* 3 info columns — all left-aligned, matching structure */}
+        {/* 3 info columns, all left-aligned, matching structure */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 lg:gap-10 relative z-10">
 
           {/* Navegação */}
@@ -172,7 +172,7 @@ export function Footer() {
               <li>
                 <address className="not-italic inline-flex items-center gap-2 font-sans text-[13px] text-white/75" aria-label="Localização">
                   <MapPin size={14} className="text-helora-sage/50 shrink-0" aria-hidden="true" />
-                  Brasília, DF — Asa Sul
+                  Brasília, DF, Asa Sul
                 </address>
               </li>
             </ul>

@@ -23,7 +23,7 @@ export function Header() {
   const firstMobileItemRef = useRef<HTMLButtonElement>(null);
   const isTransparent = scrollY < 80 && isHome;
 
-  // Scroll listener — only active on homepage
+  // Scroll listener (only active on homepage)
   useEffect(() => {
     if (!isHome) return;
     const handleScroll = () => setScrollY(window.scrollY);
@@ -45,7 +45,7 @@ export function Header() {
     }
   }, [mobileOpen]);
 
-  /** Navigate to a hash link — on homepage scroll, otherwise go to /#hash */
+  /** Navigate to a hash link (on homepage scroll, otherwise go to /#hash) */
   const navigateToHash = useCallback(
     (hash: string) => {
       if (isHome) {

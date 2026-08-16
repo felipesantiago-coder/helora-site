@@ -27,7 +27,7 @@ const TESTIMONIALS = [
 export function TestimonialsSection() {
   return (
     <section id="depoimentos" className="bg-helora-antique-white/50 py-12 md:py-24 relative overflow-hidden">
-      {/* Forest layer: Forest Floor — deeper, warmer ground-level patterns */}
+      {/* Forest layer: Forest Floor, deeper, warmer ground-level patterns */}
       <OrganicNatureBg variant="forest-floor" />
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
@@ -46,7 +46,7 @@ export function TestimonialsSection() {
           {TESTIMONIALS.map((t, index) => (
             <ScrollReveal key={t.name} delay={index * 0.12}>
               <figure className="helora-card h-full flex flex-col hover:shadow-organic-lg transition-shadow duration-300 bg-gradient-to-b from-white to-helora-antique-white/20 relative overflow-hidden">
-                {/* Organic quote mark — leaf-inspired */}
+                {/* Organic quote mark, leaf-inspired */}
                 <div className="absolute top-4 right-4 pointer-events-none opacity-[0.04]" aria-hidden="true">
                   <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M30 5 Q50 15, 48 35 Q46 52, 28 55 Q12 57, 10 40 Q8 22, 30 5Z" fill="#777F5C" />

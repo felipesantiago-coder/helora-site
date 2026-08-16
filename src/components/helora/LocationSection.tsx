@@ -4,7 +4,7 @@ import { MapPin, Navigation } from 'lucide-react';
 import { ScrollReveal } from './ScrollReveal';
 import { OrganicNatureBg } from './OrganicNatureBg';
 
-const ADDRESS = 'SEPS 707/907 Conjunto E Sala 214, Edifício San Marino, Asa Sul, Brasília – DF';
+const ADDRESS = 'SEPS 707/907 Conjunto E Sala 214, Edifício San Marino, Asa Sul, Brasília, DF';
 const MAPS_EMBED = 'https://maps.google.com/maps?q=SEPS+707%2F907+Conjunto+E+Sala+214+Edif%C3%ADcio+San+Marino+Asa+Sul+Bras%C3%ADlia+DF&t=&z=16&ie=UTF8&iwloc=&output=embed';
 const MAPS_LINK = 'https://www.google.com/maps/search/SEPS+707%2F907+Conjunto+E+Sala+214+Edif%C3%ADcio+San+Marino+Asa+Sul+Bras%C3%ADlia+DF';
 
@@ -20,7 +20,7 @@ export function LocationSection() {
               Onde estamos
             </h2>
             <p className="font-sans text-helora-tan text-base md:text-lg leading-relaxed">
-              Nosso espaço fica na Asa Sul, em Brasília — de fácil acesso e pensado para seu conforto.
+              Nosso espaço fica na Asa Sul, em Brasília, de fácil acesso e pensado para seu conforto.
             </p>
           </div>
         </ScrollReveal>
@@ -38,7 +38,7 @@ export function LocationSection() {
                     Endereço
                   </h3>
                   <p className="font-sans text-[13px] text-helora-tan mt-0.5 tracking-wide uppercase">
-                    Asa Sul, Brasília – DF
+                    Asa Sul, Brasília, DF
                   </p>
                 </div>
               </div>

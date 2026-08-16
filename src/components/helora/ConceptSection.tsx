@@ -6,7 +6,7 @@ import { OrganicNatureBg, FloatingLeaf, OrganicBranch } from './OrganicNatureBg'
 export function ConceptSection() {
   return (
     <section id="conceito" className="bg-helora-white py-12 md:py-24 relative overflow-hidden">
-      {/* Forest layer: Understory — vertical vine patterns, entering the forest */}
+      {/* Forest layer: Understory, vertical vine patterns, entering the forest */}
       <OrganicNatureBg variant="understory" />
 
       {/* Floating leaf accents */}
@@ -23,7 +23,7 @@ export function ConceptSection() {
           </h2>
 
           <div className="space-y-6 text-helora-dark-coffee font-sans relative leading-[1.85]">
-            {/* Organic sienna accent — curved leaf-like border */}
+            {/* Organic sienna accent, curved leaf-like border */}
             <div className="absolute left-0 top-0 bottom-0 w-[3px] rounded-full overflow-hidden" aria-hidden="true">
               <svg width="3" height="100%" viewBox="0 0 3 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1.5 0 Q0 75, 2 150 Q3 225, 1.5 300" stroke="#9C6146" strokeWidth="3" fill="none" strokeLinecap="round" />
@@ -32,7 +32,7 @@ export function ConceptSection() {
 
             <p className="text-base md:text-[17px] pl-8">
               A Helora nasceu da vontade de oferecer um cuidado de verdade. Não somos
-              apenas um consultório — somos um espaço pensado para que você se sinta
+              apenas um consultório, somos um espaço pensado para que você se sinta
               acolhido de verdade. Aqui, cada detalhe existe para que você possa
               respirar, ser ouvido e cuidar de si no seu próprio tempo.
             </p>
@@ -46,7 +46,7 @@ export function ConceptSection() {
             <p className="text-base md:text-[17px] pl-8">
               Nosso espaço em Brasília foi projetado para transmitir calma e
               segurança. Desde o primeiro contato até o acompanhamento contínuo,
-              você encontra profissionais que escolheram o cuidado como caminho —
+              você encontra profissionais que escolheram o cuidado como caminho,
               porque acreditamos que cuidar é a forma mais genuína de estar presente.
             </p>
           </div>

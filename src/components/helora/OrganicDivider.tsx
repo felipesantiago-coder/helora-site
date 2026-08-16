@@ -7,10 +7,10 @@ interface OrganicDividerProps {
  * Organic dividers that reinforce the forest canopy-to-roots descent.
  *
  * "leaf" variant: Vine-like hanging elements (understory transition)
- *   — Vertical emphasis, small drooping curves, leaf buds
+ *   Vertical emphasis, small drooping curves, leaf buds
  *
  * "sage" variant: Ground-cover transition (understory → forest floor)
- *   — Horizontal emphasis, mossy curves, earth-tone accents
+ *   Horizontal emphasis, mossy curves, earth-tone accents
  *
  * "o" variant: Brand divider (unchanged)
  */
@@ -33,7 +33,7 @@ export function OrganicDivider({ variant = 'sage', className = '' }: OrganicDivi
           className="w-full h-auto block"
           preserveAspectRatio="none"
         >
-          {/* Vine-like hanging curves — vertical drooping forms */}
+          {/* Vine-like hanging curves, vertical drooping forms */}
           <path
             d="M320 0 Q325 30, 315 55 Q308 72, 320 88"
             stroke="rgba(119,127,92,0.12)"
@@ -80,7 +80,7 @@ export function OrganicDivider({ variant = 'sage', className = '' }: OrganicDivi
     );
   }
 
-  /* variant === 'sage' — ground-cover transition (understory → forest floor) */
+  /* variant === 'sage' | ground-cover transition (understory → forest floor) */
   return (
     <div className={`w-full ${className}`} aria-hidden="true">
       <svg
@@ -90,7 +90,7 @@ export function OrganicDivider({ variant = 'sage', className = '' }: OrganicDivi
         className="w-full h-auto block"
         preserveAspectRatio="none"
       >
-        {/* Horizontal ground-cover curves — mossy/fern-like */}
+        {/* Horizontal ground-cover curves, mossy/fern-like */}
         <path
           d="M0 50 Q180 15, 360 40 Q540 65, 720 35 Q900 5, 1080 30 Q1260 55, 1440 25"
           stroke="rgba(119, 127, 92, 0.15)"
@@ -98,7 +98,7 @@ export function OrganicDivider({ variant = 'sage', className = '' }: OrganicDivi
           fill="none"
           strokeLinecap="round"
         />
-        {/* Warmer secondary curve — earth tones emerging */}
+        {/* Warmer secondary curve, earth tones emerging */}
         <path
           d="M0 45 Q240 75, 480 50 Q720 25, 960 55 Q1200 80, 1440 45"
           stroke="rgba(156, 97, 70, 0.06)"
