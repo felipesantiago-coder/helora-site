@@ -1,6 +1,6 @@
 'use client';
 
-import { Leaf } from 'lucide-react';
+import Image from 'next/image';
 import { ScrollReveal } from './ScrollReveal';
 import { OrganicNatureBg } from './OrganicNatureBg';
 
@@ -63,9 +63,12 @@ export function ServicesSection() {
                   <h3 className="font-serif font-normal text-xl md:text-[22px] text-helora-dark-green tracking-tight">
                     {service.name}
                   </h3>
-                  <Leaf
-                    size={18}
-                    className="mt-1 shrink-0 text-helora-light-gray group-hover:text-helora-sage transition-colors duration-300"
+                  <Image
+                    src="/favicon.svg"
+                    alt=""
+                    width={18}
+                    height={18}
+                    className="mt-1 shrink-0 opacity-30 group-hover:opacity-60 transition-opacity duration-300"
                     aria-hidden="true"
                   />
                 </div>
