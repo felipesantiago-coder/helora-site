@@ -14,9 +14,16 @@ const WHATSAPP_BASE_MSG = encodeURIComponent(
 const WHATSAPP_CONVENIO_MSG = encodeURIComponent(
   'Olá! Gostaria de saber se a Helora atende pelo meu plano de saúde. Pode me informar?'
 );
+const WHATSAPP_INSTITUCIONAL_MSG = encodeURIComponent(
+  'Olá! Gostaria de saber mais sobre os serviços institucionais da Helora.'
+);
 
-export function getWhatsAppLink(msg?: 'agendamento' | 'convenio'): string {
-  const text = msg === 'convenio' ? WHATSAPP_CONVENIO_MSG : WHATSAPP_BASE_MSG;
+export function getWhatsAppLink(msg?: 'agendamento' | 'convenio' | 'institucional'): string {
+  const msgMap = {
+    convenio: WHATSAPP_CONVENIO_MSG,
+    institucional: WHATSAPP_INSTITUCIONAL_MSG,
+  };
+  const text = msg ? msgMap[msg] : WHATSAPP_BASE_MSG;
   return `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${text}`;
 }
 
