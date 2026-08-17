@@ -142,7 +142,7 @@ export default function InstitucionalPage() {
       <Header />
       <main className="flex-1">
         {/* Hero */}
-        <section className="relative overflow-hidden py-20 md:py-32"
+        <section className="relative overflow-hidden min-h-[100dvh] flex items-center justify-center"
           style={{ background: 'linear-gradient(to bottom, #141E03, #283107)' }}>
           <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(119,127,92,0.12) 0%, rgba(119,127,92,0) 70%)' }} />
