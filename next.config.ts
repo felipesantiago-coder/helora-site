@@ -6,8 +6,7 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false,
   },
   images: {
-    formats: ["image/avif", "image/webp"],
-    remotePatterns: [],
+    unoptimized: true,
   },
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion"],
