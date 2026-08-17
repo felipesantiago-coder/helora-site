@@ -52,7 +52,7 @@ export function ServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SERVICES.map((service, index) => (
             <ScrollReveal key={service.id} delay={index * 0.1}>
-              <article className="helora-card text-left group w-full relative overflow-hidden" aria-label={service.name}>
+              <article className="helora-card text-left group w-full h-full flex flex-col relative overflow-hidden" aria-label={service.name}>
                 <div className="absolute top-0 left-0 right-0 h-[3px] overflow-hidden" aria-hidden="true">
                   <svg width="100%" height="3" viewBox="0 0 400 3" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 1.5 Q100 0, 200 2 Q300 3, 400 1" stroke="#777F5C" strokeWidth="3" fill="none" strokeLinecap="round" />
@@ -72,10 +72,10 @@ export function ServicesSection() {
                     aria-hidden="true"
                   />
                 </div>
-                <p className="font-sans text-[15px] text-helora-tan leading-relaxed mb-5">
+                <p className="font-sans text-[15px] text-helora-tan leading-relaxed flex-1">
                   {service.description}
                 </p>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 pt-5">
                   <span className="w-2 h-2 rounded-full bg-helora-sage shrink-0" aria-hidden="true" />
                   <span className="font-sans text-sm text-helora-tan">
                     {service.duration}
