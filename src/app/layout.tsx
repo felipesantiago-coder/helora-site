@@ -50,28 +50,28 @@ export const metadata: Metadata = {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
   openGraph: {
-    title: "Helora | Clínica de Psicologia em Brasília | Saúde Integrada",
+    title: "Helora | Clínica de Psicologia em Brasília",
     description:
-      "Clínica de psicologia em Brasília, DF. Atendimento em psicoterapia, neuropsicologia e avaliação psicológica para todas as faixas etárias. Agende por WhatsApp.",
+      "Cuidar de você é nossa essência. Psicoterapia individual, de casal, neuropsicologia e avaliação psicológica em Brasília/DF. Um espaço de acolhimento pensado para você.",
     type: "website",
     locale: "pt_BR",
     url: `${SITE_URL}/`,
     siteName: "Helora | Saúde Integrada",
     images: [
       {
-        url: "/og-image.png",
-        width: 1152,
-        height: 864,
-        alt: "Helora | Clínica de Psicologia em Brasília",
+        url: "/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Helora | Clínica de Psicologia em Brasília — Cuidar de você é nossa essência",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Helora | Clínica de Psicologia em Brasília | Saúde Integrada",
+    title: "Helora | Clínica de Psicologia em Brasília",
     description:
-      "Clínica de psicologia em Brasília, DF. Atendimento em psicoterapia, neuropsicologia e avaliação psicológica para todas as faixas etárias. Agende por WhatsApp.",
-    images: ["/og-image.png"],
+      "Cuidar de você é nossa essência. Psicoterapia individual, de casal, neuropsicologia e avaliação psicológica em Brasília/DF. Um espaço de acolhimento pensado para você.",
+    images: ["/og-image.webp"],
   },
   robots: {
     index: true,
@@ -115,7 +115,7 @@ const structuredData = {
       "@id": `${SITE_URL}/#business`,
       name: "Helora | Saúde Integrada",
       url: SITE_URL,
-      image: `${SITE_URL}/og-image.png`,
+      image: `${SITE_URL}/og-image.webp`,
       address: {
         "@type": "PostalAddress",
         streetAddress: "SEPS 707/907 Conjunto E Sala 214, Edifício San Marino, Asa Sul",

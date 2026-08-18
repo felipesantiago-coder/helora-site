@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     siteName: 'Helora | Saúde Integrada',
     locale: 'pt_BR',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Helora | Clínica de Psicologia em Brasília',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://www.clinicahelora.com/convenios',
