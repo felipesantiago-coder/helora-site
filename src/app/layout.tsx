@@ -1,5 +1,21 @@
 import type { Metadata, Viewport } from "next";
+import { Inter, Fraunces } from 'next/font/google';
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  weight: 'variable',
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-fraunces',
+});
 
 const SITE_URL = "https://www.clinicahelora.com";
 
@@ -232,19 +248,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang="pt-BR" suppressHydrationWarning className={`${inter.variable} ${fraunces.variable}`}>
       <head>
         <link rel="canonical" href={`${SITE_URL}/`} />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
         <link rel="preconnect" href="https://api.whatsapp.com" crossOrigin="anonymous" />
         <link rel="me" href="https://www.instagram.com/heloraclinica?igsh=bXJkbTg3Z2VzYXRs" />
         <script

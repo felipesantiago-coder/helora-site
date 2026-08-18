@@ -50,6 +50,12 @@ export function SoundWaveDivider() {
 
     /* ── Draw loop ── */
     function draw() {
+      /* Skip frames when tab is not visible */
+      if (document.hidden) {
+        rafId = requestAnimationFrame(draw);
+        return;
+      }
+
       if (!cw || !ch) { rafId = requestAnimationFrame(draw); return; }
 
       const analyser = analyserRef.current;

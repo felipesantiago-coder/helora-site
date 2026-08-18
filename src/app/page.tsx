@@ -5,19 +5,32 @@ import { Header } from '@/components/helora/Header';
 import { ConceptSection } from '@/components/helora/ConceptSection';
 import { ServicesSection } from '@/components/helora/ServicesSection';
 import { TeamSection } from '@/components/helora/TeamSection';
-import { TestimonialsSection } from '@/components/helora/TestimonialsSection';
-import { CTASection } from '@/components/helora/CTASection';
-import { LocationSection } from '@/components/helora/LocationSection';
-import { Footer } from '@/components/helora/Footer';
 import { OrganicDivider } from '@/components/helora/OrganicDivider';
 
-/* ── Lazy load heavy components ── */
+/* ── Lazy load heavy / below-fold components ── */
 const HeroSection = dynamic(
   () => import('@/components/helora/HeroSection').then((m) => ({ default: m.HeroSection })),
-  {
-    ssr: false,
-    loading: () => <HeroFallback />,
-  }
+  { ssr: false, loading: () => <HeroFallback /> }
+);
+
+const TestimonialsSection = dynamic(
+  () => import('@/components/helora/TestimonialsSection').then((m) => ({ default: m.TestimonialsSection })),
+  { ssr: true }
+);
+
+const LocationSection = dynamic(
+  () => import('@/components/helora/LocationSection').then((m) => ({ default: m.LocationSection })),
+  { ssr: true }
+);
+
+const CTASection = dynamic(
+  () => import('@/components/helora/CTASection').then((m) => ({ default: m.CTASection })),
+  { ssr: true }
+);
+
+const Footer = dynamic(
+  () => import('@/components/helora/Footer').then((m) => ({ default: m.Footer })),
+  { ssr: true }
 );
 
 function HeroFallback() {

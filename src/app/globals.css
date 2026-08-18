@@ -22,8 +22,8 @@
   --color-ring: #777F5C;
 
   /* ── Typography ── */
-  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-serif: 'Fraunces', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, 'Times New Roman', serif;
 
   /* ── Spacing & Radius ── */
   --radius-sm: calc(0.75rem - 4px);
@@ -58,7 +58,7 @@
     line-height: 1.7;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Fraunces', ui-serif, Georgia, serif;
+    font-family: var(--font-fraunces), ui-serif, Georgia, serif;
     letter-spacing: -0.02em;
     line-height: 1.3;
   }

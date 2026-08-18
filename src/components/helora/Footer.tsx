@@ -99,6 +99,8 @@ export function Footer() {
             src="/logo-mark.svg"
             alt="Helora"
             className="h-8 sm:h-9 w-auto shrink-0 brightness-0 invert"
+            loading="lazy"
+            decoding="async"
           />
           <p className="font-sans text-white/80 text-[11px] mt-1.5 tracking-[0.15em] uppercase">
             saúde integrada
