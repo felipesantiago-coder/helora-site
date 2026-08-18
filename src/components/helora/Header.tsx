@@ -121,7 +121,7 @@ export function Header() {
           <span
             className={
               'w-full text-center font-sans text-[9px] sm:text-[10px] tracking-[0.15em] uppercase leading-none mt-1.5 transition-colors duration-300 ' +
-              (isTransparent ? 'text-white/75' : 'text-helora-tan')
+              (isTransparent ? 'text-white/90' : 'text-helora-tan')
             }
           >
             saúde integrada
@@ -137,7 +137,7 @@ export function Header() {
               onClick={(e) => handleNavClick(e, link.href)}
               className={`font-sans text-sm font-medium transition-colors duration-200 focus:outline-none focus-visible:underline hover:font-semibold ${
                 isTransparent
-                  ? 'text-white/80 hover:text-white'
+                  ? 'text-white/90 hover:text-white'
                   : 'text-helora-tan hover:text-helora-dark-coffee'
               }`}
             >
@@ -148,7 +148,7 @@ export function Header() {
             onClick={handleBooking}
             className={`btn-pill text-sm font-medium px-5 py-2 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 ${
               isTransparent
-                ? 'bg-[#283107] text-white border border-[#283107] hover:bg-[#1a2004]'
+                ? 'bg-[#283107] text-white border border-[#3a4a12] hover:bg-[#1a2004]'
                 : 'bg-helora-sage text-white hover:bg-helora-dark-green'
             }`}
           >

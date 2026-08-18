@@ -149,17 +149,17 @@ export default function InstitucionalPage() {
           </div>
           <div className="max-w-3xl mx-auto px-4 text-center relative z-10">
             <ScrollReveal>
-              <h1 className="font-serif font-light text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] text-white tracking-tight text-balance leading-[1.2] mb-6">
+              <h1 className="font-serif font-light text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] text-white tracking-tight text-balance leading-[1.2] mb-6 drop-shadow-[0_2px_8px_rgba(40,49,6,0.3)]">
                 Cuidado que se multiplica
               </h1>
-              <p className="font-sans text-white/60 text-[0.938rem] sm:text-base md:text-[1.063rem] max-w-xl mx-auto mb-10 leading-relaxed">
+              <p className="font-sans text-white/90 text-[0.938rem] sm:text-base md:text-[1.063rem] max-w-xl mx-auto mb-10 leading-relaxed">
                 Levamos saúde mental para onde as pessoas precisam: empresas, escolas, consultórios e instituições. Sob consulta.
               </p>
               <a
                 href={getWhatsAppLink('institucional')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-pill inline-flex items-center gap-2 bg-[#283107] text-white border border-[#283107] hover:bg-[#1a2004] font-medium py-3 px-8 transition-[color,background-color,transform] duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 text-[15px] sm:text-base shadow-organic-lg active:scale-[0.98]"
+                className="btn-pill inline-flex items-center gap-2 bg-[#283107] text-white border border-[#3a4a12] hover:bg-[#1a2004] font-medium py-3 px-8 transition-[color,background-color,transform] duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 text-[15px] sm:text-base shadow-organic active:scale-[0.98]"
               >
                 <MessageCircle size={18} aria-hidden="true" />
                 Fale conosco

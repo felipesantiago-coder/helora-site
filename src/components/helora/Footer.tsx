@@ -17,7 +17,7 @@ const NAV_LINKS = [
 
 const INSTAGRAM_URL = 'https://www.instagram.com/heloraclinica?igsh=bXJkbTg3Z2VzYXRs';
 
-const COL_HEADER = 'font-sans text-[11px] font-medium text-helora-gainsboro/80 tracking-[0.15em] uppercase mb-4';
+const COL_HEADER = 'font-sans text-[11px] font-medium text-white/80 tracking-[0.15em] uppercase mb-4';
 
 export function Footer() {
   const router = useRouter();
@@ -74,7 +74,7 @@ export function Footer() {
 
       {/* Top border accent */}
       <div
-        className="h-[2px] bg-gradient-to-r from-transparent via-white/10 to-transparent"
+        className="h-[2px] bg-gradient-to-r from-transparent via-white/15 to-transparent"
         aria-hidden="true"
       />
 
@@ -100,13 +100,13 @@ export function Footer() {
             alt="Helora"
             className="h-8 sm:h-9 w-auto shrink-0 brightness-0 invert"
           />
-          <p className="font-sans text-helora-gainsboro/70 text-[11px] mt-1.5 tracking-[0.15em] uppercase">
+          <p className="font-sans text-white/80 text-[11px] mt-1.5 tracking-[0.15em] uppercase">
             saúde integrada
           </p>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-helora-sage/10 mb-10 relative z-10" aria-hidden="true" />
+        <div className="border-t border-white/10 mb-10 relative z-10" aria-hidden="true" />
 
         {/* 3 info columns, all left-aligned, matching structure */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 lg:gap-10 relative z-10">
@@ -120,7 +120,7 @@ export function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => handleFooterNav(e, link.href)}
-                    className="font-sans text-[13px] text-white/75 hover:text-white transition-colors duration-200 text-left focus:outline-none focus-visible:underline focus-visible:ring-2 focus-visible:ring-helora-sage/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#141E03] rounded-sm"
+                    className="font-sans text-[13px] text-white/90 hover:text-white transition-colors duration-200 text-left focus:outline-none focus-visible:underline focus-visible:ring-2 focus-visible:ring-helora-sage/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#777F5C] rounded-sm"
                   >
                     {link.label}
                   </a>
@@ -138,9 +138,9 @@ export function Footer() {
                   href={getWhatsAppLink()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 font-sans text-[13px] text-white/75 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:underline focus-visible:ring-2 focus-visible:ring-helora-sage/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#141E03] rounded-sm"
+                  className="inline-flex items-center gap-2 font-sans text-[13px] text-white/90 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:underline focus-visible:ring-2 focus-visible:ring-helora-sage/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#777F5C] rounded-sm"
                 >
-                  <MessageCircle size={14} className="text-helora-sage/50 shrink-0" aria-hidden="true" />
+                  <MessageCircle size={14} className="text-white/70 shrink-0" aria-hidden="true" />
                   {WHATSAPP_DISPLAY}
                   <span className="sr-only">(abre em nova janela)</span>
                 </a>
@@ -150,7 +150,7 @@ export function Footer() {
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 font-sans text-[13px] text-white/75 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:underline focus-visible:ring-2 focus-visible:ring-helora-sage/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#141E03] rounded-sm"
+                  className="inline-flex items-center gap-2 font-sans text-[13px] text-white/90 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:underline focus-visible:ring-2 focus-visible:ring-helora-sage/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#777F5C] rounded-sm"
                 >
                   <svg
                     width="14"
@@ -158,7 +158,7 @@ export function Footer() {
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="text-helora-sage/50 shrink-0"
+                    className="text-white/70 shrink-0"
                     aria-hidden="true"
                   >
                     <path
@@ -171,8 +171,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <address className="not-italic inline-flex items-center gap-2 font-sans text-[13px] text-white/75" aria-label="Localização">
-                  <MapPin size={14} className="text-helora-sage/50 shrink-0" aria-hidden="true" />
+                <address className="not-italic inline-flex items-center gap-2 font-sans text-[13px] text-white/90" aria-label="Localização">
+                  <MapPin size={14} className="text-white/70 shrink-0" aria-hidden="true" />
                   Brasília, DF, Asa Sul
                 </address>
               </li>
@@ -184,42 +184,42 @@ export function Footer() {
             <p className={COL_HEADER}>Segurança</p>
             <ul className="flex flex-col gap-3">
               <li className="inline-flex items-center gap-2.5">
-                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-helora-sage/15 text-helora-sage/70 shrink-0">
+                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-white/10 text-white/80 shrink-0">
                   <Lock size={13} aria-hidden="true" />
                 </span>
-                <span className="font-sans text-[13px] text-white/75 leading-tight">Site seguro (SSL/HTTPS)</span>
+                <span className="font-sans text-[13px] text-white/90 leading-tight">Site seguro (SSL/HTTPS)</span>
               </li>
               <li className="inline-flex items-center gap-2.5">
-                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-helora-sage/15 text-helora-sage/70 shrink-0">
+                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-white/10 text-white/80 shrink-0">
                   <ShieldCheck size={13} aria-hidden="true" />
                 </span>
-                <span className="font-sans text-[13px] text-white/75 leading-tight">Dados protegidos pela LGPD</span>
+                <span className="font-sans text-[13px] text-white/90 leading-tight">Dados protegidos pela LGPD</span>
               </li>
               <li className="inline-flex items-center gap-2.5">
-                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-helora-sage/15 text-helora-sage/70 shrink-0">
+                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-white/10 text-white/80 shrink-0">
                   <FileCheck size={13} aria-hidden="true" />
                 </span>
-                <span className="font-sans text-[13px] text-white/75 leading-tight">Profissionais certificados</span>
+                <span className="font-sans text-[13px] text-white/90 leading-tight">Profissionais certificados</span>
               </li>
               <li className="inline-flex items-center gap-2.5">
-                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-helora-sage/15 text-helora-sage/70 shrink-0">
+                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-white/10 text-white/80 shrink-0">
                   <Eye size={13} aria-hidden="true" />
                 </span>
-                <span className="font-sans text-[13px] text-white/75 leading-tight">Sigilo profissional garantido</span>
+                <span className="font-sans text-[13px] text-white/90 leading-tight">Sigilo profissional garantido</span>
               </li>
               <li className="inline-flex items-center gap-2.5">
-                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-helora-sage/15 text-helora-sage/70 shrink-0">
+                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-white/10 text-white/80 shrink-0">
                   <HeartHandshake size={13} aria-hidden="true" />
                 </span>
-                <span className="font-sans text-[13px] text-white/75 leading-tight">Atendimento ético e humanizado</span>
+                <span className="font-sans text-[13px] text-white/90 leading-tight">Atendimento ético e humanizado</span>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-helora-sage/10 pt-5 mt-10 relative z-10">
-          <p className="font-sans text-[11px] text-helora-gainsboro/40 text-center">
+        <div className="border-t border-white/10 pt-5 mt-10 relative z-10">
+          <p className="font-sans text-[11px] text-white/60 text-center">
             © 2026 Helora Saúde Integrada. Todos os direitos reservados.
           </p>
         </div>

@@ -300,23 +300,23 @@ export function HeroSection() {
           <img
             src="/logo-mark.svg"
             alt="Helora Saúde Integrada"
-            className="h-10 mx-auto brightness-0 invert"
+            className="h-10 mx-auto brightness-0 invert opacity-90"
           />
         </motion.div>
 
         <motion.h1
-          className="font-serif font-light text-[1.85rem] sm:text-[2.75rem] md:text-5xl lg:text-6xl text-white tracking-tight text-balance leading-[1.2] mb-8 md:mb-6"
+          className="font-serif font-light text-[1.85rem] sm:text-[2.75rem] md:text-5xl lg:text-6xl text-white tracking-tight text-balance leading-[1.2] mb-8 md:mb-6 drop-shadow-[0_2px_8px_rgba(40,49,6,0.3)]"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.3 }}
         >
           Cuidar de você é
           <br />
-          <span className="text-white/60">nossa essência.</span>
+          <span className="text-white/90">nossa essência.</span>
         </motion.h1>
 
         <motion.p
-          className="font-sans text-white/70 text-[0.938rem] sm:text-base md:text-[1.063rem] max-w-md mx-auto mb-12 md:mb-10 leading-relaxed"
+          className="font-sans text-white/90 text-[0.938rem] sm:text-base md:text-[1.063rem] max-w-md mx-auto mb-12 md:mb-10 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
@@ -334,14 +334,14 @@ export function HeroSection() {
             href={getWhatsAppLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-pill bg-[#283107] text-white font-medium py-2.5 px-6 sm:py-3.5 sm:px-9 hover:bg-[#1a2004] border border-[#283107] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 text-[15px] sm:text-base active:scale-[0.98] w-auto text-center"
+            className="btn-pill bg-[#283107] text-white font-medium py-2.5 px-6 sm:py-3.5 sm:px-9 hover:bg-[#1a2004] border border-[#3a4a12] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 text-[15px] sm:text-base active:scale-[0.98] w-auto text-center shadow-organic"
           >
             Agendar sessão
             <span className="sr-only">(abre em nova janela)</span>
           </a>
           <button
             onClick={() => document.getElementById('equipe')?.scrollIntoView({ behavior: 'smooth' })}
-            className="font-sans font-medium text-[15px] text-white/80 border border-white/25 hover:border-white/40 hover:text-white rounded-full px-5 py-2.5 sm:px-6 sm:py-3 sm:text-base transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50"
+            className="font-sans font-medium text-[15px] text-white border border-white/40 hover:border-white/60 hover:bg-white/10 rounded-full px-5 py-2.5 sm:px-6 sm:py-3 sm:text-base transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50"
           >
             Conheça a equipe
           </button>

@@ -267,8 +267,8 @@ export function AmbientSound() {
       className={
         'group relative z-20 flex items-center justify-center w-10 h-10 rounded-full border transition-all duration-500 ' +
         (playing
-          ? 'border-helora-sage/40 bg-helora-sage/15 text-helora-sage'
-          : 'border-helora-gainsboro/15 bg-white/5 text-helora-gainsboro/40 hover:border-helora-gainsboro/30 hover:text-helora-gainsboro/60')
+          ? 'border-white/30 bg-white/10 text-white hover:bg-white/15'
+          : 'border-white/15 bg-white/5 text-white/50 hover:border-white/30 hover:text-white/70')
       }
     >
       {playing ? (
@@ -277,7 +277,7 @@ export function AmbientSound() {
         <VolumeX className="w-4 h-4" strokeWidth={1.5} aria-hidden="true" />
       )}
       {playing && (
-        <span className="absolute inset-0 rounded-full border border-helora-sage/30 animate-ping pointer-events-none" aria-hidden="true" />
+        <span className="absolute inset-0 rounded-full border border-white/20 animate-ping pointer-events-none" aria-hidden="true" />
       )}
     </button>
   );
