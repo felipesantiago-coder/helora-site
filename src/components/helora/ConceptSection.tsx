@@ -2,16 +2,11 @@
 
 import { ScrollReveal } from './ScrollReveal';
 import { OrganicNatureBg, FloatingLeaf, OrganicBranch } from './OrganicNatureBg';
-import { SoundWaveDivider } from './SoundWaveDivider';
-
 export function ConceptSection() {
   return (
-    <section id="conceito" className="relative">
-      {/* Sound-wave visualizer: reacts to the ambient music in real-time */}
-      <SoundWaveDivider />
-
+    <section id="conceito" className="bg-helora-white relative">
       {/* Content wrapper with overflow-hidden for floating elements */}
-      <div className="bg-helora-white py-12 md:py-24 relative overflow-hidden">
+      <div className="py-12 md:py-24 relative overflow-hidden">
         {/* Forest layer: Understory, vertical vine patterns, entering the forest */}
         <OrganicNatureBg variant="understory" />
 
