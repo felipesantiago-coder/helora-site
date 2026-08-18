@@ -6,9 +6,9 @@ import { OrganicNatureBg, FloatingLeaf, OrganicBranch } from './OrganicNatureBg'
 export function ConceptSection() {
   return (
     <section id="conceito" className="bg-helora-white relative">
-      {/* Curved top edge: overlaps into the hero above, filled with hero color */}
+      {/* Curved top edge: white wave overlapping into the hero, visually part of this section */}
       <div
-        className="overflow-hidden leading-[0] -mb-px"
+        className="overflow-hidden leading-[0]"
         style={{ marginTop: 'clamp(-30px, -5vw, -60px)' }}
         aria-hidden="true"
       >
@@ -20,7 +20,7 @@ export function ConceptSection() {
           preserveAspectRatio="none"
           style={{ height: 'clamp(30px, 5vw, 60px)' }}
         >
-          <path d="M0 0 L1440 0 L1440 40 Q1080 5, 720 30 Q360 55, 0 20 Z" fill="#777F5C" />
+          <path d="M0 20 Q360 55, 720 30 Q1080 5, 1440 40 L1440 60 L0 60Z" fill="#FFFFFF" />
         </svg>
       </div>
 
