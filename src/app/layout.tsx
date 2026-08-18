@@ -29,7 +29,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Helora | Clínica de Psicologia em Brasília | Saúde Integrada",
+  title: "Helora | Clínica Multidisciplinar em Brasília | Saúde Integrada",
   description:
     "Clínica de psicologia em Brasília, DF. Atendimento em psicoterapia, neuropsicologia e avaliação psicológica para todas as faixas etárias. Agende por WhatsApp.",
   keywords: [
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
   openGraph: {
-    title: "Helora | Clínica de Psicologia em Brasília",
+    title: "Helora | Clínica Multidisciplinar em Brasília",
     description:
       "Cuidar de você é nossa essência. Psicoterapia individual, de casal, neuropsicologia e avaliação psicológica em Brasília/DF. Um espaço de acolhimento pensado para você.",
     type: "website",
@@ -62,13 +62,13 @@ export const metadata: Metadata = {
         url: "/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "Helora | Clínica de Psicologia em Brasília — Cuidar de você é nossa essência",
+        alt: "Helora | Clínica Multidisciplinar em Brasília — Cuidar de você é nossa essência",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Helora | Clínica de Psicologia em Brasília",
+    title: "Helora | Clínica Multidisciplinar em Brasília",
     description:
       "Cuidar de você é nossa essência. Psicoterapia individual, de casal, neuropsicologia e avaliação psicológica em Brasília/DF. Um espaço de acolhimento pensado para você.",
     images: ["/og-image.webp"],

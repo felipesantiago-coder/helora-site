@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         url: '/og-image.webp',
         width: 1200,
         height: 630,
-        alt: 'Helora | Clínica de Psicologia em Brasília',
+        alt: 'Helora | Clínica Multidisciplinar em Brasília',
       },
     ],
   },
