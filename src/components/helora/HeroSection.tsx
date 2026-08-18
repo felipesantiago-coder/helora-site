@@ -131,13 +131,12 @@ export function HeroSection() {
     }
 
     function render() {
+      /* Uniform base color matching #777F5C exactly */
+      const B_R = 119, B_G = 127, B_B = 92;
+
       for (let vy = 0; vy < VH; vy++) {
         const sy = vy + BORDER;
         const syw = sy * SW;
-        const t = vy / VH;
-        const bR = 95 + t * 24;
-        const bG = 102 + t * 25;
-        const bB = 68 + t * 24;
 
         for (let vx = 0; vx < VW; vx++) {
           const sx = vx + BORDER;
@@ -159,18 +158,16 @@ export function HeroSection() {
             let s2 = sd * sd;
             let s4 = s2 * s2;
             const spec = s4 * s4;
-            const light = 0.55 + diffuse * 0.4 + spec * 0.55;
-            const specR = spec * 14;
-            const specG = spec * 35;
-            const specB = spec * 18;
-            px[pi] = Math.min(255, (bR * light + specR) | 0);
-            px[pi + 1] = Math.min(255, (bG * light + specG) | 0);
-            px[pi + 2] = Math.min(255, (bB * light + specB) | 0);
+            /* Subtle lighting: calm surface ≈ 1.0x multiplier → matches #777F5C */
+            const light = 0.88 + diffuse * 0.10 + spec * 0.03;
+            px[pi]     = Math.min(255, (B_R * light + spec * 2) | 0);
+            px[pi + 1] = Math.min(255, (B_G * light + spec * 5) | 0);
+            px[pi + 2] = Math.min(255, (B_B * light + spec * 3) | 0);
           } else {
-            const light = 0.55 + diffuse * 0.4;
-            px[pi] = Math.min(255, (bR * light) | 0);
-            px[pi + 1] = Math.min(255, (bG * light) | 0);
-            px[pi + 2] = Math.min(255, (bB * light) | 0);
+            const light = 0.88 + diffuse * 0.10;
+            px[pi]     = Math.min(255, (B_R * light) | 0);
+            px[pi + 1] = Math.min(255, (B_G * light) | 0);
+            px[pi + 2] = Math.min(255, (B_B * light) | 0);
           }
           px[pi + 3] = 255;
         }
