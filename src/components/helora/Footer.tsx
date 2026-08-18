@@ -40,7 +40,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-gradient-to-b from-[#777F5C] to-[#283107] text-white mt-auto relative overflow-hidden">
+    <footer className="bg-[#777F5C] text-white mt-auto relative overflow-hidden">
       {/* Organic nature wave top */}
       <div
         className="absolute top-0 left-0 w-full overflow-hidden leading-[0] -translate-y-[99%]"

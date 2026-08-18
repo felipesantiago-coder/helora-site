@@ -25,15 +25,15 @@ function HeroFallback() {
     <section
       id="hero"
       className="min-h-[100dvh] flex items-center justify-center overflow-hidden"
-      style={{ background: 'linear-gradient(to bottom, #141E03, #283107)' }}
+      style={{ background: '#777F5C' }}
     >
       <div className="max-w-2xl mx-auto px-6 text-center">
         <h1 className="font-serif font-light text-[1.85rem] sm:text-[2.75rem] md:text-5xl lg:text-6xl text-white tracking-tight text-balance leading-[1.2] mb-6">
           Cuidar de você é
           <br />
-          <span className="text-white/60">nossa essência.</span>
+          <span className="text-white/90">nossa essência.</span>
         </h1>
-        <p className="font-sans text-white/60 text-[0.938rem] sm:text-base md:text-[1.063rem] max-w-md mx-auto mb-10 leading-relaxed">
+        <p className="font-sans text-white/90 text-[0.938rem] sm:text-base md:text-[1.063rem] max-w-md mx-auto mb-10 leading-relaxed">
           Um espaço de acolhimento onde você pode respirar, ser ouvido e cuidar de si.
         </p>
       </div>
