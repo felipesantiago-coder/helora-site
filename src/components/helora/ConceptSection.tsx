@@ -2,29 +2,15 @@
 
 import { ScrollReveal } from './ScrollReveal';
 import { OrganicNatureBg, FloatingLeaf, OrganicBranch } from './OrganicNatureBg';
+import { SoundWaveDivider } from './SoundWaveDivider';
 
 export function ConceptSection() {
   return (
     <section id="conceito" className="bg-helora-white relative">
-      {/* Curved top edge: white wave overlapping into the hero, visually part of this section */}
-      <div
-        className="overflow-hidden leading-[0]"
-        style={{ marginTop: 'clamp(-30px, -5vw, -60px)' }}
-        aria-hidden="true"
-      >
-        <svg
-          viewBox="0 0 1440 60"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-auto block"
-          preserveAspectRatio="none"
-          style={{ height: 'clamp(30px, 5vw, 60px)' }}
-        >
-          <path d="M0 20 Q360 55, 720 30 Q1080 5, 1440 40 L1440 60 L0 60Z" fill="#FFFFFF" />
-        </svg>
-      </div>
+      {/* Sound-wave visualizer: reacts to the ambient music in real-time */}
+      <SoundWaveDivider />
 
-      {/* Content wrapper with original overflow-hidden for floating elements */}
+      {/* Content wrapper with overflow-hidden for floating elements */}
       <div className="py-12 md:py-24 relative overflow-hidden">
         {/* Forest layer: Understory, vertical vine patterns, entering the forest */}
         <OrganicNatureBg variant="understory" />

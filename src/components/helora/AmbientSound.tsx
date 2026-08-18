@@ -2,6 +2,7 @@
 
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
+import { setSharedAnalyser } from '@/lib/audio-analyser';
 
 const FADE_DURATION = 1.5;
 const MASTER_VOLUME = 5.0;
@@ -125,7 +126,13 @@ export function AmbientSound() {
     const master = ctx.createGain();
     master.gain.setValueAtTime(0, now);
     master.gain.linearRampToValueAtTime(MASTER_VOLUME, now + FADE_DURATION);
-    master.connect(ctx.destination);
+    /* Analyser for sound-wave visualizer */
+    const analyser = ctx.createAnalyser();
+    analyser.fftSize = 2048;
+    analyser.smoothingTimeConstant = 0.85;
+    master.connect(analyser);
+    analyser.connect(ctx.destination);
+    setSharedAnalyser(analyser);
 
     const oscillators: (AudioBufferSourceNode | OscillatorNode)[] = [];
 
@@ -184,7 +191,7 @@ export function AmbientSound() {
     musicSrc.connect(master);
     musicSrc.start(now);
 
-    return { ctx, master, musicSrc, oscillators, noiseProcessor: noiseProc };
+    return { ctx, master, analyser, musicSrc, oscillators, noiseProcessor: noiseProc };
   }, []);
 
   /** Initialize audio: create context + nodes, try resume */
@@ -223,6 +230,7 @@ export function AmbientSound() {
     if (!nodesRef.current) return;
     const ref = nodesRef.current;
     nodesRef.current = null;
+    setSharedAnalyser(null);
     destroyNodes(ref);
     setPlaying(false);
   }, [destroyNodes]);
