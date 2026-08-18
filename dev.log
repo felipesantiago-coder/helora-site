@@ -8,3 +8,49 @@
   · optimizePackageImports
 
  HEAD / 200 in 442ms (next.js: 189ms, application-code: 253ms)
+$ next dev -p 3000
+▲ Next.js 16.3.0 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://21.0.5.173:3000
+- Environments: .env
+✓ Ready in 296ms
+✓ Running next.config.ts took 36ms
+- Experiments (use with caution):
+  · optimizePackageImports
+
+⨯ ./src/app/layout.tsx
+Error: Module not found: Can't resolve 'next/font/google/target.css'
+Axes can only be defined for variable fonts when the weight property is nonexistent or set to `variable`.
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Axes can only be defined for variable fonts when the weight property is nonexistent or set to `variable`.
+Error while looking up import map: Axes can only be defined for variable fonts when the weight property is nonexistent or set to `variable`.
+
+Debug info:
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Axes can only be defined for variable fonts when the weight property is nonexistent or set to `variable`.
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+$ next dev -p 3000
+▲ Next.js 16.3.0 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://21.0.5.173:3000
+- Environments: .env
+✓ Ready in 291ms
+✓ Running next.config.ts took 37ms
+- Experiments (use with caution):
+  · optimizePackageImports
+
+ GET / 200 in 3.2s (next.js: 2.9s, application-code: 273ms)
+$ next dev -p 3000
