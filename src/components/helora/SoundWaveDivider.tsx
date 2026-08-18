@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from 'react';
 import { getSharedAnalyser, onAnalyserChange } from '@/lib/audio-analyser';
-import type { ArrayBuffer as AB } from 'buffer';
 
 /**
  * Sound-wave divider between the hero and the next section.
@@ -30,7 +29,7 @@ export function SoundWaveDivider() {
     if (!ctx) return;
 
     let rafId = 0;
-    let dataArr: Uint8Array<AB> | null = null;
+    let dataArr: Uint8Array<ArrayBuffer> | null = null;
     let cw = 0;
     let ch = 0;
 
@@ -57,7 +56,7 @@ export function SoundWaveDivider() {
 
       /* Prepare data array when analyser becomes available */
       if (analyser && !dataArr) {
-        dataArr = new Uint8Array<AB>(analyser.frequencyBinCount);
+        dataArr = new Uint8Array(analyser.frequencyBinCount) as Uint8Array<ArrayBuffer>;
       }
       if (analyser && dataArr) {
         analyser.getByteTimeDomainData(dataArr);
