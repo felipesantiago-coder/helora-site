@@ -352,21 +352,6 @@ export function HeroSection() {
         <AmbientSound />
       </div>
 
-      <div
-        className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-10"
-        aria-hidden="true"
-      >
-        <svg
-          viewBox="0 0 1440 60"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-auto block"
-          preserveAspectRatio="none"
-          style={{ height: 'clamp(30px, 5vw, 60px)' }}
-        >
-          <path d="M0 20 Q360 55, 720 30 Q1080 5, 1440 40 L1440 60 L0 60Z" fill="#FFFFFF" />
-        </svg>
-      </div>
     </section>
   );
 }
