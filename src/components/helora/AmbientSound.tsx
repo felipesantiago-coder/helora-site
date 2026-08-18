@@ -4,7 +4,7 @@ import { useState, useRef, useCallback, useEffect } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
 
 const FADE_DURATION = 1.5;
-const MASTER_VOLUME = 2.5;
+const MASTER_VOLUME = 5.0;
 const LOOP_S = 48;
 
 function snap(f: number): number {
