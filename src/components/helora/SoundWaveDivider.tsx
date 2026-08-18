@@ -148,13 +148,13 @@ export function SoundWaveDivider() {
   return (
     <div
       className="w-full overflow-hidden"
-      style={{ marginTop: '-1px' }}
+      style={{ marginTop: 'clamp(-30px, -5vw, -60px)' }}
       aria-hidden="true"
     >
       <canvas
         ref={canvasRef}
         className="w-full block"
-        style={{ height: 'clamp(36px, 5vw, 64px)' }}
+        style={{ height: 'clamp(60px, 10vw, 120px)' }}
       />
     </div>
   );

@@ -6,12 +6,12 @@ import { SoundWaveDivider } from './SoundWaveDivider';
 
 export function ConceptSection() {
   return (
-    <section id="conceito" className="bg-helora-white relative">
+    <section id="conceito" className="relative">
       {/* Sound-wave visualizer: reacts to the ambient music in real-time */}
       <SoundWaveDivider />
 
       {/* Content wrapper with overflow-hidden for floating elements */}
-      <div className="py-12 md:py-24 relative overflow-hidden">
+      <div className="bg-helora-white py-12 md:py-24 relative overflow-hidden">
         {/* Forest layer: Understory, vertical vine patterns, entering the forest */}
         <OrganicNatureBg variant="understory" />
 
