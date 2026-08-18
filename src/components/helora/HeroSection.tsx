@@ -135,9 +135,9 @@ export function HeroSection() {
         const sy = vy + BORDER;
         const syw = sy * SW;
         const t = vy / VH;
-        const bR = 20 + t * 20;
-        const bG = 30 + t * 19;
-        const bB = 3 + t * 4;
+        const bR = 95 + t * 24;
+        const bG = 102 + t * 25;
+        const bB = 68 + t * 24;
 
         for (let vx = 0; vx < VW; vx++) {
           const sx = vx + BORDER;
@@ -274,7 +274,7 @@ export function HeroSection() {
       ref={sectionRef}
       id="hero"
       className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-12 md:pt-0"
-      style={{ background: 'linear-gradient(to bottom, #141E03, #283107)' }}
+      style={{ background: '#777F5C' }}
     >
       <canvas
         ref={canvasRef}
@@ -286,7 +286,7 @@ export function HeroSection() {
       <div
         className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
-        style={{ background: 'radial-gradient(ellipse at 50% 40%, transparent 25%, rgba(10,16,3,0.50) 100%)' }}
+        style={{ background: 'radial-gradient(ellipse at 50% 40%, transparent 25%, rgba(40,49,6,0.25) 100%)' }}
       />
 
       <div className="relative z-10 max-w-2xl mx-auto px-6 text-center">
@@ -312,11 +312,11 @@ export function HeroSection() {
         >
           Cuidar de você é
           <br />
-          <span className="text-helora-gainsboro/75">nossa essência.</span>
+          <span className="text-white/60">nossa essência.</span>
         </motion.h1>
 
         <motion.p
-          className="font-sans text-helora-gainsboro/80 text-[0.938rem] sm:text-base md:text-[1.063rem] max-w-md mx-auto mb-12 md:mb-10 leading-relaxed"
+          className="font-sans text-white/70 text-[0.938rem] sm:text-base md:text-[1.063rem] max-w-md mx-auto mb-12 md:mb-10 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
@@ -334,14 +334,14 @@ export function HeroSection() {
             href={getWhatsAppLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-pill bg-helora-sage text-white font-medium py-2.5 px-6 sm:py-3.5 sm:px-9 hover:bg-helora-gainsboro/25 hover:text-white border border-helora-sage/40 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 text-[15px] sm:text-base active:scale-[0.98] w-auto text-center"
+            className="btn-pill bg-[#283107] text-white font-medium py-2.5 px-6 sm:py-3.5 sm:px-9 hover:bg-[#1a2004] border border-[#283107] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 text-[15px] sm:text-base active:scale-[0.98] w-auto text-center"
           >
             Agendar sessão
             <span className="sr-only">(abre em nova janela)</span>
           </a>
           <button
             onClick={() => document.getElementById('equipe')?.scrollIntoView({ behavior: 'smooth' })}
-            className="font-sans font-medium text-[15px] text-helora-gainsboro/80 hover:text-white/90 border border-helora-gainsboro/20 hover:border-helora-gainsboro/40 rounded-full px-5 py-2.5 sm:px-6 sm:py-3 sm:text-base transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50"
+            className="font-sans font-medium text-[15px] text-white/80 border border-white/25 hover:border-white/40 hover:text-white rounded-full px-5 py-2.5 sm:px-6 sm:py-3 sm:text-base transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50"
           >
             Conheça a equipe
           </button>

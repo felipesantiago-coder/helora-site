@@ -143,7 +143,7 @@ export default function InstitucionalPage() {
       <main className="flex-1">
         {/* Hero */}
         <section className="relative overflow-hidden min-h-[100dvh] flex items-center justify-center"
-          style={{ background: 'linear-gradient(to bottom, #141E03, #283107)' }}>
+          style={{ background: '#777F5C' }}>
           <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(119,127,92,0.12) 0%, rgba(119,127,92,0) 70%)' }} />
           </div>
@@ -159,7 +159,7 @@ export default function InstitucionalPage() {
                 href={getWhatsAppLink('institucional')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-pill inline-flex items-center gap-2 bg-white/15 text-white border border-white/20 backdrop-blur-sm font-medium py-3 px-8 hover:bg-white/25 transition-[color,background-color,transform] duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 text-[15px] sm:text-base shadow-organic-lg active:scale-[0.98]"
+                className="btn-pill inline-flex items-center gap-2 bg-[#283107] text-white border border-[#283107] hover:bg-[#1a2004] font-medium py-3 px-8 transition-[color,background-color,transform] duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 text-[15px] sm:text-base shadow-organic-lg active:scale-[0.98]"
               >
                 <MessageCircle size={18} aria-hidden="true" />
                 Fale conosco

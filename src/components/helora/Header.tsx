@@ -148,7 +148,7 @@ export function Header() {
             onClick={handleBooking}
             className={`btn-pill text-sm font-medium px-5 py-2 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 ${
               isTransparent
-                ? 'bg-white/15 text-white border border-white/20 hover:bg-white/25 backdrop-blur-sm'
+                ? 'bg-[#283107] text-white border border-[#283107] hover:bg-[#1a2004]'
                 : 'bg-helora-sage text-white hover:bg-helora-dark-green'
             }`}
           >

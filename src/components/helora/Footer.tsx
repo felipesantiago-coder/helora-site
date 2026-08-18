@@ -40,7 +40,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-gradient-to-b from-[#141E03] to-[#283107] text-white mt-auto relative overflow-hidden">
+    <footer className="bg-gradient-to-b from-[#777F5C] to-[#283107] text-white mt-auto relative overflow-hidden">
       {/* Organic nature wave top */}
       <div
         className="absolute top-0 left-0 w-full overflow-hidden leading-[0] -translate-y-[99%]"
@@ -55,7 +55,7 @@ export function Footer() {
         >
           <path
             d="M0 30 Q180 65, 360 45 Q540 25, 720 50 Q900 75, 1080 40 Q1260 10, 1440 35 L1440 80 L0 80 Z"
-            fill="#283107"
+            fill="#777F5C"
           />
           <path
             d="M0 30 Q180 65, 360 45 Q540 25, 720 50 Q900 75, 1080 40 Q1260 10, 1440 35"
@@ -74,7 +74,7 @@ export function Footer() {
 
       {/* Top border accent */}
       <div
-        className="h-[2px] bg-gradient-to-r from-transparent via-helora-sage/40 to-transparent"
+        className="h-[2px] bg-gradient-to-r from-transparent via-white/10 to-transparent"
         aria-hidden="true"
       />
 
