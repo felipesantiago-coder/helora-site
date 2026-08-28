@@ -8,19 +8,16 @@ const REVIEWS = [
     author: 'Adriana Ribeiro de Lima Dantas',
     rating: 5,
     text: 'Gostaria de deixar meu agradecimento à psicóloga Elizângela. Ela é uma profissional maravilhosa que tem feito uma diferença enorme na minha vida. Graças ao seu trabalho, tenho aprendido a me conhecer cada vez melhor. É um espaço onde me sinto 100% acolhida, segura e ouvida. Recomendo muito!',
-    relativeTime: '6 dias atrás',
   },
   {
     author: 'Matheus Quintas',
     rating: 5,
     text: 'A psicóloga Maria de Fátima é uma excelente profissional, especialmente por seu amplo conhecimento em neuropsicologia. Além disso, a clínica é um ambiente muito agradável e acolhedor.',
-    relativeTime: '1 semana atrás',
   },
   {
     author: 'Miguel Jr',
     rating: 5,
     text: 'A profissional Elizângela Brito mudou a minha vida e a forma como me integro à sociedade. Graças ao seu trabalho, dedicação e profissionalismo, vivi uma transformação que levarei para sempre comigo.',
-    relativeTime: '1 semana atrás',
   },
 ];
 
@@ -58,9 +55,6 @@ function ReviewCard({ review }: { review: (typeof REVIEWS)[number] }) {
         <div>
           <p className="font-sans text-[0.875rem] font-medium text-[#2C2C2C]">
             {review.author}
-          </p>
-          <p className="font-sans text-[0.75rem] text-[#A39B82] mt-0.5">
-            {review.relativeTime}
           </p>
         </div>
         <Stars rating={review.rating} />
