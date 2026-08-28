@@ -39,7 +39,7 @@ const PROFESSIONALS = [
 
 export function TeamSection() {
   return (
-    <section id="equipe" className="section-padding bg-[#FAF8F5]">
+    <section id="equipe" className="section-padding bg-[#F0EBE3]">
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Section header */}
         <div className="max-w-[700px] mb-16 md:mb-20">

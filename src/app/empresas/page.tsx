@@ -151,7 +151,7 @@ export default function EmpresasPage() {
         </section>
 
         {/* Differentials */}
-        <section className="section-padding bg-[#F5F0EB]">
+        <section className="section-padding bg-[#F0EBE3]">
           <div className="max-w-[1200px] mx-auto px-6">
             <div className="max-w-[700px] mb-14">
               <p className="font-sans text-[12px] tracking-[0.15em] uppercase text-[#A39B82] mb-4">

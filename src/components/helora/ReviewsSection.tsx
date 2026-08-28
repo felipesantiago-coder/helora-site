@@ -72,7 +72,7 @@ function ReviewCard({ review }: { review: (typeof REVIEWS)[number] }) {
 // ── Main Section ───────────────────────────────────────────────────────
 export function ReviewsSection() {
   return (
-    <section className="section-padding bg-[#FAF8F5]">
+    <section className="section-padding bg-[#F0EBE3]">
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Section header */}
         <div className="max-w-[700px] mb-14">

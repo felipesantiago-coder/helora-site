@@ -187,7 +187,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}
-                className="font-sans text-base text-[#2C2C2C] hover:text-[#777F5C] py-3 px-3 rounded-xl hover:bg-[#F5F0EB] transition-colors duration-200 text-left focus:outline-none focus-visible:bg-[#F5F0EB]"
+                className="font-sans text-base text-[#2C2C2C] hover:text-[#777F5C] py-3 px-3 rounded-xl hover:bg-[#F0EBE3] transition-colors duration-200 text-left focus:outline-none focus-visible:bg-[#F0EBE3]"
               >
                 {link.label}
               </a>
@@ -196,7 +196,7 @@ export function Header() {
                 key={link.href}
                 ref={i === 0 ? firstMobileItemRef : undefined}
                 onClick={() => handleMobileNavClick(link.href)}
-                className="font-sans text-base text-[#2C2C2C] hover:text-[#777F5C] py-3 px-3 rounded-xl hover:bg-[#F5F0EB] transition-colors duration-200 text-left focus:outline-none focus-visible:bg-[#F5F0EB]"
+                className="font-sans text-base text-[#2C2C2C] hover:text-[#777F5C] py-3 px-3 rounded-xl hover:bg-[#F0EBE3] transition-colors duration-200 text-left focus:outline-none focus-visible:bg-[#F0EBE3]"
               >
                 {link.label}
               </button>

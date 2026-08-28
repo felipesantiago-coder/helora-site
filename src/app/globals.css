@@ -22,11 +22,11 @@
   --color-ring: #777F5C;
 
   /* ── Muted Palette ── */
-  --color-muted: #F5F0EB;
+  --color-muted: #F0EBE3;
   --color-muted-foreground: #6B6B6B;
 
   /* ── Section Alternating Backgrounds ── */
-  --color-section-warm: #F5F0EB;
+  --color-section-warm: #F0EBE3;
   --color-section-cream: #FAF8F5;
   --color-section-sage: #EDEEE8;
 
@@ -146,7 +146,7 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F5F0EB;
+  background: #F0EBE3;
 }
 ::-webkit-scrollbar-thumb {
   background: #C7C3AC;

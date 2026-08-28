@@ -41,7 +41,7 @@ export function ComingSoonSection() {
           {COMING_SOON.map((item) => (
             <div
               key={item.title}
-              className="bg-[#F5F0EB] rounded-2xl p-8 border border-[#E8E4DD]"
+              className="bg-[#F0EBE3] rounded-2xl p-8 border border-[#E8E4DD]"
             >
               <span className="inline-block font-sans text-[11px] tracking-[0.12em] uppercase text-[#777F5C] font-medium px-3 py-1 rounded-full bg-[#777F5C]/10 mb-5">
                 Em breve

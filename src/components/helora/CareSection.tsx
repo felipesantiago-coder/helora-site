@@ -23,7 +23,7 @@ export const CARE_PILLARS = [
 
 export function CareSection() {
   return (
-    <section id="cuidar" className="section-padding bg-[#F5F0EB]">
+    <section id="cuidar" className="section-padding bg-[#F0EBE3]">
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Section header */}
         <div className="max-w-[700px] mb-16">

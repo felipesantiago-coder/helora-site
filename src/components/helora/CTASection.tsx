@@ -2,7 +2,7 @@ import { getWhatsAppLink } from '@/lib/utils';
 
 export function CTASection() {
   return (
-    <section id="contato" className="section-padding bg-[#F5F0EB]">
+    <section id="contato" className="section-padding bg-[#F0EBE3]">
       <div className="max-w-[800px] mx-auto px-6 text-center">
         <p className="font-sans text-[12px] tracking-[0.15em] uppercase text-[#A39B82] mb-4">
           Vamos conversar
