@@ -1,3 +1,4 @@
+import { HeloraOrganicO } from '@/components/helora/HeloraOrganicO';
 import { getWhatsAppLink } from '@/lib/utils';
 
 export function Footer() {
@@ -7,13 +8,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 pb-12 border-b border-white/10">
           {/* Brand column */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-5">
-              <img
-                src="/logo-mark.svg"
-                alt=""
-                className="h-7 w-auto brightness-0 invert"
-                loading="lazy"
-                decoding="async"
+            <div className="flex items-center gap-2.5 mb-5">
+              <HeloraOrganicO
+                size={28}
+                className="text-[#777F5C]"
+                strokeWidth={2}
               />
               <span className="font-sans text-[10px] tracking-[0.18em] uppercase text-white/50 leading-none">
                 saúde integrada

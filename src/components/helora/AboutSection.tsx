@@ -1,3 +1,5 @@
+import { HeloraOrganicO } from '@/components/helora/HeloraOrganicO';
+
 export function AboutSection() {
   return (
     <section id="sobre" className="section-padding bg-[#FAF8F5]">
@@ -25,9 +27,18 @@ export function AboutSection() {
             Porque cuidar não é apenas tratar. É compreender, acompanhar e criar condições para que você possa viver com mais equilíbrio, presença e qualidade.
           </p>
         </div>
-        <p className="font-serif italic text-[1.1rem] sm:text-[1.25rem] text-[#777F5C] mt-12 leading-[1.5]">
-          Helora. Um cuidado que vê você por inteiro.
-        </p>
+
+        {/* Tagline with organic O watermark */}
+        <div className="relative mt-14">
+          <HeloraOrganicO
+            size={180}
+            className="absolute -top-10 -left-6 text-[#777F5C]/[0.07] pointer-events-none"
+            strokeWidth={2}
+          />
+          <p className="font-serif italic text-[1.1rem] sm:text-[1.25rem] text-[#777F5C] leading-[1.5] relative z-10">
+            Helora. Um cuidado que vê você por inteiro.
+          </p>
+        </div>
       </div>
     </section>
   );

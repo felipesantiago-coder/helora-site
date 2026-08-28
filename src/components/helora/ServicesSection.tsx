@@ -1,4 +1,6 @@
-export const SERVICES = [
+import { HeloraOrganicO } from '@/components/helora/HeloraOrganicO';
+
+const SERVICES: { title: string; description: string }[] = [
   {
     title: 'Psicologia clínica',
     description:
@@ -24,7 +26,7 @@ export const SERVICES = [
     description:
       'Uma investigação ampla das funções cognitivas, emocionais e comportamentais, que integra diferentes aspectos do funcionamento individual para compreender demandas, potencialidades e necessidades de cuidado.',
   },
-] as const;
+];
 
 export function ServicesSection() {
   return (
@@ -43,22 +45,34 @@ export function ServicesSection() {
           </p>
         </div>
 
-        {/* Services list */}
-        <div className="space-y-0">
-          {SERVICES.map((service, index) => (
-            <div
+        {/* Service cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {SERVICES.map((service) => (
+            <article
               key={service.title}
-              className={`py-8 sm:py-10 ${index < SERVICES.length - 1 ? 'border-b border-[#E8E4DD]' : ''}`}
+              className="relative overflow-hidden rounded-2xl bg-white border border-[#E8E4DD] p-7 sm:p-8"
             >
-              <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-8">
-                <h3 className="font-serif text-[1.15rem] sm:text-[1.25rem] text-[#2C2C2C] leading-tight shrink-0 sm:w-[320px]">
-                  {service.title}
-                </h3>
-                <p className="font-sans text-[0.95rem] sm:text-base text-[#5A5A5A] leading-[1.8]">
-                  {service.description}
-                </p>
-              </div>
-            </div>
+              {/* Small organic O icon */}
+              <HeloraOrganicO
+                size={28}
+                className="text-[#777F5C] mb-5"
+                strokeWidth={2.5}
+              />
+
+              <h3 className="font-serif text-[1.1rem] sm:text-[1.15rem] text-[#2C2C2C] leading-tight mb-3">
+                {service.title}
+              </h3>
+              <p className="font-sans text-[0.875rem] sm:text-[0.9rem] text-[#5A5A5A] leading-[1.75] relative z-10">
+                {service.description}
+              </p>
+
+              {/* Large watermark O — bottom right */}
+              <HeloraOrganicO
+                size={140}
+                className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 text-[#777F5C]/[0.06] pointer-events-none"
+                strokeWidth={2}
+              />
+            </article>
           ))}
         </div>
       </div>

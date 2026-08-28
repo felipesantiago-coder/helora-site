@@ -1,5 +1,6 @@
 'use client';
 
+import { HeloraOrganicO } from '@/components/helora/HeloraOrganicO';
 import { getWhatsAppLink } from '@/lib/utils';
 
 export function HeroSection() {
@@ -19,6 +20,18 @@ export function HeroSection() {
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-[#2C241C]/50" />
       </div>
+
+      {/* Floating organic O — decorative background element */}
+      <HeloraOrganicO
+        size={320}
+        className="absolute top-[15%] right-[-5%] text-white/[0.04] pointer-events-none hidden md:block"
+        strokeWidth={1.5}
+      />
+      <HeloraOrganicO
+        size={200}
+        className="absolute bottom-[12%] left-[-3%] text-white/[0.03] pointer-events-none hidden lg:block"
+        strokeWidth={1.5}
+      />
 
       {/* Content */}
       <div className="relative z-10 max-w-2xl mx-auto px-6 text-center">

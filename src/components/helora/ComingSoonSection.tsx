@@ -1,4 +1,6 @@
-export const COMING_SOON = [
+import { HeloraOrganicO } from '@/components/helora/HeloraOrganicO';
+
+const COMING_SOON: { title: string; description: string }[] = [
   {
     title: 'Nutrição',
     description:
@@ -13,7 +15,7 @@ export const COMING_SOON = [
     title: 'Fisioterapia',
     description: 'O corpo também guarda histórias. Movimento que cura.',
   },
-] as const;
+];
 
 export function ComingSoonSection() {
   return (
@@ -41,7 +43,7 @@ export function ComingSoonSection() {
           {COMING_SOON.map((item) => (
             <div
               key={item.title}
-              className="bg-[#F0EBE3] rounded-2xl p-8 border border-[#E8E4DD]"
+              className="relative overflow-hidden bg-[#F0EBE3] rounded-2xl p-8 border border-[#E8E4DD]"
             >
               <span className="inline-block font-sans text-[11px] tracking-[0.12em] uppercase text-[#777F5C] font-medium px-3 py-1 rounded-full bg-[#777F5C]/10 mb-5">
                 Em breve
@@ -49,9 +51,15 @@ export function ComingSoonSection() {
               <h3 className="font-serif text-[1.2rem] text-[#2C2C2C] mb-3 leading-tight">
                 {item.title}
               </h3>
-              <p className="font-sans text-[0.875rem] text-[#6B6B6B] leading-[1.7]">
+              <p className="font-sans text-[0.875rem] text-[#6B6B6B] leading-[1.7] relative z-10">
                 {item.description}
               </p>
+              {/* Watermark organic O */}
+              <HeloraOrganicO
+                size={120}
+                className="absolute -bottom-4 -right-4 text-[#A39B82]/[0.08] pointer-events-none"
+                strokeWidth={1.5}
+              />
             </div>
           ))}
         </div>

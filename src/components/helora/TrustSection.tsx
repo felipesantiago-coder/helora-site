@@ -1,3 +1,5 @@
+import { HeloraOrganicO } from '@/components/helora/HeloraOrganicO';
+
 const FEATURED_STAT = {
   number: '+8.000',
   label: 'atendimentos',
@@ -5,7 +7,7 @@ const FEATURED_STAT = {
     'Experiências clínicas que se solidificam em cuidado, não em pressa.',
 };
 
-const TRUST_ITEMS = [
+const TRUST_ITEMS: { label: string; description: string }[] = [
   {
     label: 'Profissionais certificados',
     description:
@@ -21,7 +23,7 @@ const TRUST_ITEMS = [
     description:
       'Um tempo reservado só para você, com presença de verdade em cada encontro.',
   },
-] as const;
+];
 
 export function TrustSection() {
   return (
@@ -37,11 +39,18 @@ export function TrustSection() {
           </h2>
         </div>
 
-        {/* Featured stat */}
-        <div className="mb-14 pb-14 border-b border-white/[0.08]">
-          <span className="block font-serif text-[3rem] sm:text-[4rem] md:text-[4.5rem] text-[#A39B82] leading-none tracking-[-0.02em]">
-            {FEATURED_STAT.number}
-          </span>
+        {/* Featured stat with organic O */}
+        <div className="relative mb-14 pb-14 border-b border-white/[0.08]">
+          <div className="relative inline-block">
+            <HeloraOrganicO
+              size={180}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/[0.03]"
+              strokeWidth={2}
+            />
+            <span className="relative z-10 block font-serif text-[3rem] sm:text-[4rem] md:text-[4.5rem] text-[#A39B82] leading-none tracking-[-0.02em]">
+              {FEATURED_STAT.number}
+            </span>
+          </div>
           <h3 className="font-sans text-[14px] tracking-[0.04em] font-medium text-white mt-3 mb-3 leading-tight">
             {FEATURED_STAT.label}
           </h3>
@@ -50,7 +59,7 @@ export function TrustSection() {
           </p>
         </div>
 
-        {/* Trust items — 3-column grid, all perfectly aligned */}
+        {/* Trust items — 3-column grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           {TRUST_ITEMS.map((item) => (
             <div key={item.label} className="text-left">

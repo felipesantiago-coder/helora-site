@@ -1,4 +1,6 @@
-export const CARE_PILLARS = [
+import { HeloraOrganicO } from '@/components/helora/HeloraOrganicO';
+
+const CARE_PILLARS: { number: string; title: string; description: string }[] = [
   {
     number: '01',
     title: 'Tempo de verdade',
@@ -19,7 +21,7 @@ export const CARE_PILLARS = [
     title: 'Ambiente que acolhe',
     description: 'Sereno e confortável; o cuidado começa pela sensação.',
   },
-] as const;
+];
 
 export function CareSection() {
   return (
@@ -48,11 +50,19 @@ export function CareSection() {
           {CARE_PILLARS.map((pillar) => (
             <div
               key={pillar.number}
-              className="bg-white rounded-2xl p-8 border border-[#E8E4DD] hover:shadow-md transition-shadow duration-300"
+              className="relative overflow-hidden bg-white rounded-2xl p-8 border border-[#E8E4DD] hover:shadow-md transition-shadow duration-300"
             >
-              <span className="font-serif text-[2.5rem] text-[#E8E4DD] leading-none block mb-4">
-                {pillar.number}
-              </span>
+              {/* Organic O behind the number */}
+              <div className="relative mb-5">
+                <HeloraOrganicO
+                  size={52}
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#E8E4DD]"
+                  strokeWidth={2}
+                />
+                <span className="relative z-10 font-serif text-[2.5rem] text-[#A39B82] leading-none block">
+                  {pillar.number}
+                </span>
+              </div>
               <h3 className="font-serif text-[1.1rem] sm:text-[1.15rem] text-[#2C2C2C] mb-3 leading-tight">
                 {pillar.title}
               </h3>
