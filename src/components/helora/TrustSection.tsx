@@ -25,11 +25,11 @@ const TRUST_ITEMS: { label: string; description: string }[] = [
 
 export function TrustSection() {
   return (
-    <section className="section-padding bg-[#2C241C]">
+    <section className="section-padding bg-[#9C6146]">
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Section header */}
         <div className="max-w-[700px] mb-16">
-          <p className="font-sans text-[12px] tracking-[0.15em] uppercase text-[#A39B82] mb-4">
+          <p className="font-sans text-[12px] tracking-[0.15em] uppercase text-white/60 mb-4">
             Por que a Helora
           </p>
           <h2 className="font-serif text-[1.75rem] sm:text-[2.25rem] md:text-[2.75rem] text-white leading-[1.2] text-balance">
@@ -39,7 +39,7 @@ export function TrustSection() {
 
         {/* Featured stat */}
         <div className="mb-14 pb-14 border-b border-white/[0.08]">
-          <span className="block font-serif text-[3rem] sm:text-[4rem] md:text-[4.5rem] text-[#A39B82] leading-none tracking-[-0.02em]">
+          <span className="block font-serif text-[3rem] sm:text-[4rem] md:text-[4.5rem] text-white/90 leading-none tracking-[-0.02em]">
             {FEATURED_STAT.number}
           </span>
           <h3 className="font-sans text-[14px] tracking-[0.04em] font-medium text-white mt-3 mb-3 leading-tight">
