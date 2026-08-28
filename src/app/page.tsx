@@ -25,7 +25,7 @@ const TrustSection = dynamic(
 
 const ReviewsSection = dynamic(
   () => import('@/components/helora/ReviewsSection').then((m) => ({ default: m.ReviewsSection })),
-  { ssr: false }
+  { ssr: true }
 );
 
 const LocationSection = dynamic(
