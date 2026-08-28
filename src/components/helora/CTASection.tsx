@@ -10,7 +10,6 @@ export function CTASection() {
           <HeloraOrganicO
             size={64}
             className="text-[#777F5C] mx-auto"
-            strokeWidth={2}
           />
         </div>
 

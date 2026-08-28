@@ -57,7 +57,6 @@ export function CareSection() {
                 <HeloraOrganicO
                   size={52}
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#E8E4DD]"
-                  strokeWidth={2}
                 />
                 <span className="relative z-10 font-serif text-[2.5rem] text-[#A39B82] leading-none block">
                   {pillar.number}

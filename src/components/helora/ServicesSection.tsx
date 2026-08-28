@@ -56,7 +56,6 @@ export function ServicesSection() {
               <HeloraOrganicO
                 size={28}
                 className="text-[#777F5C] mb-5"
-                strokeWidth={2.5}
               />
 
               <h3 className="font-serif text-[1.1rem] sm:text-[1.15rem] text-[#2C2C2C] leading-tight mb-3">
@@ -70,7 +69,6 @@ export function ServicesSection() {
               <HeloraOrganicO
                 size={140}
                 className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 text-[#777F5C]/[0.06] pointer-events-none"
-                strokeWidth={2}
               />
             </article>
           ))}

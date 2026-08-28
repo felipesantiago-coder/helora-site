@@ -25,12 +25,10 @@ export function HeroSection() {
       <HeloraOrganicO
         size={320}
         className="absolute top-[15%] right-[-5%] text-white/[0.04] pointer-events-none hidden md:block"
-        strokeWidth={1.5}
       />
       <HeloraOrganicO
         size={200}
         className="absolute bottom-[12%] left-[-3%] text-white/[0.03] pointer-events-none hidden lg:block"
-        strokeWidth={1.5}
       />
 
       {/* Content */}

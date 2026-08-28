@@ -33,7 +33,6 @@ export function AboutSection() {
           <HeloraOrganicO
             size={180}
             className="absolute -top-10 -left-6 text-[#777F5C]/[0.07] pointer-events-none"
-            strokeWidth={2}
           />
           <p className="font-serif italic text-[1.1rem] sm:text-[1.25rem] text-[#777F5C] leading-[1.5] relative z-10">
             Helora. Um cuidado que vê você por inteiro.

@@ -58,7 +58,6 @@ export function ComingSoonSection() {
               <HeloraOrganicO
                 size={120}
                 className="absolute -bottom-4 -right-4 text-[#A39B82]/[0.08] pointer-events-none"
-                strokeWidth={1.5}
               />
             </div>
           ))}

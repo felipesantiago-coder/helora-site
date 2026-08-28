@@ -45,7 +45,6 @@ export function TrustSection() {
             <HeloraOrganicO
               size={180}
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/[0.03]"
-              strokeWidth={2}
             />
             <span className="relative z-10 block font-serif text-[3rem] sm:text-[4rem] md:text-[4.5rem] text-[#A39B82] leading-none tracking-[-0.02em]">
               {FEATURED_STAT.number}

@@ -12,7 +12,6 @@ export function Footer() {
               <HeloraOrganicO
                 size={28}
                 className="text-[#777F5C]"
-                strokeWidth={2}
               />
               <span className="font-sans text-[10px] tracking-[0.18em] uppercase text-white/50 leading-none">
                 saúde integrada
