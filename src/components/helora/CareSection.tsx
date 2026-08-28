@@ -52,22 +52,20 @@ export function CareSection() {
               key={pillar.number}
               className="relative overflow-hidden bg-white rounded-2xl p-8 border border-[#E8E4DD] hover:shadow-md transition-shadow duration-300"
             >
-              {/* Organic O wrapping the number */}
-              <div className="relative w-[52px] h-[60px] mb-5">
-                <HeloraOrganicO
-                  size={52}
-                  className="absolute inset-0 text-[#777F5C]/20"
-                />
-                <span className="absolute inset-0 flex items-center justify-center font-serif text-[1.4rem] text-[#777F5C] leading-none">
-                  {pillar.number}
-                </span>
-              </div>
+              <span className="block font-serif text-[1.4rem] text-[#777F5C] leading-none mb-5">
+                {pillar.number}
+              </span>
               <h3 className="font-serif text-[1.1rem] sm:text-[1.15rem] text-[#2C2C2C] mb-3 leading-tight">
                 {pillar.title}
               </h3>
-              <p className="font-sans text-[0.875rem] text-[#6B6B6B] leading-[1.7]">
+              <p className="font-sans text-[0.875rem] text-[#6B6B6B] leading-[1.7] relative z-10">
                 {pillar.description}
               </p>
+              {/* Watermark organic O — bottom right */}
+              <HeloraOrganicO
+                size={120}
+                className="absolute -bottom-4 -right-4 text-[#777F5C]/[0.06] pointer-events-none"
+              />
             </div>
           ))}
         </div>
