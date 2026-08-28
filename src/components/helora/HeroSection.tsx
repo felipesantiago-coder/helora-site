@@ -18,7 +18,7 @@ export function HeroSection() {
           loading="eager"
         />
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-[#9C6146]/40" />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       {/* Floating organic O — decorative background element */}
