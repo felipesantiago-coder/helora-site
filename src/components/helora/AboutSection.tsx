@@ -1,5 +1,3 @@
-import { HeloraOrganicO } from '@/components/helora/HeloraOrganicO';
-
 export function AboutSection() {
   return (
     <section id="sobre" className="section-padding bg-[#FAF8F5]">
@@ -28,13 +26,8 @@ export function AboutSection() {
           </p>
         </div>
 
-        {/* Tagline with organic O watermark */}
-        <div className="relative mt-14">
-          <HeloraOrganicO
-            size={180}
-            className="absolute -top-10 -left-6 text-[#777F5C]/[0.07] pointer-events-none"
-          />
-          <p className="font-serif italic text-[1.1rem] sm:text-[1.25rem] text-[#777F5C] leading-[1.5] relative z-10">
+        <div className="mt-14">
+          <p className="font-serif italic text-[1.1rem] sm:text-[1.25rem] text-[#777F5C] leading-[1.5]">
             Helora. Um cuidado que vê você por inteiro.
           </p>
         </div>
