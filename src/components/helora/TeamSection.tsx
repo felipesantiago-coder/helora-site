@@ -1,15 +1,15 @@
 const PROFESSIONALS = [
   {
-    name: 'Elizângela Brito',
-    crp: 'CRP 01/25.683',
-    title: 'Psicóloga Clínica · Neuropsicóloga · Avaliação',
-    quote: 'Um olhar humano, que respeita a singularidade de cada pessoa.',
+    name: 'Maria de Fátima Soares Correia',
+    crp: 'CRP 01/25456',
+    title: 'Psicóloga Clínica · Neuropsicologia',
+    quote: 'Cuidar é um ato humano antes de ser técnico.',
     bio: [
-      'Sou psicóloga clínica, especialista em Psicologia Humanista com Abordagem Centrada na Pessoa e em Neuropsicologia. Atuo com psicoterapia para crianças, adolescentes, adultos e idosos, ofereço um atendimento humanizado, ético e baseado em evidências, promovendo saúde mental, autoconhecimento e qualidade de vida, respeitando a singularidade de cada pessoa e auxiliando no desenvolvimento de recursos para enfrentar desafios e alcançar seu potencial.',
-      'Realizo Avaliações Psicológicas e Neuropsicológicas de crianças, adolescentes, adultos e idosos, utilizando entrevistas e instrumentos padronizados para investigar o funcionamento cognitivo, emocional e comportamental, auxiliando no diagnóstico, planejamento terapêutico e reabilitação.',
-      'A avaliação neuropsicológica é indicada para investigação de condições como TDAH, Transtorno do Espectro Autista (TEA), dificuldades de aprendizagem, alterações de memória, demências, doenças neurológicas e outras condições que impactam o funcionamento cognitivo e emocional.',
+      'Psicóloga clínica, especialista em Neuropsicologia e palestrante, dedico minha atuação à promoção da saúde mental com excelência técnica, ética e acolhimento. Ao longo da minha trajetória profissional, já realizei mais de 8.000 atendimentos clínicos, consolidando uma prática pautada em evidências científicas e no respeito à singularidade de cada paciente.',
+      'Atendo crianças, adolescentes, adultos e idosos, oferecendo psicoterapia e avaliação neuropsicológica com foco na compreensão do funcionamento cognitivo, emocional e comportamental, contribuindo para diagnósticos precisos e intervenções individualizadas.',
+      'Meu compromisso é proporcionar um ambiente seguro, ético e confidencial, promovendo autoconhecimento, equilíbrio emocional e qualidade de vida.',
     ],
-    photo: '/elizangela-profissional.jpeg',
+    photo: '/fatima-profissional.jpeg',
   },
   {
     name: 'Juliana Santos Ribeiro Veras de Alencar',
@@ -24,16 +24,16 @@ const PROFESSIONALS = [
     photo: '/juliana-profissional.jpeg',
   },
   {
-    name: 'Maria de Fátima Soares Correia',
-    crp: 'CRP 01/25456',
-    title: 'Psicóloga Clínica · Neuropsicologia',
-    quote: 'Cuidar é um ato humano antes de ser técnico.',
+    name: 'Elizângela Brito',
+    crp: 'CRP 01/25.683',
+    title: 'Psicóloga Clínica · Neuropsicóloga · Avaliação',
+    quote: 'Um olhar humano, que respeita a singularidade de cada pessoa.',
     bio: [
-      'Psicóloga clínica, especialista em Neuropsicologia e palestrante, dedico minha atuação à promoção da saúde mental com excelência técnica, ética e acolhimento. Ao longo da minha trajetória profissional, já realizei mais de 8.000 atendimentos clínicos, consolidando uma prática pautada em evidências científicas e no respeito à singularidade de cada paciente.',
-      'Atendo crianças, adolescentes, adultos e idosos, oferecendo psicoterapia e avaliação neuropsicológica com foco na compreensão do funcionamento cognitivo, emocional e comportamental, contribuindo para diagnósticos precisos e intervenções individualizadas.',
-      'Meu compromisso é proporcionar um ambiente seguro, ético e confidencial, promovendo autoconhecimento, equilíbrio emocional e qualidade de vida.',
+      'Sou psicóloga clínica, especialista em Psicologia Humanista com Abordagem Centrada na Pessoa e em Neuropsicologia. Atuo com psicoterapia para crianças, adolescentes, adultos e idosos, ofereço um atendimento humanizado, ético e baseado em evidências, promovendo saúde mental, autoconhecimento e qualidade de vida, respeitando a singularidade de cada pessoa e auxiliando no desenvolvimento de recursos para enfrentar desafios e alcançar seu potencial.',
+      'Realizo Avaliações Psicológicas e Neuropsicológicas de crianças, adolescentes, adultos e idosos, utilizando entrevistas e instrumentos padronizados para investigar o funcionamento cognitivo, emocional e comportamental, auxiliando no diagnóstico, planejamento terapêutico e reabilitação.',
+      'A avaliação neuropsicológica é indicada para investigação de condições como TDAH, Transtorno do Espectro Autista (TEA), dificuldades de aprendizagem, alterações de memória, demências, doenças neurológicas e outras condições que impactam o funcionamento cognitivo e emocional.',
     ],
-    photo: '/fatima-profissional.jpeg',
+    photo: '/elizangela-profissional.jpeg',
   },
 ] as const;
 
