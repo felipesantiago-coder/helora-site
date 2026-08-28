@@ -22,7 +22,7 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 max-w-2xl mx-auto px-6 text-center">
-        <h1 className="font-serif font-light text-[2rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem] text-white tracking-[-0.02em] leading-[1.15] mb-6 text-balance">
+        <h1 className="font-serif font-light text-[2.75rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem] text-white tracking-[-0.02em] leading-[1.1] mb-6 text-balance">
           Cuidar de você é a nossa essência.
         </h1>
         <p className="font-sans text-white/90 text-[0.95rem] sm:text-base md:text-[1.05rem] max-w-lg mx-auto mb-10 leading-relaxed">

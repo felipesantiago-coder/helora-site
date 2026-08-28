@@ -45,7 +45,7 @@ function HeroFallback() {
       className="min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#2C241C]"
     >
       <div className="max-w-2xl mx-auto px-6 text-center">
-        <h1 className="font-serif font-light text-[2rem] sm:text-[3rem] text-white tracking-[-0.02em] leading-[1.15] mb-6">
+        <h1 className="font-serif font-light text-[2.75rem] sm:text-[3rem] text-white tracking-[-0.02em] leading-[1.1] mb-6">
           Cuidar de você é a nossa essência.
         </h1>
         <p className="font-sans text-white/70 text-base max-w-md mx-auto mb-10 leading-relaxed">
