@@ -1,7 +1,7 @@
 export function AboutSection() {
   return (
     <section id="sobre" className="section-padding bg-[#FAF8F5]">
-      <div className="max-w-[800px] mx-auto px-6">
+      <div className="max-w-[800px] mx-auto px-6 md:my-10 lg:my-16">
         <p className="font-sans text-[12px] tracking-[0.15em] uppercase text-[#A39B82] mb-4">
           A Helora
         </p>
