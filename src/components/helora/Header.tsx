@@ -2,17 +2,14 @@
 
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { getWhatsAppLink } from '@/lib/utils';
 
 const NAV_LINKS = [
   { label: 'Início', href: '#hero' },
-  { label: 'Conceito', href: '#conceito' },
-  { label: 'Serviços', href: '#servicos' },
+  { label: 'Helora para Empresas', href: '#empresas' },
   { label: 'Convênios', href: '/convenios' },
-  { label: 'Equipe', href: '#equipe' },
-  { label: 'Institucional', href: '/institucional' },
-  { label: 'Localização', href: '#localizacao' },
+  { label: 'Contato', href: '#contato' },
 ] as const;
 
 export function Header() {
@@ -24,7 +21,6 @@ export function Header() {
   const firstMobileItemRef = useRef<HTMLButtonElement>(null);
   const isTransparent = scrollY < 80 && isHome;
 
-  // Scroll listener (only active on homepage)
   useEffect(() => {
     if (!isHome) return;
     const handleScroll = () => setScrollY(window.scrollY);
@@ -46,7 +42,6 @@ export function Header() {
     }
   }, [mobileOpen]);
 
-  /** Navigate to a hash link (on homepage scroll, otherwise go to /#hash) */
   const navigateToHash = useCallback(
     (hash: string) => {
       if (isHome) {
@@ -63,7 +58,7 @@ export function Header() {
     (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
       if (href.startsWith('/')) {
         setMobileOpen(false);
-        return; // let default <a> navigation happen
+        return;
       }
       e.preventDefault();
       setMobileOpen(false);
@@ -93,78 +88,70 @@ export function Header() {
     }
   }, [isHome, router]);
 
-  const handleBooking = useCallback(() => {
-    setMobileOpen(false);
-    window.open(getWhatsAppLink(), '_blank', 'noopener,noreferrer');
-  }, []);
-
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
         isTransparent
           ? 'bg-transparent text-white'
-          : 'bg-helora-white/95 backdrop-blur-md shadow-organic text-helora-dark-coffee'
+          : 'bg-[#FAF8F5]/95 backdrop-blur-md text-[#2C2C2C]'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 h-14 sm:h-16 lg:h-[72px] flex items-center justify-between">
+      <div className="max-w-[1200px] mx-auto px-6 h-16 sm:h-18 lg:h-20 flex items-center justify-between">
         {/* Logo */}
         <button
           onClick={handleLogoClick}
-          className="focus:outline-none transition-all duration-300 hidden md:inline-flex flex-col items-center"
+          className="focus:outline-none transition-all duration-300 flex items-center gap-2"
           aria-label="Voltar ao início"
         >
           <img
             src="/logo-mark.svg"
             alt=""
-            className={`h-6 sm:h-7 w-auto shrink-0 transition-all duration-300 ${!isTransparent ? 'invert' : ''}`}
+            className={`h-7 w-auto shrink-0 transition-all duration-300 ${!isTransparent ? '' : 'brightness-0 invert'}`}
           />
           <span
-            className={
-              'w-full text-center font-sans text-[9px] sm:text-[10px] tracking-[0.15em] uppercase leading-none mt-1.5 transition-colors duration-300 ' +
-              (isTransparent ? 'text-white/90' : 'text-helora-tan')
-            }
+            className={`font-sans text-[10px] tracking-[0.18em] uppercase leading-none transition-colors duration-300 ${
+              isTransparent ? 'text-white/80' : 'text-[#A39B82]'
+            }`}
           >
             saúde integrada
           </span>
         </button>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6 lg:gap-8" aria-label="Navegação principal">
+        <nav className="hidden lg:flex items-center gap-10" aria-label="Navegação principal">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className={`font-sans text-sm font-medium transition-colors duration-200 focus:outline-none focus-visible:underline hover:font-semibold ${
+              className={`font-sans text-[13px] tracking-[0.04em] transition-colors duration-300 focus:outline-none focus-visible:underline ${
                 isTransparent
-                  ? 'text-white/90 hover:text-white'
-                  : 'text-helora-tan hover:text-helora-dark-coffee'
+                  ? 'text-white/80 hover:text-white'
+                  : 'text-[#6B6B6B] hover:text-[#2C2C2C]'
               }`}
             >
               {link.label}
             </a>
           ))}
-          <button
-            onClick={handleBooking}
-            className={`btn-pill text-sm font-medium px-5 py-2 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 ${
+          <a
+            href={getWhatsAppLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`font-sans text-[13px] tracking-[0.08em] uppercase font-medium px-6 py-2.5 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 ${
               isTransparent
-                ? 'bg-[#283107] text-white border border-[#3a4a12] hover:bg-[#1a2004]'
-                : 'bg-helora-sage text-white hover:bg-helora-dark-green'
+                ? 'bg-white text-[#2C2C2C] hover:bg-white/90'
+                : 'bg-[#777F5C] text-white hover:bg-[#283107]'
             }`}
           >
-            <span className="flex items-center gap-1.5">
-              <MessageCircle size={14} aria-hidden="true" />
-              Agendar sessão
-              <span className="sr-only">(abre em nova janela)</span>
-            </span>
-          </button>
+            Marcar uma conversa
+          </a>
         </nav>
 
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen((prev) => !prev)}
-          className={`md:hidden p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 rounded-lg transition-colors duration-200 ${
-            isTransparent ? 'text-white' : 'text-helora-dark-coffee'
+          className={`lg:hidden p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 rounded-lg transition-colors duration-200 ${
+            isTransparent ? 'text-white' : 'text-[#2C2C2C]'
           }`}
           aria-label={mobileOpen ? 'Fechar menu' : 'Abrir menu'}
           aria-expanded={mobileOpen}
@@ -176,7 +163,7 @@ export function Header() {
       {/* Mobile overlay */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 top-14 sm:top-16 bg-helora-dark-coffee/20 backdrop-blur-sm z-40 md:hidden"
+          className="fixed inset-0 top-16 sm:top-18 bg-black/20 backdrop-blur-sm z-40 lg:hidden"
           onClick={() => setMobileOpen(false)}
           aria-hidden="true"
         />
@@ -184,30 +171,30 @@ export function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden fixed top-14 sm:top-16 left-0 right-0 bg-helora-white shadow-organic-lg z-40 transition-transform duration-300 ease-in-out ${
+        className={`lg:hidden fixed top-16 sm:top-18 left-0 right-0 bg-[#FAF8F5] z-40 transition-transform duration-300 ease-in-out shadow-lg ${
           mobileOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 pointer-events-none'
         }`}
       >
-        <nav className="flex flex-col py-3 px-4 gap-0.5" aria-label="Menu mobile">
+        <nav className="flex flex-col py-4 px-6 gap-1" aria-label="Menu mobile">
           {NAV_LINKS.map((link, i) => (
             <button
               key={link.href}
               ref={i === 0 ? firstMobileItemRef : undefined}
               onClick={() => handleMobileNavClick(link.href)}
-              className="font-sans text-base font-medium text-helora-dark-coffee hover:text-helora-sage py-3 px-3 rounded-xl hover:bg-helora-gainsboro/50 transition-colors duration-200 text-left focus:outline-none focus-visible:bg-helora-gainsboro/50"
+              className="font-sans text-base text-[#2C2C2C] hover:text-[#777F5C] py-3 px-3 rounded-xl hover:bg-[#F5F0EB] transition-colors duration-200 text-left focus:outline-none focus-visible:bg-[#F5F0EB]"
             >
               {link.label}
             </button>
           ))}
-          <div className="pt-2 px-3">
-            <button
-              onClick={handleBooking}
-              className="w-full btn-pill bg-helora-sage text-white text-sm font-medium px-5 py-3 hover:bg-helora-dark-green transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 flex items-center justify-center gap-2"
+          <div className="pt-3 px-3">
+            <a
+              href={getWhatsAppLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center font-sans text-sm font-medium px-6 py-3.5 rounded-full bg-[#777F5C] text-white hover:bg-[#283107] transition-colors duration-200"
             >
-              <MessageCircle size={16} aria-hidden="true" />
-              Agendar sessão
-              <span className="sr-only">(abre em nova janela)</span>
-            </button>
+              Marcar uma conversa
+            </a>
           </div>
         </nav>
       </div>

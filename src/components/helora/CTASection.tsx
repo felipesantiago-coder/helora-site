@@ -1,34 +1,26 @@
-'use client';
-
-import { MessageCircle } from 'lucide-react';
-import { ScrollReveal } from './ScrollReveal';
-import { OrganicNatureBg } from './OrganicNatureBg';
 import { getWhatsAppLink } from '@/lib/utils';
 
 export function CTASection() {
   return (
-    <section id="agendamento" className="relative overflow-hidden py-16 md:py-28">
-      <OrganicNatureBg variant="soil" />
-
-      <div className="max-w-2xl mx-auto px-4 text-center relative z-10">
-        <ScrollReveal>
-          <h2 className="font-serif font-normal text-3xl md:text-5xl text-helora-dark-coffee tracking-tight text-balance mb-6">
-            Vamos começar?
-          </h2>
-          <p className="font-sans text-helora-tan text-lg md:text-xl leading-relaxed mb-10 max-w-lg mx-auto">
-            O primeiro passo é conversar. Estamos aqui.
-          </p>
-          <a
-            href={getWhatsAppLink()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-pill inline-flex items-center gap-2 bg-helora-sage text-white font-medium py-3 px-8 sm:py-3.5 sm:px-9 hover:bg-helora-dark-green transition-[color,background-color,transform] duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 text-[15px] sm:text-base shadow-organic-lg active:scale-[0.98]"
-          >
-            <MessageCircle size={18} aria-hidden="true" />
-            Agendar sessão
-            <span className="sr-only">(abre em nova janela)</span>
-          </a>
-        </ScrollReveal>
+    <section id="contato" className="section-padding bg-[#F5F0EB]">
+      <div className="max-w-[800px] mx-auto px-6 text-center">
+        <p className="font-sans text-[12px] tracking-[0.15em] uppercase text-[#A39B82] mb-4">
+          Vamos conversar
+        </p>
+        <h2 className="font-serif text-[1.75rem] sm:text-[2.25rem] md:text-[2.75rem] text-[#2C2C2C] leading-[1.2] mb-4 text-balance">
+          Estamos prontos para te ouvir.
+        </h2>
+        <p className="font-sans text-[0.95rem] sm:text-base text-[#5A5A5A] leading-[1.8] mb-10">
+          É só chamar.
+        </p>
+        <a
+          href={getWhatsAppLink()}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block font-sans text-[13px] tracking-[0.1em] uppercase font-medium px-8 py-3.5 rounded-full bg-[#777F5C] text-white hover:bg-[#283107] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50"
+        >
+          Marcar uma conversa
+        </a>
       </div>
     </section>
   );

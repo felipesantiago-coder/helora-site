@@ -2,24 +2,24 @@
 
 import dynamic from 'next/dynamic';
 import { Header } from '@/components/helora/Header';
-import { ConceptSection } from '@/components/helora/ConceptSection';
+import { AboutSection } from '@/components/helora/AboutSection';
+import { CareSection } from '@/components/helora/CareSection';
 import { ServicesSection } from '@/components/helora/ServicesSection';
 import { TeamSection } from '@/components/helora/TeamSection';
-import { OrganicDivider } from '@/components/helora/OrganicDivider';
 
 /* ── Lazy load heavy / below-fold components ── */
 const HeroSection = dynamic(
   () => import('@/components/helora/HeroSection').then((m) => ({ default: m.HeroSection })),
-  { ssr: false, loading: () => <HeroFallback /> }
+  { ssr: true, loading: () => <HeroFallback /> }
 );
 
-const TestimonialsSection = dynamic(
-  () => import('@/components/helora/TestimonialsSection').then((m) => ({ default: m.TestimonialsSection })),
+const ComingSoonSection = dynamic(
+  () => import('@/components/helora/ComingSoonSection').then((m) => ({ default: m.ComingSoonSection })),
   { ssr: true }
 );
 
-const LocationSection = dynamic(
-  () => import('@/components/helora/LocationSection').then((m) => ({ default: m.LocationSection })),
+const TrustSection = dynamic(
+  () => import('@/components/helora/TrustSection').then((m) => ({ default: m.TrustSection })),
   { ssr: true }
 );
 
@@ -37,17 +37,14 @@ function HeroFallback() {
   return (
     <section
       id="hero"
-      className="min-h-[100dvh] flex items-center justify-center overflow-hidden"
-      style={{ background: '#777F5C' }}
+      className="min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#2C241C]"
     >
       <div className="max-w-2xl mx-auto px-6 text-center">
-        <h1 className="font-serif font-light text-[1.85rem] sm:text-[2.75rem] md:text-5xl lg:text-6xl text-white tracking-tight text-balance leading-[1.2] mb-6">
-          Cuidar de você é
-          <br />
-          <span className="text-white/90">nossa essência.</span>
+        <h1 className="font-serif font-light text-[2rem] sm:text-[3rem] text-white tracking-[-0.02em] leading-[1.15] mb-6">
+          Cuidar de você é a nossa essência.
         </h1>
-        <p className="font-sans text-white/90 text-[0.938rem] sm:text-base md:text-[1.063rem] max-w-md mx-auto mb-10 leading-relaxed">
-          Um espaço de acolhimento onde você pode respirar, ser ouvido e cuidar de si.
+        <p className="font-sans text-white/70 text-base max-w-md mx-auto mb-10 leading-relaxed">
+          Um espaço de saúde integrada onde você pode respirar, ser ouvido e cuidar de si por inteiro.
         </p>
       </div>
     </section>
@@ -60,14 +57,12 @@ export default function Home() {
       <Header />
       <main id="main-content" className="flex-1">
         <HeroSection />
-        <ConceptSection />
-        <OrganicDivider variant="leaf" />
+        <AboutSection />
+        <CareSection />
         <ServicesSection />
-        <OrganicDivider variant="sage" />
         <TeamSection />
-        <TestimonialsSection />
-        <OrganicDivider variant="leaf" />
-        <LocationSection />
+        <ComingSoonSection />
+        <TrustSection />
         <CTASection />
       </main>
       <Footer />

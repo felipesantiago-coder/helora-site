@@ -1,88 +1,64 @@
-'use client';
-
-import Image from 'next/image';
-import { ScrollReveal } from './ScrollReveal';
-import { OrganicNatureBg } from './OrganicNatureBg';
-
-interface Service {
-  id: string;
-  name: string;
-  duration: string;
-  description: string;
-}
-
-const SERVICES: Service[] = [
+export const SERVICES = [
   {
-    id: '1',
-    name: 'Primeira sessão',
-    duration: '50 min',
-    description: 'Um momento para se conhecer, entender suas demandas e ver como podemos te ajudar. Sem compromisso.',
+    title: 'Psicologia clínica',
+    description:
+      'O acompanhamento psicoterapêutico que está no coração da Helora, no cuidado com o que você sente e vive.',
   },
   {
-    id: '2',
-    name: 'Sessão individual',
-    duration: '60 min',
-    description: 'Psicoterapia contínua, no seu ritmo e focada no que você precisa agora.',
+    title: 'Terapia Cognitivo-Comportamental (TCC)',
+    description:
+      'Uma abordagem prática e baseada em evidências para lidar com pensamentos, emoções e comportamentos do presente.',
   },
   {
-    id: '3',
-    name: 'Sessão de casal',
-    duration: '90 min',
-    description: 'Um espaço para o casal se reconectar e fortalecer a relação.',
+    title: 'Terapia do Esquema',
+    description:
+      'Um olhar mais profundo para os padrões e crenças que se repetem, ajudando você a transformá-los.',
   },
-];
+  {
+    title: 'Avaliação psicológica',
+    description:
+      'Um processo cuidadoso para compreender melhor você e apoiar escolhas, encaminhamentos e caminhos.',
+  },
+  {
+    title: 'Avaliação neuropsicológica',
+    description:
+      'Uma investigação ampla das funções cognitivas, emocionais e comportamentais, que integra diferentes aspectos do funcionamento individual para compreender demandas, potencialidades e necessidades de cuidado.',
+  },
+] as const;
 
 export function ServicesSection() {
   return (
-    <section id="servicos" className="bg-helora-antique-white py-12 md:py-24 relative overflow-hidden">
-      <OrganicNatureBg variant="understory" />
+    <section id="servicos" className="section-padding bg-[#FAF8F5]">
+      <div className="max-w-[1200px] mx-auto px-6">
+        {/* Section header */}
+        <div className="max-w-[700px] mb-14">
+          <p className="font-sans text-[12px] tracking-[0.15em] uppercase text-[#A39B82] mb-4">
+            Nossas especialidades
+          </p>
+          <h2 className="font-serif text-[1.75rem] sm:text-[2.25rem] md:text-[2.75rem] text-[#2C2C2C] leading-[1.2] mb-4 text-balance">
+            O cuidado que você encontra na Helora.
+          </h2>
+          <p className="font-sans text-[0.95rem] sm:text-base text-[#5A5A5A] leading-[1.8]">
+            A psicologia é o coração da Helora. Estas são as especialidades que acompanham você, no que você sente e no que você vive.
+          </p>
+        </div>
 
-      <div className="max-w-6xl mx-auto px-4 relative z-10">
-        <ScrollReveal>
-          <div className="max-w-2xl mb-14">
-            <h2 className="font-serif font-normal text-2xl md:text-4xl text-helora-dark-green tracking-tight text-balance mb-4">
-              Como cuidamos de você
-            </h2>
-            <p className="font-sans text-helora-tan text-base md:text-lg leading-relaxed">
-              Escolha o formato que combina com o seu momento.
-            </p>
-          </div>
-        </ScrollReveal>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Services list */}
+        <div className="space-y-0">
           {SERVICES.map((service, index) => (
-            <ScrollReveal key={service.id} delay={index * 0.1}>
-              <article className="helora-card text-left group w-full h-full flex flex-col relative overflow-hidden" aria-label={service.name}>
-                <div className="absolute top-0 left-0 right-0 h-[3px] overflow-hidden" aria-hidden="true">
-                  <svg width="100%" height="3" viewBox="0 0 400 3" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 1.5 Q100 0, 200 2 Q300 3, 400 1" stroke="#777F5C" strokeWidth="3" fill="none" strokeLinecap="round" />
-                  </svg>
-                </div>
-
-                <div className="flex items-start justify-between gap-3 mb-4">
-                  <h3 className="font-serif font-normal text-xl md:text-[22px] text-helora-dark-green tracking-tight">
-                    {service.name}
-                  </h3>
-                  <Image
-                    src="/favicon.svg"
-                    alt=""
-                    width={18}
-                    height={18}
-                    className="mt-1 shrink-0 opacity-30 group-hover:opacity-60 transition-opacity duration-300"
-                    aria-hidden="true"
-                  />
-                </div>
-                <p className="font-sans text-[15px] text-helora-tan leading-relaxed flex-1">
+            <div
+              key={service.title}
+              className={`py-8 sm:py-10 ${index < SERVICES.length - 1 ? 'border-b border-[#E8E4DD]' : ''}`}
+            >
+              <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-8">
+                <h3 className="font-serif text-[1.15rem] sm:text-[1.25rem] text-[#2C2C2C] leading-tight shrink-0 sm:w-[320px]">
+                  {service.title}
+                </h3>
+                <p className="font-sans text-[0.95rem] sm:text-base text-[#5A5A5A] leading-[1.8]">
                   {service.description}
                 </p>
-                <div className="flex items-center gap-2 pt-5">
-                  <span className="w-2 h-2 rounded-full bg-helora-sage shrink-0" aria-hidden="true" />
-                  <span className="font-sans text-sm text-helora-tan">
-                    {service.duration}
-                  </span>
-                </div>
-              </article>
-            </ScrollReveal>
+              </div>
+            </div>
           ))}
         </div>
       </div>

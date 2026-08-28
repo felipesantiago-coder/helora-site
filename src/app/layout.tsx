@@ -20,7 +20,7 @@ const fraunces = Fraunces({
 const SITE_URL = "https://www.clinicahelora.com";
 
 export const viewport: Viewport = {
-  themeColor: "#283107",
+  themeColor: "#2C241C",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
