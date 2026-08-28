@@ -47,7 +47,7 @@ function HeroFallback() {
   return (
     <section
       id="hero"
-      className="min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#2C241C]"
+      className="min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#9C6146]"
     >
       <div className="max-w-2xl mx-auto px-6 text-center">
         <h1 className="font-serif font-light text-[2.75rem] sm:text-[3rem] text-white tracking-[-0.02em] leading-[1.1] mb-6">
