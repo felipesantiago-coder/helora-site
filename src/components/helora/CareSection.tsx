@@ -42,7 +42,7 @@ export function CareSection() {
 
         {/* Intro paragraph */}
         <p className="font-sans text-[0.95rem] sm:text-base text-[#5A5A5A] leading-[1.8] max-w-[800px] mb-14">
-          Sessões que não têm relógio na parede correndo contra você. Uma escuta que acolhe antes de orientar. Um ambiente pensado para acalmar desde a porta. E, cada vez mais, diferentes especialistas conversando entre si para cuidar de você sem que você precise recomeçar a história a cada porta.
+          Sessões onde o tempo é aproveitado com presença, sem correria. Uma escuta que acolhe antes de orientar. Um ambiente pensado para acalmar desde a porta. E, cada vez mais, diferentes especialistas conversando entre si para cuidar de você sem que você precise recomeçar a história a cada porta.
         </p>
 
         {/* 4 Pillars */}

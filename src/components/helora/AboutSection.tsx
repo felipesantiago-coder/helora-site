@@ -6,7 +6,7 @@ export function AboutSection() {
           A Helora
         </p>
         <h2 className="font-serif text-[1.75rem] sm:text-[2.25rem] md:text-[2.75rem] text-[#2C2C2C] leading-[1.2] mb-10 text-balance max-w-[700px]">
-          Um cuidado que enxerga tudo o que você é
+          Um cuidado que enxerga tudo o que você é.
         </h2>
         <div className="space-y-5 max-w-[960px]">
           <p className="font-sans text-[0.95rem] sm:text-base text-[#5A5A5A] leading-[1.8]">
