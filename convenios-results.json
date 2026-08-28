@@ -1,0 +1,562 @@
+[
+  {
+    "name": "NOTRE DAME",
+    "slug": "notre-dame",
+    "status": "ok",
+    "original_size": [
+      120,
+      84
+    ],
+    "new_size": [
+      360,
+      252
+    ],
+    "file_size": 31812
+  },
+  {
+    "name": "TRES SAUDE",
+    "slug": "tres-saude",
+    "status": "ok",
+    "original_size": [
+      120,
+      67
+    ],
+    "new_size": [
+      360,
+      201
+    ],
+    "file_size": 26394
+  },
+  {
+    "name": "REAL GRANDEZA",
+    "slug": "real-grandeza",
+    "status": "ok",
+    "original_size": [
+      120,
+      34
+    ],
+    "new_size": [
+      360,
+      102
+    ],
+    "file_size": 18536
+  },
+  {
+    "name": "UNAFISCO SAUDE",
+    "slug": "unafisco-saude",
+    "status": "ok",
+    "original_size": [
+      120,
+      120
+    ],
+    "new_size": [
+      360,
+      360
+    ],
+    "file_size": 16170
+  },
+  {
+    "name": "GEAP",
+    "slug": "geap",
+    "status": "ok",
+    "original_size": [
+      120,
+      120
+    ],
+    "new_size": [
+      360,
+      360
+    ],
+    "file_size": 15144
+  },
+  {
+    "name": "GRAVIA",
+    "slug": "gravia",
+    "status": "ok",
+    "original_size": [
+      120,
+      58
+    ],
+    "new_size": [
+      360,
+      174
+    ],
+    "file_size": 17032
+  },
+  {
+    "name": "PROASA",
+    "slug": "proasa",
+    "status": "ok",
+    "original_size": [
+      120,
+      120
+    ],
+    "new_size": [
+      360,
+      360
+    ],
+    "file_size": 20984
+  },
+  {
+    "name": "LUMINAR SAUDE",
+    "slug": "luminar-saude",
+    "status": "ok",
+    "original_size": [
+      120,
+      120
+    ],
+    "new_size": [
+      360,
+      360
+    ],
+    "file_size": 11138
+  },
+  {
+    "name": "AFEB BRASAL",
+    "slug": "afeb-brasal",
+    "status": "ok",
+    "original_size": [
+      120,
+      120
+    ],
+    "new_size": [
+      360,
+      360
+    ],
+    "file_size": 18672
+  },
+  {
+    "name": "AFFEGO",
+    "slug": "affego",
+    "status": "ok",
+    "original_size": [
+      120,
+      68
+    ],
+    "new_size": [
+      360,
+      204
+    ],
+    "file_size": 10780
+  },
+  {
+    "name": "ANAFE SAUDE",
+    "slug": "anafe-saude",
+    "status": "ok",
+    "original_size": [
+      120,
+      68
+    ],
+    "new_size": [
+      360,
+      204
+    ],
+    "file_size": 8816
+  },
+  {
+    "name": "CLIQUE MEDICOS",
+    "slug": "clique-medicos",
+    "status": "ok",
+    "original_size": [
+      120,
+      120
+    ],
+    "new_size": [
+      360,
+      360
+    ],
+    "file_size": 16596
+  },
+  {
+    "name": "CUIDADOS PLUS",
+    "slug": "cuidados-plus",
+    "status": "ok",
+    "original_size": [
+      120,
+      120
+    ],
+    "new_size": [
+      360,
+      360
+    ],
+    "file_size": 15330
+  },
+  {
+    "name": "FAPES",
+    "slug": "fapes",
+    "status": "ok",
+    "original_size": [
+      120,
+      58
+    ],
+    "new_size": [
+      360,
+      174
+    ],
+    "file_size": 20146
+  },
+  {
+    "name": "SAUDE CAIXA",
+    "slug": "saude-caixa",
+    "status": "ok",
+    "original_size": [
+      120,
+      120
+    ],
+    "new_size": [
+      360,
+      360
+    ],
+    "file_size": 8204
+  },
+  {
+    "name": "SAUDE PETROBRAS",
+    "slug": "saude-petrobras",
+    "status": "ok",
+    "original_size": [
+      120,
+      68
+    ],
+    "new_size": [
+      360,
+      204
+    ],
+    "file_size": 15504
+  },
+  {
+    "name": "SERPRO",
+    "slug": "serpro",
+    "status": "ok",
+    "original_size": [
+      120,
+      49
+    ],
+    "new_size": [
+      360,
+      147
+    ],
+    "file_size": 11268
+  },
+  {
+    "name": "SIS SENADO",
+    "slug": "sis-senado",
+    "status": "ok",
+    "original_size": [
+      120,
+      60
+    ],
+    "new_size": [
+      360,
+      180
+    ],
+    "file_size": 4964
+  },
+  {
+    "name": "STF-MED",
+    "slug": "stf-med",
+    "status": "ok",
+    "original_size": [
+      120,
+      60
+    ],
+    "new_size": [
+      360,
+      180
+    ],
+    "file_size": 22448
+  },
+  {
+    "name": "GDF SAUDE",
+    "slug": "gdf-saude",
+    "status": "ok",
+    "original_size": [
+      120,
+      120
+    ],
+    "new_size": [
+      360,
+      360
+    ],
+    "file_size": 24512
+  },
+  {
+    "name": "PF SAUDE",
+    "slug": "pf-saude",
+    "status": "ok",
+    "original_size": [
+      120,
+      120
+    ],
+    "new_size": [
+      360,
+      360
+    ],
+    "file_size": 19876
+  },
+  {
+    "name": "PMDF",
+    "slug": "pmdf",
+    "status": "ok",
+    "original_size": [
+      120,
+      80
+    ],
+    "new_size": [
+      360,
+      240
+    ],
+    "file_size": 23980
+  },
+  {
+    "name": "PRO-SAUDA CAMARA",
+    "slug": "pro-sauda-camara",
+    "status": "ok",
+    "original_size": [
+      99,
+      120
+    ],
+    "new_size": [
+      297,
+      360
+    ],
+    "file_size": 59100
+  },
+  {
+    "name": "PRO-SAUDA TJDFT",
+    "slug": "pro-sauda-tjdft",
+    "status": "ok",
+    "original_size": [
+      120,
+      120
+    ],
+    "new_size": [
+      360,
+      360
+    ],
+    "file_size": 24578
+  },
+  {
+    "name": "PRO-SER STJ",
+    "slug": "pro-ser-stj",
+    "status": "ok",
+    "original_size": [
+      120,
+      120
+    ],
+    "new_size": [
+      360,
+      360
+    ],
+    "file_size": 23842
+  },
+  {
+    "name": "PRO-SOCIAL TRF",
+    "slug": "pro-social-trf",
+    "status": "ok",
+    "original_size": [
+      120,
+      78
+    ],
+    "new_size": [
+      360,
+      234
+    ],
+    "file_size": 25858
+  },
+  {
+    "name": "SAUDE POSTAL",
+    "slug": "saude-postal",
+    "status": "ok",
+    "original_size": [
+      120,
+      120
+    ],
+    "new_size": [
+      360,
+      360
+    ],
+    "file_size": 34906
+  },
+  {
+    "name": "PLAS/JMU STM",
+    "slug": "plas-jmu-stm",
+    "status": "ok",
+    "original_size": [
+      120,
+      85
+    ],
+    "new_size": [
+      360,
+      255
+    ],
+    "file_size": 19092
+  },
+  {
+    "name": "TRT SAUDE",
+    "slug": "trt-saude",
+    "status": "ok",
+    "original_size": [
+      120,
+      84
+    ],
+    "new_size": [
+      360,
+      252
+    ],
+    "file_size": 28876
+  },
+  {
+    "name": "TST SAUDE",
+    "slug": "tst-saude",
+    "status": "ok",
+    "original_size": [
+      120,
+      120
+    ],
+    "new_size": [
+      360,
+      360
+    ],
+    "file_size": 24688
+  },
+  {
+    "name": "BACEN",
+    "slug": "bacen",
+    "status": "ok",
+    "original_size": [
+      120,
+      65
+    ],
+    "new_size": [
+      360,
+      195
+    ],
+    "file_size": 18562
+  },
+  {
+    "name": "BRB SAUDE",
+    "slug": "brb-saude",
+    "status": "ok",
+    "original_size": [
+      120,
+      83
+    ],
+    "new_size": [
+      360,
+      249
+    ],
+    "file_size": 19182
+  },
+  {
+    "name": "CONAB",
+    "slug": "conab",
+    "status": "ok",
+    "original_size": [
+      120,
+      120
+    ],
+    "new_size": [
+      360,
+      360
+    ],
+    "file_size": 18372
+  },
+  {
+    "name": "CBMDF",
+    "slug": "cbmdf",
+    "status": "ok",
+    "original_size": [
+      200,
+      200
+    ],
+    "new_size": [
+      600,
+      600
+    ],
+    "file_size": 8786
+  },
+  {
+    "name": "EMBRATEL TELOS",
+    "slug": "embratel-telos",
+    "status": "ok",
+    "original_size": [
+      120,
+      120
+    ],
+    "new_size": [
+      360,
+      360
+    ],
+    "file_size": 24374
+  },
+  {
+    "name": "CAEME",
+    "slug": "caeme",
+    "status": "ok",
+    "original_size": [
+      120,
+      50
+    ],
+    "new_size": [
+      360,
+      150
+    ],
+    "file_size": 38258
+  },
+  {
+    "name": "CESAN",
+    "slug": "cesan",
+    "status": "ok",
+    "original_size": [
+      120,
+      84
+    ],
+    "new_size": [
+      360,
+      252
+    ],
+    "file_size": 21932
+  },
+  {
+    "name": "CASEC",
+    "slug": "casec",
+    "status": "ok",
+    "original_size": [
+      120,
+      77
+    ],
+    "new_size": [
+      360,
+      231
+    ],
+    "file_size": 38138
+  },
+  {
+    "name": "CASEMBRAPA",
+    "slug": "casembrapa",
+    "status": "ok",
+    "original_size": [
+      120,
+      120
+    ],
+    "new_size": [
+      360,
+      360
+    ],
+    "file_size": 21322
+  },
+  {
+    "name": "VIDA EMPRESARIAL",
+    "slug": "vida-empresarial",
+    "status": "ok",
+    "original_size": [
+      120,
+      84
+    ],
+    "new_size": [
+      360,
+      252
+    ],
+    "file_size": 26684
+  }
+]
