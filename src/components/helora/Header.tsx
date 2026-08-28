@@ -106,7 +106,9 @@ export function Header() {
           <img
             src="/logo-mark.svg"
             alt=""
-            className={`h-7 w-auto shrink-0 transition-all duration-300 ${!isTransparent ? '' : 'brightness-0 invert'}`}
+            className={`h-7 w-auto shrink-0 transition-all duration-300 ${
+              isTransparent ? 'brightness-0 invert' : 'brightness-0'
+            }`}
           />
           <span
             className={`font-sans text-[10px] tracking-[0.18em] uppercase leading-none transition-colors duration-300 ${
