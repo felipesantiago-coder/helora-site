@@ -5,12 +5,12 @@ import { usePathname, useRouter } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { getWhatsAppLink } from '@/lib/utils';
 
-const NAV_LINKS = [
+const NAV_LINKS: { label: string; href: string; external?: boolean }[] = [
   { label: 'Início', href: '#hero' },
   { label: 'Helora para Empresas', href: '/empresas', external: true },
   { label: 'Convênios', href: '/convenios' },
   { label: 'Contato', href: '#contato' },
-] as const;
+];
 
 export function Header() {
   const pathname = usePathname();
