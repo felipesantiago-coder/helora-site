@@ -36,12 +36,14 @@ export function Footer() {
                 { label: 'A Helora', href: '#sobre' },
                 { label: 'Nossa forma de cuidar', href: '#cuidar' },
                 { label: 'Equipe', href: '#equipe' },
+                { label: 'Localização', href: '#localizacao' },
                 { label: 'Convênios', href: '/convenios' },
-                { label: 'Helora para empresas', href: '#empresas' },
+                { label: 'Helora para empresas', href: '/empresas', external: true },
               ].map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
+                  {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   className="font-sans text-[0.875rem] text-white/60 hover:text-white transition-colors duration-200 w-fit"
                 >
                   {link.label}

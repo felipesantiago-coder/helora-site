@@ -23,6 +23,11 @@ const TrustSection = dynamic(
   { ssr: true }
 );
 
+const LocationSection = dynamic(
+  () => import('@/components/helora/LocationSection').then((m) => ({ default: m.LocationSection })),
+  { ssr: true }
+);
+
 const CTASection = dynamic(
   () => import('@/components/helora/CTASection').then((m) => ({ default: m.CTASection })),
   { ssr: true }
@@ -63,6 +68,7 @@ export default function Home() {
         <TeamSection />
         <ComingSoonSection />
         <TrustSection />
+        <LocationSection />
         <CTASection />
       </main>
       <Footer />
