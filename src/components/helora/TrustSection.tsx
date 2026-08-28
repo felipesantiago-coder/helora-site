@@ -1,5 +1,3 @@
-import { HeloraOrganicO } from '@/components/helora/HeloraOrganicO';
-
 const FEATURED_STAT = {
   number: '+8.000',
   label: 'atendimentos',
@@ -39,17 +37,11 @@ export function TrustSection() {
           </h2>
         </div>
 
-        {/* Featured stat with organic O */}
-        <div className="relative mb-14 pb-14 border-b border-white/[0.08]">
-          <div className="relative inline-block">
-            <HeloraOrganicO
-              size={180}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/[0.03]"
-            />
-            <span className="relative z-10 block font-serif text-[3rem] sm:text-[4rem] md:text-[4.5rem] text-[#A39B82] leading-none tracking-[-0.02em]">
-              {FEATURED_STAT.number}
-            </span>
-          </div>
+        {/* Featured stat */}
+        <div className="mb-14 pb-14 border-b border-white/[0.08]">
+          <span className="block font-serif text-[3rem] sm:text-[4rem] md:text-[4.5rem] text-[#A39B82] leading-none tracking-[-0.02em]">
+            {FEATURED_STAT.number}
+          </span>
           <h3 className="font-sans text-[14px] tracking-[0.04em] font-medium text-white mt-3 mb-3 leading-tight">
             {FEATURED_STAT.label}
           </h3>
