@@ -27,7 +27,7 @@ export const TRUST_ITEMS = [
 
 export function TrustSection() {
   return (
-    <section id="empresas" className="section-padding bg-[#2C241C]">
+    <section className="section-padding bg-[#2C241C]">
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="max-w-[700px] mb-16">
           <p className="font-sans text-[12px] tracking-[0.15em] uppercase text-[#A39B82] mb-4">
