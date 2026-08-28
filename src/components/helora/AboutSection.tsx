@@ -1,14 +1,14 @@
 export function AboutSection() {
   return (
     <section id="sobre" className="section-padding bg-[#FAF8F5]">
-      <div className="max-w-[800px] mx-auto px-6 md:my-10 lg:my-16">
+      <div className="max-w-[1200px] mx-auto px-6">
         <p className="font-sans text-[12px] tracking-[0.15em] uppercase text-[#A39B82] mb-4">
           A Helora
         </p>
-        <h2 className="font-serif text-[1.75rem] sm:text-[2.25rem] md:text-[2.75rem] text-[#2C2C2C] leading-[1.2] mb-10 text-balance">
+        <h2 className="font-serif text-[1.75rem] sm:text-[2.25rem] md:text-[2.75rem] text-[#2C2C2C] leading-[1.2] mb-10 text-balance max-w-[700px]">
           Um cuidado que enxerga tudo o que você é
         </h2>
-        <div className="space-y-5">
+        <div className="space-y-5 max-w-[720px]">
           <p className="font-sans text-[0.95rem] sm:text-base text-[#5A5A5A] leading-[1.8]">
             A Helora nasceu de um propósito: oferecer um cuidado mais atento, humano e integrado ao que realmente importa: você.
           </p>
