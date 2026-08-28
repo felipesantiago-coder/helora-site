@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.webp',
+        url: 'https://www.clinicahelora.com/og-image.webp',
         width: 1200,
         height: 630,
         alt: 'Helora | Clínica Multidisciplinar em Brasília',

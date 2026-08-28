@@ -29,28 +29,44 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Helora | Clínica Multidisciplinar em Brasília | Saúde Integrada",
+  title: {
+    default: "Helora | Clínica de Psicologia em Brasília — Saúde Integrada",
+    template: "%s | Helora Saúde Integrada",
+  },
   description:
-    "Clínica de psicologia em Brasília, DF. Atendimento em psicoterapia, neuropsicologia e avaliação psicológica para todas as faixas etárias. Agende por WhatsApp.",
+    "Clínica de psicologia em Brasília, DF. Psicoterapia individual, de casal, neuropsicologia e avaliação psicológica para todas as faixas etárias. Agende pelo WhatsApp.",
+  authors: [{ name: "Helora Saúde Integrada", url: SITE_URL }],
+  creator: "Helora Saúde Integrada",
+  publisher: "Helora Saúde Integrada",
   keywords: [
     "psicologia Brasília",
-    "psicoterapia",
-    "clínica de psicologia",
-    "saúde integrada",
+    "psicoterapia Brasília",
+    "clínica de psicologia Brasília",
+    "psicólogo Brasília DF",
+    "psicólogo Asa Sul",
     "terapia individual",
     "terapia de casal",
-    "psicólogo DF",
     "neuropsicologia",
     "avaliação psicológica",
-    "acolhimento psicológico",
+    "avaliação neuropsicológica",
+    "terapia cognitivo-comportamental",
+    "terapia do esquema",
+    "TDAH Brasília",
+    "autismo avaliação",
+    "saúde mental Brasília",
     "Helora",
+    "saúde integrada",
+    "acolhimento psicológico",
     "bem-estar emocional",
   ],
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/favicon.svg",
   },
   openGraph: {
-    title: "Helora | Clínica Multidisciplinar em Brasília",
+    title: "Helora | Clínica de Psicologia em Brasília",
     description:
       "Cuidar de você é nossa essência. Psicoterapia individual, de casal, neuropsicologia e avaliação psicológica em Brasília/DF. Um espaço de acolhimento pensado para você.",
     type: "website",
@@ -59,19 +75,19 @@ export const metadata: Metadata = {
     siteName: "Helora | Saúde Integrada",
     images: [
       {
-        url: "/og-image.webp",
+        url: `${SITE_URL}/og-image.webp`,
         width: 1200,
         height: 630,
-        alt: "Helora | Clínica Multidisciplinar em Brasília — Cuidar de você é nossa essência",
+        alt: "Helora | Clínica de Psicologia em Brasília — Cuidar de você é nossa essência",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Helora | Clínica Multidisciplinar em Brasília",
+    title: "Helora | Clínica de Psicologia em Brasília",
     description:
-      "Cuidar de você é nossa essência. Psicoterapia individual, de casal, neuropsicologia e avaliação psicológica em Brasília/DF. Um espaço de acolhimento pensado para você.",
-    images: ["/og-image.webp"],
+      "Cuidar de você é nossa essência. Psicoterapia individual, de casal, neuropsicologia e avaliação psicológica em Brasília/DF.",
+    images: [`${SITE_URL}/og-image.webp`],
   },
   robots: {
     index: true,
@@ -87,14 +103,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${SITE_URL}/`,
   },
+  other: {
+    "geo.region": "BR-DF",
+    "geo.placename": "Brasília",
+    "geo.position": "-15.7801;-47.9292",
+    "ICBM": "-15.7801, -47.9292",
+  },
 };
 
 /**
  * JSON-LD Structured Data: @graph com todos os schemas.
- * MedicalBusiness  → rich card com info do negócio
- * WebSite         → sitelinks + caixa de busca
- * FAQPage         → perguntas expandíveis nos resultados
- * BreadcrumbList  → estrutura de navegação
+ * Organization        → identity + contact
+ * LocalBusiness/MedicalBusiness → local SEO rich card
+ * WebSite             → sitelinks search box
+ * FAQPage             → perguntas expandíveis nos resultados
+ * BreadcrumbList      → estrutura de navegação
  */
 const structuredData = {
   "@context": "https://schema.org",
@@ -102,18 +125,50 @@ const structuredData = {
     {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
-      name: "Helora | Saúde Integrada",
-      alternateName: "Helora",
+      name: "Helora Saúde Integrada",
+      alternateName: ["Helora", "Clínica Helora"],
       url: SITE_URL,
-      logo: `${SITE_URL}/logo-mark.svg`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/logo-mark.svg`,
+        width: 200,
+        height: 200,
+      },
+      image: `${SITE_URL}/og-image.webp`,
       telephone: "+55-61-99593-8870",
       email: "contato@clinicahelora.com",
-      sameAs: ["https://www.instagram.com/heloraclinica?igsh=bXJkbTg3Z2VzYXRs"],
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "SEPS 707/907 Conjunto E Sala 214, Edifício San Marino, Asa Sul",
+        addressLocality: "Brasília",
+        addressRegion: "DF",
+        postalCode: "70390-075",
+        addressCountry: "BR",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: -15.7801,
+        longitude: -47.9292,
+      },
+      sameAs: [
+        "https://www.instagram.com/heloraclinica",
+        "https://api.whatsapp.com/send?phone=5561995938870",
+      ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+55-61-99593-8870",
+        contactType: "customer service",
+        availableLanguage: ["Portuguese"],
+        areaServed: {
+          "@type": "City",
+          name: "Brasília",
+        },
+      },
     },
     {
       "@type": ["LocalBusiness", "MedicalBusiness"],
       "@id": `${SITE_URL}/#business`,
-      name: "Helora | Saúde Integrada",
+      name: "Helora Saúde Integrada",
       url: SITE_URL,
       image: `${SITE_URL}/og-image.webp`,
       address: {
@@ -121,10 +176,18 @@ const structuredData = {
         streetAddress: "SEPS 707/907 Conjunto E Sala 214, Edifício San Marino, Asa Sul",
         addressLocality: "Brasília",
         addressRegion: "DF",
+        postalCode: "70390-075",
         addressCountry: "BR",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: -15.7801,
+        longitude: -47.9292,
       },
       telephone: "+55-61-99593-8870",
       priceRange: "$$",
+      currenciesAccepted: "BRL",
+      paymentAccepted: "Cash, Credit Card, Debit Card, Health Insurance",
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
@@ -149,32 +212,42 @@ const structuredData = {
         "Psicologia Clínica",
         "Neuropsicologia",
         "Avaliação Psicológica",
+        "Terapia Cognitivo-Comportamental",
+        "Terapia do Esquema",
       ],
       availableService: [
         {
           "@type": "MedicalTherapy",
           name: "Psicoterapia Individual",
-          description: "Sessões de psicologia clínica com foco no acolhimento e cuidado integrado.",
+          description: "Sessões de psicologia clínica com foco no acolhimento e cuidado integrado para crianças, adolescentes, adultos e idosos em Brasília.",
         },
         {
           "@type": "MedicalTherapy",
           name: "Psicoterapia de Casal",
-          description: "Espaço compartilhado para reconstruir laços e fortalecer a conexão.",
+          description: "Espaço compartilhado para reconstruir laços e fortalecer a conexão entre casais.",
         },
         {
           "@type": "MedicalTherapy",
           name: "Neuropsicologia",
-          description: "Avaliação e reabilitação neuropsicológica para todas as faixas etárias.",
+          description: "Avaliação e reabilitação neuropsicológica para todas as faixas etárias, incluindo investigação de TDAH, TEA e outras condições cognitivas.",
         },
         {
           "@type": "MedicalTherapy",
           name: "Avaliação Psicológica",
-          description: "Avaliações psicológicas completas com laudo técnico.",
+          description: "Avaliações psicológicas completas com laudo técnico para diferentes finalidades.",
         },
       ],
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5.0",
+        bestRating: "5",
+        worstRating: "1",
+        ratingCount: "16",
+        reviewCount: "16",
+      },
       areaServed: [
         { "@type": "City", name: "Brasília" },
-        { "@type": "State", name: "Distrito Federal" },
+        { "@type": "AdministrativeArea", name: "Distrito Federal" },
       ],
     },
     {
@@ -183,6 +256,7 @@ const structuredData = {
       name: "Helora | Saúde Integrada",
       url: SITE_URL,
       inLanguage: "pt-BR",
+      publisher: { "@id": `${SITE_URL}/#organization` },
       potentialAction: {
         "@type": "SearchAction",
         target: {
@@ -200,31 +274,39 @@ const structuredData = {
           name: "O que é a Helora Saúde Integrada?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "A Helora é uma clínica de psicologia e saúde integrada em Brasília/DF. Oferecemos psicoterapia individual, de casal, neuropsicologia e avaliação psicológica, sempre com acolhimento e escuta sensível.",
+            text: "A Helora é uma clínica de psicologia e saúde integrada localizada na Asa Sul, em Brasília/DF. Oferecemos psicoterapia individual, de casal, neuropsicologia e avaliação psicológica, sempre com acolhimento e escuta sensível. Contamos com profissionais certificados pelo CRP e mais de 8.000 atendimentos realizados.",
           },
         },
         {
           "@type": "Question",
-          name: "Quais serviços a Helora oferece?",
+          name: "Quais serviços psicológicos a Helora oferece em Brasília?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "A Helora oferece psicoterapia individual, psicoterapia de casal, neuropsicologia e avaliação psicológica. Cada sessão é pensada para o seu momento, sem pressa e sem julgamento.",
+            text: "A Helora oferece psicologia clínica, terapia cognitivo-comportamental (TCC), terapia do esquema, avaliação psicológica e avaliação neuropsicológica. Atendemos crianças, adolescentes, adultos e idosos na Asa Sul, Brasília/DF.",
           },
         },
         {
           "@type": "Question",
-          name: "Onde fica a Helora?",
+          name: "Onde fica a Helora e qual o horário de funcionamento?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "A Helora está localizada em Brasília, Distrito Federal. Atendemos de segunda a sexta das 08h às 20h e aos sábados das 08h às 14h.",
+            text: "A Helora está localizada na SEPS 707/907 Conjunto E Sala 214, Edifício San Marino, Asa Sul, Brasília — DF. Atendemos de segunda a sexta das 08h às 20h e aos sábados das 08h às 14h.",
           },
         },
         {
           "@type": "Question",
-          name: "Como agendar uma sessão na Helora?",
+          name: "Como agendar uma sessão de psicologia na Helora?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Você pode agendar sua primeira sessão diretamente pelo nosso site, através do botão Agendar, ou pelo WhatsApp.",
+            text: "Você pode agendar sua primeira sessão diretamente pelo WhatsApp no número (61) 9 9593-8870 ou pelo botão 'Marcar uma conversa' disponível no site. O atendimento é rápido e sem burocracia.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "A Helora aceita convênios e planos de saúde?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Sim, a Helora aceita diversos convênios e planos de saúde como Notre Dame, GEAP, SERPRO, Saúde Caixa, Petrobras e muitos outros. Consulte a página de convênios no site para ver a lista completa.",
           },
         },
       ],
@@ -233,7 +315,7 @@ const structuredData = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Início", item: `${SITE_URL}/` },
-        { "@type": "ListItem", position: 2, name: "Conceito", item: `${SITE_URL}/#conceito` },
+        { "@type": "ListItem", position: 2, name: "A Helora", item: `${SITE_URL}/#sobre` },
         { "@type": "ListItem", position: 3, name: "Serviços", item: `${SITE_URL}/#servicos` },
         { "@type": "ListItem", position: 4, name: "Equipe", item: `${SITE_URL}/#equipe` },
         { "@type": "ListItem", position: 5, name: "Convênios", item: `${SITE_URL}/convenios` },
@@ -252,7 +334,14 @@ export default function RootLayout({
       <head>
         <link rel="canonical" href={`${SITE_URL}/`} />
         <link rel="preconnect" href="https://api.whatsapp.com" crossOrigin="anonymous" />
-        <link rel="me" href="https://www.instagram.com/heloraclinica?igsh=bXJkbTg3Z2VzYXRs" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="me" href="https://www.instagram.com/heloraclinica" />
+        <link rel="manifest" href="/manifest.webmanifest" />
+        <meta name="geo.region" content="BR-DF" />
+        <meta name="geo.placename" content="Brasília" />
+        <meta name="geo.position" content="-15.7801;-47.9292" />
+        <meta name="ICBM" content="-15.7801, -47.9292" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

@@ -61,6 +61,8 @@ function HeroFallback() {
   );
 }
 
+import { WhatsAppFAB } from '@/components/helora/WhatsAppFAB';
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -78,6 +80,7 @@ export default function Home() {
         <CTASection />
       </main>
       <Footer />
+      <WhatsAppFAB />
     </div>
   );
 }
