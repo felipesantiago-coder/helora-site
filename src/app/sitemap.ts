@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: 'https://www.clinicahelora.com/institucional',
+      url: 'https://www.clinicahelora.com/empresas',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,

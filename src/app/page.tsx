@@ -28,11 +28,6 @@ const CTASection = dynamic(
   { ssr: true }
 );
 
-const EmpresasSection = dynamic(
-  () => import('@/components/helora/EmpresasSection').then((m) => ({ default: m.EmpresasSection })),
-  { ssr: true }
-);
-
 const Footer = dynamic(
   () => import('@/components/helora/Footer').then((m) => ({ default: m.Footer })),
   { ssr: true }
@@ -67,7 +62,6 @@ export default function Home() {
         <ServicesSection />
         <TeamSection />
         <ComingSoonSection />
-        <EmpresasSection />
         <TrustSection />
         <CTASection />
       </main>

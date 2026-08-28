@@ -7,7 +7,7 @@ import { getWhatsAppLink } from '@/lib/utils';
 
 const NAV_LINKS = [
   { label: 'Início', href: '#hero' },
-  { label: 'Helora para Empresas', href: '#empresas' },
+  { label: 'Helora para Empresas', href: '/empresas', external: true },
   { label: 'Convênios', href: '/convenios' },
   { label: 'Contato', href: '#contato' },
 ] as const;
@@ -125,6 +125,7 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
+              {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               onClick={(e) => handleNavClick(e, link.href)}
               className={`font-sans text-[13px] tracking-[0.04em] transition-colors duration-300 focus:outline-none focus-visible:underline ${
                 isTransparent
@@ -178,16 +179,29 @@ export function Header() {
         }`}
       >
         <nav className="flex flex-col py-4 px-6 gap-1" aria-label="Menu mobile">
-          {NAV_LINKS.map((link, i) => (
-            <button
-              key={link.href}
-              ref={i === 0 ? firstMobileItemRef : undefined}
-              onClick={() => handleMobileNavClick(link.href)}
-              className="font-sans text-base text-[#2C2C2C] hover:text-[#777F5C] py-3 px-3 rounded-xl hover:bg-[#F5F0EB] transition-colors duration-200 text-left focus:outline-none focus-visible:bg-[#F5F0EB]"
-            >
-              {link.label}
-            </button>
-          ))}
+          {NAV_LINKS.map((link, i) =>
+            link.external ? (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="font-sans text-base text-[#2C2C2C] hover:text-[#777F5C] py-3 px-3 rounded-xl hover:bg-[#F5F0EB] transition-colors duration-200 text-left focus:outline-none focus-visible:bg-[#F5F0EB]"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <button
+                key={link.href}
+                ref={i === 0 ? firstMobileItemRef : undefined}
+                onClick={() => handleMobileNavClick(link.href)}
+                className="font-sans text-base text-[#2C2C2C] hover:text-[#777F5C] py-3 px-3 rounded-xl hover:bg-[#F5F0EB] transition-colors duration-200 text-left focus:outline-none focus-visible:bg-[#F5F0EB]"
+              >
+                {link.label}
+              </button>
+            ),
+          )}
           <div className="pt-3 px-3">
             <a
               href={getWhatsAppLink()}
