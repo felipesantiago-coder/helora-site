@@ -27,8 +27,8 @@ export function LocationSection() {
           {/* Address card */}
           <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
             <div className="flex items-start gap-3 mb-5">
-              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#777F5C]/10 shrink-0">
-                <MapPin size={18} className="text-[#777F5C]" aria-hidden="true" />
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#9C6146]/10 shrink-0">
+                <MapPin size={18} className="text-[#9C6146]" aria-hidden="true" />
               </span>
               <div>
                 <h3 className="font-serif text-[1.1rem] sm:text-[1.2rem] text-[#2C2C2C] leading-tight">
@@ -49,7 +49,7 @@ export function LocationSection() {
                 href={MAPS_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-sans text-[13px] tracking-[0.06em] font-medium px-6 py-3 rounded-full bg-[#777F5C] text-white hover:bg-[#2C241C] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#777F5C]/50"
+                className="inline-flex items-center gap-2 font-sans text-[13px] tracking-[0.06em] font-medium px-6 py-3 rounded-full bg-[#9C6146] text-white hover:bg-[#8A563D] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9C6146]/50"
               >
                 <Navigation size={15} aria-hidden="true" />
                 Abrir no Google Maps

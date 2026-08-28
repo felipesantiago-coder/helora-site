@@ -3,7 +3,7 @@ import { getWhatsAppLink } from '@/lib/utils';
 
 export function Footer() {
   return (
-    <footer className="bg-[#2C241C] mt-auto">
+    <footer className="bg-[#9C6146] mt-auto">
       <div className="max-w-[1200px] mx-auto px-6 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 pb-12 border-b border-white/10">
           {/* Brand column */}
@@ -11,7 +11,7 @@ export function Footer() {
             <div className="flex items-center gap-2.5 mb-5">
               <HeloraOrganicO
                 size={28}
-                className="text-[#777F5C]"
+                className="text-[#D4B5A8]"
               />
               <span className="font-sans text-[10px] tracking-[0.18em] uppercase text-white/50 leading-none">
                 saúde integrada
@@ -92,7 +92,7 @@ export function Footer() {
               key={badge}
               className="font-sans text-[0.75rem] text-white/40 flex items-center gap-1.5"
             >
-              <span className="w-1 h-1 rounded-full bg-[#777F5C] shrink-0" />
+              <span className="w-1 h-1 rounded-full bg-[#D4B5A8] shrink-0" />
               {badge}
             </span>
           ))}

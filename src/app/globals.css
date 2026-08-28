@@ -19,7 +19,7 @@
   --color-card: #FFFFFF;
   --color-card-foreground: #2C2C2C;
   --color-border: #E8E4DD;
-  --color-ring: #777F5C;
+  --color-ring: #9C6146;
 
   /* ── Muted Palette ── */
   --color-muted: #F0EBE3;
@@ -112,7 +112,7 @@
   }
   .helora-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(40, 49, 6, 0.08);
+    box-shadow: 0 8px 32px rgba(156, 97, 70, 0.08);
   }
 
   /* Subtle grain texture overlay */
@@ -159,5 +159,5 @@
 /* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(119, 127, 92, 0.3) transparent;
+  scrollbar-color: rgba(156, 97, 70, 0.3) transparent;
 }

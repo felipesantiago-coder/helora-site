@@ -26,7 +26,7 @@ export function CTASection() {
           href={getWhatsAppLink()}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block font-sans text-[13px] tracking-[0.1em] uppercase font-medium px-8 py-3.5 rounded-full bg-[#777F5C] text-white hover:bg-[#283107] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50"
+          className="inline-block font-sans text-[13px] tracking-[0.1em] uppercase font-medium px-8 py-3.5 rounded-full bg-[#9C6146] text-white hover:bg-[#8A563D] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9C6146]/50"
         >
           Marcar uma conversa
         </a>

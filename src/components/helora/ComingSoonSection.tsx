@@ -45,7 +45,7 @@ export function ComingSoonSection() {
               key={item.title}
               className="relative overflow-hidden bg-[#F0EBE3] rounded-2xl p-8 border border-[#E8E4DD]"
             >
-              <span className="inline-block font-sans text-[11px] tracking-[0.12em] uppercase text-[#777F5C] font-medium px-3 py-1 rounded-full bg-[#777F5C]/10 mb-5">
+              <span className="inline-block font-sans text-[11px] tracking-[0.12em] uppercase text-[#9C6146] font-medium px-3 py-1 rounded-full bg-[#9C6146]/10 mb-5">
                 Em breve
               </span>
               <h3 className="font-serif text-[1.2rem] text-[#2C2C2C] mb-3 leading-tight">

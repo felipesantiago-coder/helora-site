@@ -29,7 +29,7 @@ function Stars({ rating }: { rating: number }) {
         <Star
           key={i}
           size={14}
-          className={i < rating ? 'fill-[#777F5C] text-[#777F5C]' : 'fill-none text-[#D4CFC7]'}
+          className={i < rating ? 'fill-[#9C6146] text-[#9C6146]' : 'fill-none text-[#D4CFC7]'}
         />
       ))}
     </div>
@@ -41,7 +41,7 @@ function ReviewCard({ review }: { review: (typeof REVIEWS)[number] }) {
   return (
     <blockquote className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E8E4DD] flex flex-col h-full">
       {/* Quote mark */}
-      <span className="font-serif text-[2.5rem] text-[#E8E4DD] leading-none select-none mb-4" aria-hidden="true">
+      <span className="font-serif text-[2.5rem] text-[#D4B5A8] leading-none select-none mb-4" aria-hidden="true">
         &ldquo;
       </span>
 

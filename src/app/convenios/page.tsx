@@ -57,7 +57,7 @@ export default function ConveniosPage() {
               className="w-[500px] h-[500px] rounded-full"
               style={{
                 background:
-                  'radial-gradient(circle, rgba(119,127,92,0.08) 0%, rgba(119,127,92,0) 70%)',
+                  'radial-gradient(circle, rgba(156,97,70,0.08) 0%, rgba(156,97,70,0) 70%)',
               }}
             />
           </div>
@@ -84,9 +84,9 @@ export default function ConveniosPage() {
             </div>
 
             {/* Count badge */}
-            <div className="mt-6 sm:mt-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#777F5C]/10 border border-[#777F5C]/20">
-              <span className="w-2 h-2 rounded-full bg-[#777F5C] animate-pulse" />
-              <span className="font-sans text-sm font-medium text-[#777F5C]">
+            <div className="mt-6 sm:mt-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#9C6146]/10 border border-[#9C6146]/20">
+              <span className="w-2 h-2 rounded-full bg-[#9C6146] animate-pulse" />
+              <span className="font-sans text-sm font-medium text-[#9C6146]">
                 {ALL_CONVENIOS.length} convênios aceitos
               </span>
             </div>
@@ -110,7 +110,7 @@ export default function ConveniosPage() {
               href={getWhatsAppLink('convenio')}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-sans text-[13px] tracking-[0.1em] uppercase font-medium px-8 py-3.5 rounded-full bg-[#777F5C] text-white hover:bg-[#283107] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#777F5C]/50"
+              className="inline-flex items-center gap-2 font-sans text-[13px] tracking-[0.1em] uppercase font-medium px-8 py-3.5 rounded-full bg-[#9C6146] text-white hover:bg-[#8A563D] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9C6146]/50"
             >
               <MessageCircle size={16} aria-hidden="true" />
               Perguntar pelo WhatsApp

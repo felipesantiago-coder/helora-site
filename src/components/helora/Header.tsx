@@ -140,10 +140,10 @@ export function Header() {
             href={getWhatsAppLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className={`font-sans text-[13px] tracking-[0.08em] uppercase font-medium px-6 py-2.5 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 ${
+            className={`font-sans text-[13px] tracking-[0.08em] uppercase font-medium px-6 py-2.5 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9C6146]/50 ${
               isTransparent
                 ? 'bg-white text-[#2C2C2C] hover:bg-white/90'
-                : 'bg-[#777F5C] text-white hover:bg-[#283107]'
+                : 'bg-[#9C6146] text-white hover:bg-[#8A563D]'
             }`}
           >
             Marcar uma conversa
@@ -153,7 +153,7 @@ export function Header() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen((prev) => !prev)}
-          className={`lg:hidden p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-helora-sage/50 rounded-lg transition-colors duration-200 ${
+          className={`lg:hidden p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9C6146]/50 rounded-lg transition-colors duration-200 ${
             isTransparent ? 'text-white' : 'text-[#2C2C2C]'
           }`}
           aria-label={mobileOpen ? 'Fechar menu' : 'Abrir menu'}
@@ -187,7 +187,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}
-                className="font-sans text-base text-[#2C2C2C] hover:text-[#777F5C] py-3 px-3 rounded-xl hover:bg-[#F0EBE3] transition-colors duration-200 text-left focus:outline-none focus-visible:bg-[#F0EBE3]"
+                className="font-sans text-base text-[#2C2C2C] hover:text-[#9C6146] py-3 px-3 rounded-xl hover:bg-[#F0EBE3] transition-colors duration-200 text-left focus:outline-none focus-visible:bg-[#F0EBE3]"
               >
                 {link.label}
               </a>
@@ -196,7 +196,7 @@ export function Header() {
                 key={link.href}
                 ref={i === 0 ? firstMobileItemRef : undefined}
                 onClick={() => handleMobileNavClick(link.href)}
-                className="font-sans text-base text-[#2C2C2C] hover:text-[#777F5C] py-3 px-3 rounded-xl hover:bg-[#F0EBE3] transition-colors duration-200 text-left focus:outline-none focus-visible:bg-[#F0EBE3]"
+                className="font-sans text-base text-[#2C2C2C] hover:text-[#9C6146] py-3 px-3 rounded-xl hover:bg-[#F0EBE3] transition-colors duration-200 text-left focus:outline-none focus-visible:bg-[#F0EBE3]"
               >
                 {link.label}
               </button>
@@ -207,7 +207,7 @@ export function Header() {
               href={getWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full text-center font-sans text-sm font-medium px-6 py-3.5 rounded-full bg-[#777F5C] text-white hover:bg-[#283107] transition-colors duration-200"
+              className="block w-full text-center font-sans text-sm font-medium px-6 py-3.5 rounded-full bg-[#9C6146] text-white hover:bg-[#8A563D] transition-colors duration-200"
             >
               Marcar uma conversa
             </a>

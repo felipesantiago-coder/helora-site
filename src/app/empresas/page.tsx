@@ -80,7 +80,7 @@ export default function EmpresasPage() {
 
       <main id="main-content" className="flex-1 pt-20 sm:pt-16 md:pt-[72px]">
         {/* Hero */}
-        <section className="bg-[#777F5C] py-20 sm:py-24 md:py-32">
+        <section className="bg-[#9C6146] py-20 sm:py-24 md:py-32">
           <div className="max-w-[1200px] mx-auto px-6">
             <a
               href="/"
@@ -136,7 +136,7 @@ export default function EmpresasPage() {
                   </p>
                   <div className="pt-5 mt-5 border-t border-[#E8E4DD]/60 flex flex-col gap-1.5">
                     <div className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#777F5C]/60 shrink-0" aria-hidden="true" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#9C6146]/60 shrink-0" aria-hidden="true" />
                       <span className="font-sans text-[11px] text-[#6B6B6B]">{service.audience}</span>
                     </div>
                     <div className="flex items-center gap-2">
@@ -165,8 +165,8 @@ export default function EmpresasPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-[900px] mb-16">
               {DIFFERENTIALS.map((item) => (
                 <div key={item.title} className="flex gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#777F5C]/10 flex items-center justify-center shrink-0">
-                    <span className="block w-1.5 h-1.5 rounded-full bg-[#777F5C]" aria-hidden="true" />
+                  <div className="w-10 h-10 rounded-full bg-[#9C6146]/10 flex items-center justify-center shrink-0">
+                    <span className="block w-1.5 h-1.5 rounded-full bg-[#9C6146]" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="font-serif text-[1.05rem] text-[#2C2C2C] mb-1 leading-tight">
@@ -192,7 +192,7 @@ export default function EmpresasPage() {
                 href={getWhatsAppLink('institucional')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-sans text-[13px] tracking-[0.1em] uppercase font-medium px-8 py-3.5 rounded-full bg-[#777F5C] text-white hover:bg-[#283107] transition-all duration-300"
+                className="inline-flex items-center gap-2 font-sans text-[13px] tracking-[0.1em] uppercase font-medium px-8 py-3.5 rounded-full bg-[#9C6146] text-white hover:bg-[#8A563D] transition-all duration-300"
               >
                 <MessageCircle size={16} aria-hidden="true" />
                 Fale conosco

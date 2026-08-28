@@ -78,7 +78,7 @@ export function TeamSection() {
                   <p className="font-sans text-[12px] text-[#999] mt-1">
                     {person.crp}
                   </p>
-                  <p className="font-sans text-[13px] tracking-[0.04em] text-[#777F5C] font-medium mt-2">
+                  <p className="font-sans text-[13px] tracking-[0.04em] text-[#9C6146] font-medium mt-2">
                     {person.title}
                   </p>
                 </div>
