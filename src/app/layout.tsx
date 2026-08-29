@@ -30,7 +30,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Helora | Clínica de Psicologia em Brasília — Saúde Integrada",
+    default: "Helora | Saúde Integrada",
     template: "%s | Helora Saúde Integrada",
   },
   description:
