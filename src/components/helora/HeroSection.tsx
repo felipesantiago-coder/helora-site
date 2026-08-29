@@ -7,7 +7,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden"
+      className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#9C6146]"
     >
       {/* Background image */}
       <div className="absolute inset-0">
@@ -18,7 +18,7 @@ export function HeroSection() {
           loading="eager"
         />
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-[#8A563D]/35" />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       {/* Floating organic O — decorative background element */}
