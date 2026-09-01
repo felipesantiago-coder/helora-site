@@ -23,6 +23,7 @@ function ConvenioCard({ name, src }: { name: string; src: string | null }) {
               sizes="(max-width: 639px) 50vw, (max-width: 767px) 33vw, 25vw"
               className="object-contain"
               loading="lazy"
+              unoptimized
             />
           </div>
         ) : (
