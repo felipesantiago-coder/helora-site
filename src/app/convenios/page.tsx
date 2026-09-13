@@ -1,6 +1,5 @@
-'use client';
-
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowLeft, MessageCircle } from 'lucide-react';
 import { Header } from '@/components/helora/Header';
 import { Footer } from '@/components/helora/Footer';
@@ -23,7 +22,6 @@ function ConvenioCard({ name, src }: { name: string; src: string | null }) {
               sizes="(max-width: 639px) 50vw, (max-width: 767px) 33vw, 25vw"
               className="object-contain"
               loading="lazy"
-              unoptimized
             />
           </div>
         ) : (
@@ -65,13 +63,13 @@ export default function ConveniosPage() {
 
           <div className="max-w-5xl mx-auto px-6 py-12 sm:py-16 md:py-20 relative z-10">
             {/* Back link */}
-            <a
+            <Link
               href="/"
               className="inline-flex items-center gap-1.5 font-sans text-sm text-[#A39B82] hover:text-[#2C2C2C] transition-colors duration-200 mb-8 sm:mb-12 focus:outline-none focus-visible:underline"
             >
               <ArrowLeft size={16} aria-hidden="true" />
               Voltar ao início
-            </a>
+            </Link>
 
             {/* Title block */}
             <div className="max-w-2xl">

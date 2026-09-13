@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { HeloraOrganicO } from '@/components/helora/HeloraOrganicO';
 import { getWhatsAppLink } from '@/lib/utils';
 
@@ -29,24 +30,48 @@ export function Footer() {
               Navegação
             </h3>
             <nav className="flex flex-col gap-2.5" aria-label="Navegação do rodapé">
-              {[
-                { label: 'Início', href: '#hero' },
-                { label: 'A Helora', href: '#sobre' },
-                { label: 'Nossa forma de cuidar', href: '#cuidar' },
-                { label: 'Equipe', href: '#equipe' },
-                { label: 'Localização', href: '#localizacao' },
-                { label: 'Convênios', href: '/convenios' },
-                { label: 'Helora para empresas', href: '/empresas', external: true },
-              ].map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                  className="font-sans text-[0.875rem] text-white/60 hover:text-white transition-colors duration-200 w-fit"
-                >
-                  {link.label}
-                </a>
-              ))}
+              <a
+                href="#hero"
+                className="font-sans text-[0.875rem] text-white/60 hover:text-white transition-colors duration-200 w-fit"
+              >
+                Início
+              </a>
+              <a
+                href="#sobre"
+                className="font-sans text-[0.875rem] text-white/60 hover:text-white transition-colors duration-200 w-fit"
+              >
+                A Helora
+              </a>
+              <a
+                href="#cuidar"
+                className="font-sans text-[0.875rem] text-white/60 hover:text-white transition-colors duration-200 w-fit"
+              >
+                Nossa forma de cuidar
+              </a>
+              <a
+                href="#equipe"
+                className="font-sans text-[0.875rem] text-white/60 hover:text-white transition-colors duration-200 w-fit"
+              >
+                Equipe
+              </a>
+              <a
+                href="#localizacao"
+                className="font-sans text-[0.875rem] text-white/60 hover:text-white transition-colors duration-200 w-fit"
+              >
+                Localização
+              </a>
+              <Link
+                href="/convenios"
+                className="font-sans text-[0.875rem] text-white/60 hover:text-white transition-colors duration-200 w-fit"
+              >
+                Convênios
+              </Link>
+              <Link
+                href="/empresas"
+                className="font-sans text-[0.875rem] text-white/60 hover:text-white transition-colors duration-200 w-fit"
+              >
+                Helora para empresas
+              </Link>
             </nav>
           </div>
 
@@ -101,7 +126,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
           <p className="font-sans text-[0.75rem] text-white/30">
-            © 2026 Helora Saúde Integrada. Todos os direitos reservados.
+            © 2025 Helora Saúde Integrada. Todos os direitos reservados.
           </p>
           <p className="font-serif italic text-[0.75rem] text-white/30">
             Cuidar de você é a nossa essência.

@@ -152,7 +152,6 @@ const structuredData = {
       },
       sameAs: [
         "https://www.instagram.com/heloraclinica",
-        "https://api.whatsapp.com/send?phone=5561995938870",
       ],
       contactPoint: {
         "@type": "ContactPoint",
@@ -237,14 +236,6 @@ const structuredData = {
           description: "Avaliações psicológicas completas com laudo técnico para diferentes finalidades.",
         },
       ],
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "5.0",
-        bestRating: "5",
-        worstRating: "1",
-        ratingCount: "16",
-        reviewCount: "16",
-      },
       areaServed: [
         { "@type": "City", name: "Brasília" },
         { "@type": "AdministrativeArea", name: "Distrito Federal" },
@@ -257,14 +248,6 @@ const structuredData = {
       url: SITE_URL,
       inLanguage: "pt-BR",
       publisher: { "@id": `${SITE_URL}/#organization` },
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: `${SITE_URL}/?q={search_term_string}`,
-        },
-        "query-input": "required name=search_term_string",
-      },
     },
     {
       "@type": "FAQPage",
@@ -315,10 +298,8 @@ const structuredData = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Início", item: `${SITE_URL}/` },
-        { "@type": "ListItem", position: 2, name: "A Helora", item: `${SITE_URL}/#sobre` },
-        { "@type": "ListItem", position: 3, name: "Serviços", item: `${SITE_URL}/#servicos` },
-        { "@type": "ListItem", position: 4, name: "Equipe", item: `${SITE_URL}/#equipe` },
-        { "@type": "ListItem", position: 5, name: "Convênios", item: `${SITE_URL}/convenios` },
+        { "@type": "ListItem", position: 2, name: "Convênios", item: `${SITE_URL}/convenios` },
+        { "@type": "ListItem", position: 3, name: "Empresas", item: `${SITE_URL}/empresas` },
       ],
     },
   ],
@@ -330,18 +311,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning className={`${inter.variable} ${fraunces.variable}`}>
+    <html lang="pt-BR" suppressHydrationWarning data-scroll-behavior="smooth" className={`${inter.variable} ${fraunces.variable}`}>
       <head>
-        <link rel="canonical" href={`${SITE_URL}/`} />
         <link rel="preconnect" href="https://api.whatsapp.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="me" href="https://www.instagram.com/heloraclinica" />
         <link rel="manifest" href="/manifest.webmanifest" />
-        <meta name="geo.region" content="BR-DF" />
-        <meta name="geo.placename" content="Brasília" />
-        <meta name="geo.position" content="-15.7801;-47.9292" />
-        <meta name="ICBM" content="-15.7801, -47.9292" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

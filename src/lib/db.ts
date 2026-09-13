@@ -1,5 +1,19 @@
 import { PrismaClient } from '@prisma/client'
 
+/**
+ * Single lazy, memoized Prisma client.
+ *
+ * - In production: requires TURSO_DATABASE_URL and TURSO_AUTH_TOKEN;
+ *   connects to Turso (libSQL) with the PrismaLibSQL adapter.
+ *   Fails explicitly if variables are missing or connection fails.
+ *
+ * - In development: if TURSO_DATABASE_URL is set, uses Turso;
+ *   otherwise falls back to local SQLite (for local dev only).
+ *
+ * The client is memoized per process/serverless function via globalThis
+ * to avoid connection leaks during hot-reload.
+ */
+
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined
 }
@@ -44,27 +58,29 @@ async function createPrismaClient(): Promise<PrismaClient> {
     )
   }
 
+  // Dev-only fallback to local SQLite
+  console.log('[DB] Using local SQLite (development only)')
   return new PrismaClient({ log: [...logConfig] })
 }
 
-const localDb =
-  globalForPrisma.prisma ?? new PrismaClient({ log: [...logConfig] })
-
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = localDb
-
-export const db = localDb
-
-let _cachedClient: PrismaClient | null = null
-
+/**
+ * Get the singleton Prisma client.
+ * Lazily creates on first call, then memoizes via globalThis.
+ */
 export async function getDb(): Promise<PrismaClient> {
-  if (_cachedClient) return _cachedClient
+  if (globalForPrisma.prisma) return globalForPrisma.prisma
 
   const client = await createPrismaClient()
-  _cachedClient = client
-
-  if (process.env.NODE_ENV !== 'production') {
-    globalForPrisma.prisma = client
-  }
+  globalForPrisma.prisma = client
 
   return client
 }
+
+/**
+ * Synchronous export for convenience in routes that can't be async.
+ * Only use AFTER getDb() has been called at least once, or in dev
+ * where the local SQLite fallback is available.
+ * Prefer getDb() in all new code.
+ */
+export const db = globalForPrisma.prisma ?? new PrismaClient({ log: [...logConfig] })
+if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = db

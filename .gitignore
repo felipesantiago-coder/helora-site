@@ -23,6 +23,21 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.tsupload/
+next-env.d.ts
+
+# dev logs
 dev.log
 worklog.md
+
+# database & PII — nunca versionar
+*.db
+*.sqlite*
+db/*.db
+
+# build artifacts & tool output
+tool-results/
+upload/
+
+# zscripts runtime artifacts
+.zscripts/*.log
+.zscripts/*.pid

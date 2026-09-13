@@ -1,3 +1,6 @@
+'use client';
+
+import { useState, useRef, useEffect } from 'react';
 import { MapPin, Navigation } from 'lucide-react';
 
 const ADDRESS = 'SEPS 707/907 Conjunto E Sala 214, Edifício San Marino, Asa Sul, Brasília — DF';
@@ -7,6 +10,27 @@ const MAPS_LINK =
   'https://www.google.com/maps/search/SEPS+707%2F907+Conjunto+E+Sala+214+Edif%C3%ADcio+San+Marino+Asa+Sul+Bras%C3%ADlia+DF';
 
 export function LocationSection() {
+  const [mapVisible, setMapVisible] = useState(false);
+  const mapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = mapRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setMapVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="localizacao" className="section-padding bg-[#FAF8F5]">
       <div className="max-w-[1200px] mx-auto px-6">
@@ -58,19 +82,35 @@ export function LocationSection() {
             </div>
           </div>
 
-          {/* Map embed */}
-          <div className="rounded-2xl overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.04)] h-full min-h-[300px] md:min-h-[400px]">
-            <iframe
-              src={MAPS_EMBED}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Localização da Helora Saúde Integrada no Google Maps"
-              className="w-full h-full min-h-[300px] md:min-h-[400px]"
-            />
+          {/* Map embed — lazy loaded via IntersectionObserver */}
+          <div
+            ref={mapRef}
+            className="rounded-2xl overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.04)] h-full min-h-[300px] md:min-h-[400px]"
+          >
+            {mapVisible ? (
+              <iframe
+                src={MAPS_EMBED}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localização da Helora Saúde Integrada no Google Maps"
+                className="w-full h-full min-h-[300px] md:min-h-[400px]"
+              />
+            ) : (
+              <div className="w-full h-full min-h-[300px] md:min-h-[400px] bg-[#F0EBE3] flex items-center justify-center">
+                <a
+                  href={MAPS_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans text-sm text-[#9C6146] hover:text-[#8A563D] underline underline-offset-4 transition-colors duration-200"
+                >
+                  Abrir mapa no Google Maps
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>

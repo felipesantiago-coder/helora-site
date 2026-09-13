@@ -2,13 +2,15 @@
 
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { getWhatsAppLink } from '@/lib/utils';
 
-const NAV_LINKS: { label: string; href: string; external?: boolean }[] = [
+const NAV_LINKS: { label: string; href: string; isRoute?: boolean }[] = [
   { label: 'Início', href: '#hero' },
-  { label: 'Helora para Empresas', href: '/empresas', external: true },
-  { label: 'Convênios', href: '/convenios' },
+  { label: 'Helora para Empresas', href: '/empresas', isRoute: true },
+  { label: 'Convênios', href: '/convenios', isRoute: true },
   { label: 'Contato', href: '#contato' },
 ];
 
@@ -19,13 +21,20 @@ export function Header() {
   const [scrollY, setScrollY] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
   const firstMobileItemRef = useRef<HTMLButtonElement>(null);
+  const rafRef = useRef<number>(0);
   const isTransparent = scrollY < 80 && isHome;
 
   useEffect(() => {
     if (!isHome) return;
-    const handleScroll = () => setScrollY(window.scrollY);
+    const handleScroll = () => {
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(() => setScrollY(window.scrollY));
+    };
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      cancelAnimationFrame(rafRef.current);
+    };
   }, [isHome]);
 
   useEffect(() => {
@@ -103,10 +112,13 @@ export function Header() {
           className="focus:outline-none transition-all duration-300 flex items-center gap-2"
           aria-label="Voltar ao início"
         >
-          <img
+          <Image
             src="/logo-mark.svg"
             alt=""
-            className={`h-7 w-auto shrink-0 transition-all duration-300 ${
+            width={28}
+            height={28}
+            style={{ width: 28, height: 28 }}
+            className={`shrink-0 transition-all duration-300 ${
               isTransparent ? 'brightness-0 invert' : 'brightness-0'
             }`}
           />
@@ -121,21 +133,34 @@ export function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-10" aria-label="Navegação principal">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className={`font-sans text-[13px] tracking-[0.04em] transition-colors duration-300 focus:outline-none focus-visible:underline ${
-                isTransparent
-                  ? 'text-white/80 hover:text-white'
-                  : 'text-[#6B6B6B] hover:text-[#2C2C2C]'
-              }`}
-            >
-              {link.label}
-            </a>
-          ))}
+          {NAV_LINKS.map((link) =>
+            link.isRoute ? (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`font-sans text-[13px] tracking-[0.04em] transition-colors duration-300 focus:outline-none focus-visible:underline ${
+                  isTransparent
+                    ? 'text-white/80 hover:text-white'
+                    : 'text-[#6B6B6B] hover:text-[#2C2C2C]'
+                }`}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className={`font-sans text-[13px] tracking-[0.04em] transition-colors duration-300 focus:outline-none focus-visible:underline ${
+                  isTransparent
+                    ? 'text-white/80 hover:text-white'
+                    : 'text-[#6B6B6B] hover:text-[#2C2C2C]'
+                }`}
+              >
+                {link.label}
+              </a>
+            )
+          )}
           <a
             href={getWhatsAppLink()}
             target="_blank"
@@ -180,17 +205,15 @@ export function Header() {
       >
         <nav className="flex flex-col py-4 px-6 gap-1" aria-label="Menu mobile">
           {NAV_LINKS.map((link, i) =>
-            link.external ? (
-              <a
+            link.isRoute ? (
+              <Link
                 key={link.href}
                 href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}
                 className="font-sans text-base text-[#2C2C2C] hover:text-[#9C6146] py-3 px-3 rounded-xl hover:bg-[#F0EBE3] transition-colors duration-200 text-left focus:outline-none focus-visible:bg-[#F0EBE3]"
               >
                 {link.label}
-              </a>
+              </Link>
             ) : (
               <button
                 key={link.href}

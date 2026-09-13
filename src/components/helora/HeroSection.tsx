@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { HeloraOrganicO } from '@/components/helora/HeloraOrganicO';
 import { getWhatsAppLink } from '@/lib/utils';
 
@@ -9,13 +10,16 @@ export function HeroSection() {
       id="hero"
       className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#9C6146]"
     >
-      {/* Background image */}
+      {/* Background image — LCP candidate */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src="/hero-background.jpeg"
           alt=""
+          fill
+          sizes="100vw"
+          priority
+          fetchPriority="high"
           className="w-full h-full object-cover"
-          loading="eager"
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/40" />

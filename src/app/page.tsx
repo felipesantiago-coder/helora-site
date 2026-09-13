@@ -1,66 +1,15 @@
-'use client';
-
-import dynamic from 'next/dynamic';
 import { Header } from '@/components/helora/Header';
+import { HeroSection } from '@/components/helora/HeroSection';
 import { AboutSection } from '@/components/helora/AboutSection';
 import { CareSection } from '@/components/helora/CareSection';
 import { ServicesSection } from '@/components/helora/ServicesSection';
 import { TeamSection } from '@/components/helora/TeamSection';
-
-/* ── Lazy load heavy / below-fold components ── */
-const HeroSection = dynamic(
-  () => import('@/components/helora/HeroSection').then((m) => ({ default: m.HeroSection })),
-  { ssr: true, loading: () => <HeroFallback /> }
-);
-
-const ComingSoonSection = dynamic(
-  () => import('@/components/helora/ComingSoonSection').then((m) => ({ default: m.ComingSoonSection })),
-  { ssr: true }
-);
-
-const TrustSection = dynamic(
-  () => import('@/components/helora/TrustSection').then((m) => ({ default: m.TrustSection })),
-  { ssr: true }
-);
-
-const ReviewsSection = dynamic(
-  () => import('@/components/helora/ReviewsSection').then((m) => ({ default: m.ReviewsSection })),
-  { ssr: true }
-);
-
-const LocationSection = dynamic(
-  () => import('@/components/helora/LocationSection').then((m) => ({ default: m.LocationSection })),
-  { ssr: true }
-);
-
-const CTASection = dynamic(
-  () => import('@/components/helora/CTASection').then((m) => ({ default: m.CTASection })),
-  { ssr: true }
-);
-
-const Footer = dynamic(
-  () => import('@/components/helora/Footer').then((m) => ({ default: m.Footer })),
-  { ssr: true }
-);
-
-function HeroFallback() {
-  return (
-    <section
-      id="hero"
-      className="min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#9C6146]"
-    >
-      <div className="max-w-2xl mx-auto px-6 text-center">
-        <h1 className="font-serif font-light text-[2.75rem] sm:text-[3rem] text-white tracking-[-0.02em] leading-[1.1] mb-6">
-          Cuidar de você é a nossa essência.
-        </h1>
-        <p className="font-sans text-white/70 text-base max-w-md mx-auto mb-10 leading-relaxed">
-          Um espaço de saúde integrada onde você pode respirar, ser ouvido e cuidar de si por inteiro.
-        </p>
-      </div>
-    </section>
-  );
-}
-
+import { ComingSoonSection } from '@/components/helora/ComingSoonSection';
+import { TrustSection } from '@/components/helora/TrustSection';
+import { ReviewsSection } from '@/components/helora/ReviewsSection';
+import { LocationSection } from '@/components/helora/LocationSection';
+import { CTASection } from '@/components/helora/CTASection';
+import { Footer } from '@/components/helora/Footer';
 import { WhatsAppFAB } from '@/components/helora/WhatsAppFAB';
 
 export default function Home() {

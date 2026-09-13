@@ -139,6 +139,13 @@
   html {
     scroll-behavior: auto;
   }
+  /* Disable continuous painting animations */
+  .animate-ping {
+    animation: none;
+  }
+  .grain-overlay::before {
+    display: none;
+  }
 }
 
 /* ── Custom Scrollbar ── */

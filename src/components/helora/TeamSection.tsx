@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const PROFESSIONALS = [
   {
     name: 'Maria de Fátima Soares Correia',
@@ -62,11 +64,13 @@ export function TeamSection() {
             >
               {/* Photo + Identity column */}
               <div className="w-full md:w-auto">
-                <div className="aspect-[3/4] rounded-2xl overflow-hidden">
-                  <img
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
+                  <Image
                     src={person.photo}
-                    alt={person.name}
-                    className="w-full h-full object-cover"
+                    alt={`Foto de ${person.name}`}
+                    fill
+                    sizes="(max-width: 767px) 280px, 320px"
+                    className="object-cover"
                     loading={index === 0 ? 'eager' : 'lazy'}
                     decoding="async"
                   />

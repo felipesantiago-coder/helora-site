@@ -1,5 +1,4 @@
-'use client';
-
+import Link from 'next/link';
 import { ArrowLeft, MessageCircle } from 'lucide-react';
 import { Header } from '@/components/helora/Header';
 import { Footer } from '@/components/helora/Footer';
@@ -82,13 +81,13 @@ export default function EmpresasPage() {
         {/* Hero */}
         <section className="bg-[#9C6146] py-20 sm:py-24 md:py-32">
           <div className="max-w-[1200px] mx-auto px-6">
-            <a
+            <Link
               href="/"
               className="inline-flex items-center gap-1.5 font-sans text-[13px] text-white/70 hover:text-white transition-colors duration-200 mb-8 sm:mb-12"
             >
               <ArrowLeft size={16} aria-hidden="true" />
               Voltar ao início
-            </a>
+            </Link>
 
             <div className="max-w-[700px]">
               <h1 className="font-serif font-light text-[2rem] sm:text-[2.75rem] md:text-[3.25rem] text-white tracking-[-0.02em] leading-[1.2] mb-5 text-balance">
