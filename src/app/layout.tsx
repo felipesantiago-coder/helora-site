@@ -106,6 +106,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${SITE_URL}/`,
   },
+  verification: {
+    google: "FtJNqGPMHL2uin1MuD5Ta7AwRNeyZE2RHVS_iDGT53s",
+  },
   other: {
     "geo.region": "BR-DF",
     "geo.placename": "Brasília",
