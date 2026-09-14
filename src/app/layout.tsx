@@ -34,11 +34,14 @@ export const metadata: Metadata = {
     template: "%s | Helora Saúde Integrada",
   },
   description:
-    "Clínica de psicologia em Brasília, DF. Psicoterapia individual, de casal, neuropsicologia e avaliação psicológica para todas as faixas etárias. Agende pelo WhatsApp.",
+    "Clínica multidisciplinar de saúde em Brasília, DF. Psicoterapia individual, de casal, neuropsicologia e avaliação psicológica para todas as faixas etárias. Agende pelo WhatsApp.",
   authors: [{ name: "Helora Saúde Integrada", url: SITE_URL }],
   creator: "Helora Saúde Integrada",
   publisher: "Helora Saúde Integrada",
   keywords: [
+    "clínica multidisciplinar Brasília",
+    "clínica multidisciplinar de saúde",
+    "clínica de saúde Brasília",
     "psicologia Brasília",
     "psicoterapia Brasília",
     "clínica de psicologia Brasília",
@@ -66,9 +69,9 @@ export const metadata: Metadata = {
     apple: "/favicon.svg",
   },
   openGraph: {
-    title: "Helora | Clínica de Psicologia em Brasília",
+    title: "Helora | Clínica Multidisciplinar de Saúde em Brasília",
     description:
-      "Cuidar de você é nossa essência. Psicoterapia individual, de casal, neuropsicologia e avaliação psicológica em Brasília/DF. Um espaço de acolhimento pensado para você.",
+      "Cuidar de você é nossa essência. Clínica multidisciplinar de saúde: psicoterapia individual, de casal, neuropsicologia e avaliação psicológica em Brasília/DF. Um espaço de acolhimento pensado para você.",
     type: "website",
     locale: "pt_BR",
     url: `${SITE_URL}/`,
@@ -78,15 +81,15 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/og-image.webp`,
         width: 1200,
         height: 630,
-        alt: "Helora | Clínica de Psicologia em Brasília — Cuidar de você é nossa essência",
+        alt: "Helora | Clínica Multidisciplinar de Saúde em Brasília — Cuidar de você é nossa essência",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Helora | Clínica de Psicologia em Brasília",
+    title: "Helora | Clínica Multidisciplinar de Saúde em Brasília",
     description:
-      "Cuidar de você é nossa essência. Psicoterapia individual, de casal, neuropsicologia e avaliação psicológica em Brasília/DF.",
+      "Cuidar de você é nossa essência. Clínica multidisciplinar de saúde: psicoterapia individual, de casal, neuropsicologia e avaliação psicológica em Brasília/DF.",
     images: [`${SITE_URL}/og-image.webp`],
   },
   robots: {
@@ -257,7 +260,7 @@ const structuredData = {
           name: "O que é a Helora Saúde Integrada?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "A Helora é uma clínica de psicologia e saúde integrada localizada na Asa Sul, em Brasília/DF. Oferecemos psicoterapia individual, de casal, neuropsicologia e avaliação psicológica, sempre com acolhimento e escuta sensível. Contamos com profissionais certificados pelo CRP e mais de 8.000 atendimentos realizados.",
+            text: "A Helora é uma clínica multidisciplinar de saúde localizada na Asa Sul, em Brasília/DF. Oferecemos psicoterapia individual, de casal, neuropsicologia e avaliação psicológica, sempre com acolhimento e escuta sensível. Contamos com profissionais certificados pelo CRP e mais de 8.000 atendimentos realizados.",
           },
         },
         {
