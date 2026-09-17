@@ -115,10 +115,10 @@ export function Header() {
           <Image
             src="/logo-mark.svg"
             alt=""
-            width={28}
+            width={149}
             height={28}
-            style={{ width: 28, height: 28 }}
-            className={`shrink-0 transition-all duration-300 ${
+            priority
+            className={`h-7 w-auto shrink-0 transition-all duration-300 ${
               isTransparent ? 'brightness-0 invert' : 'brightness-0'
             }`}
           />
