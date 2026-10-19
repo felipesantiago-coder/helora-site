@@ -13,6 +13,7 @@
     "@libsql/client": "^0.17.4",
     "@prisma/adapter-libsql": "^6.10.0",
     "@prisma/client": "^6.10.0",
+    "@vercel/analytics": "^2.0.1",
     "ably": "^2.28.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.525.0",
